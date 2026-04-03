@@ -6,12 +6,15 @@
   --color-bg-secondary: #ffffff;
   --color-accent: #f59e0b;
   --color-accent-light: #fbbf24;
+  --color-accent-dark: #d97706;
   --color-accent-soft: rgba(245, 158, 11, 0.15);
   --color-text-primary: #1f2937;
   --color-text-secondary: #4b5563;
   --color-text-muted: #6b7280;
   --color-border: #e5e7eb;
   --color-border-light: #f3f4f6;
+  --color-gradient-start: #f59e0b;
+  --color-gradient-end: #f97316;
 }
 
 /* Dark Mode Theme */
@@ -20,12 +23,15 @@
   --color-bg-secondary: #111111;
   --color-accent: #f59e0b;
   --color-accent-light: #fbbf24;
+  --color-accent-dark: #d97706;
   --color-accent-soft: rgba(245, 158, 11, 0.15);
   --color-text-primary: #f9fafb;
   --color-text-secondary: #d1d5db;
   --color-text-muted: #9ca3af;
   --color-border: #262626;
   --color-border-light: #1a1a1a;
+  --color-gradient-start: #f59e0b;
+  --color-gradient-end: #f97316;
 }
 
 html {
@@ -115,4 +121,148 @@ body {
 .image-card:hover {
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
   transform: translateY(-4px);
+}
+
+/* Gradient text animation */
+.gradient-text {
+  background: linear-gradient(135deg, var(--color-gradient-start), var(--color-gradient-end), var(--color-gradient-start));
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-shift 3s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Magnetic button effect */
+.magnetic-button {
+  transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Scroll progress indicator */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-gradient-start), var(--color-gradient-end));
+  z-index: 9999;
+  transition: width 0.1s ease;
+}
+
+/* Parallax container */
+.parallax-container {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+/* Glow effect */
+.glow {
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.4);
+  transition: box-shadow 0.3s ease;
+}
+
+.glow:hover {
+  box-shadow: 0 0 40px rgba(245, 158, 11, 0.6), 0 0 60px rgba(245, 158, 11, 0.3);
+}
+
+/* Shimmer effect */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Pulse ring effect */
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.8);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+.pulse-ring::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border: 2px solid var(--color-accent);
+  border-radius: inherit;
+  animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+}
+
+/* Performance Optimizations for Parallax */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .parallax-element {
+    transform: none !important;
+  }
+}
+
+/* GPU Acceleration for smooth parallax */
+.gpu-accelerated {
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Smooth parallax scrolling */
+.parallax-container {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .yellow-shape {
+    opacity: 0.15 !important;
+    filter: blur(40px) !important;
+  }
 }

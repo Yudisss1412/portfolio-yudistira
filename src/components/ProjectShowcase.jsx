@@ -1,5 +1,8 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import TiltCard from './TiltCard';
+import MagneticButton from './MagneticButton';
+import { ParallaxElement, ParallaxBackground } from './ParallaxScroll';
 
 const ProjectShowcase = () => {
   const [activeProject, setActiveProject] = useState(0);
@@ -132,8 +135,25 @@ const ProjectShowcase = () => {
   return (
     <div className="h-screen bg-bg-primary flex flex-col relative overflow-hidden">
       {/* Yellow Shape Background Element */}
-      <div className="yellow-shape" style={{ top: '5%', right: '10%' }}></div>
-      <div className="yellow-shape" style={{ bottom: '10%', left: '5%', width: '300px', height: '300px' }}></div>
+      <ParallaxBackground
+        elements={[
+          {
+            speed: 0.1,
+            className: 'yellow-shape',
+            style: { top: '5%', right: '10%' },
+          },
+          {
+            speed: 0.15,
+            className: 'yellow-shape',
+            style: { bottom: '10%', left: '5%', width: '300px', height: '300px' },
+          },
+          {
+            speed: 0.05,
+            className: 'w-40 h-40 rounded-full bg-gradient-to-br from-accent/10 to-accent-light/5 blur-3xl',
+            style: { top: '40%', left: '30%' },
+          },
+        ]}
+      />
 
       {/* Project Tab Selector */}
       <div className="relative z-20 flex flex-wrap justify-center gap-2 sm:gap-4 pt-4 sm:pt-8 px-4">
@@ -214,34 +234,42 @@ const ProjectShowcase = () => {
               </div>
             </div>
 
-            {/* CTA Button */}
+            {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-              <button className="bg-accent hover:bg-accent-light text-white font-bold px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 text-sm sm:text-base">
-                View Live Demo →
-              </button>
-              <button className="bg-bg-secondary hover:bg-border-light text-text-primary font-bold px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl border-2 border-border hover:border-accent transition-all text-sm sm:text-base">
-                Source Code
-              </button>
+              <MagneticButton>
+                <button className="bg-gradient-to-r from-accent to-accent-dark hover:from-accent-light hover:to-accent text-white font-bold px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 text-sm sm:text-base glow">
+                  View Live Demo →
+                </button>
+              </MagneticButton>
+              <MagneticButton>
+                <button className="bg-bg-secondary hover:bg-border-light text-text-primary font-bold px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl border-2 border-border hover:border-accent transition-all text-sm sm:text-base">
+                  Source Code
+                </button>
+              </MagneticButton>
             </div>
           </div>
 
           {/* RIGHT SIDE - Project Mockups Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
             {currentProject.mockups.map((mockup, index) => (
-              <div
-                key={index}
-                className={`image-card bg-bg-secondary overflow-hidden ${
+              <ParallaxElement key={index} speed={0.02 * (index + 1)} className="w-full">
+                <TiltCard className={`image-card bg-bg-secondary overflow-hidden rounded-2xl ${
                   index === 0 ? 'sm:col-span-2' : ''
-                }`}
-              >
+                }`}>
                 {/* Mockup Placeholder */}
                 <div
                   className={`w-full ${
                     index === 0 ? 'h-48 sm:h-56' : 'h-36 sm:h-40'
-                  } bg-gradient-to-br ${mockup.color} flex items-center justify-center relative`}
+                  } bg-gradient-to-br ${mockup.color} flex items-center justify-center relative group`}
                 >
                   <div className="text-center text-white">
-                    <div className="text-4xl mb-2">🖼️</div>
+                    <motion.div 
+                      className="text-4xl mb-2"
+                      whileHover={{ scale: 1.2, rotate: 10 }}
+                      transition={{ type: 'spring', stiffness: 300 }}
+                    >
+                      🖼️
+                    </motion.div>
                     <p className="text-sm font-semibold opacity-90">{mockup.title}</p>
                     <p className="text-xs opacity-75 mt-1">{mockup.description}</p>
                   </div>
@@ -251,6 +279,13 @@ const ProjectShowcase = () => {
                     <div className="w-2.5 h-2.5 rounded-full bg-white bg-opacity-60"></div>
                     <div className="w-2.5 h-2.5 rounded-full bg-white bg-opacity-60"></div>
                   </div>
+                  
+                  {/* Hover Overlay */}
+                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
+                    <span className="text-white font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm">
+                      View Details →
+                    </span>
+                  </div>
                 </div>
 
                 {/* Project Info */}
@@ -258,7 +293,8 @@ const ProjectShowcase = () => {
                   <h3 className="font-bold text-text-primary mb-1">{mockup.title}</h3>
                   <p className="text-sm text-text-secondary">{mockup.description}</p>
                 </div>
-              </div>
+              </TiltCard>
+              </ParallaxElement>
             ))}
           </div>
           </motion.div>

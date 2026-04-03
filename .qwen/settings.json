@@ -5,7 +5,8 @@
       "Bash(mkdir *)",
       "Bash(npm run *)",
       "Bash(timeout *)",
-      "Bash(copy *)"
+      "Bash(copy *)",
+      "Bash(del *)"
     ]
   },
   "$version": 3

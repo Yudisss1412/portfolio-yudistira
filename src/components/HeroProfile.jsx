@@ -1,6 +1,10 @@
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
+import TypingAnimation from './TypingAnimation';
+import AnimatedBackground from './AnimatedBackground';
+import MagneticButton from './MagneticButton';
+import { ParallaxBackground, ParallaxElement } from './ParallaxScroll';
 
 const funFacts = [
   "👋 Anda menemukan Easter Egg! Yuk, scroll ke bawah untuk melihat hasil kerja saya.",
@@ -72,8 +76,32 @@ const HeroProfile = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-bg-primary flex items-center justify-center p-3 sm:p-6 md:p-12">
-      <div className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-12 items-start md:items-center py-8">
+    <div className="min-h-screen bg-bg-primary flex items-center justify-center p-3 sm:p-6 md:p-12 relative overflow-hidden">
+      {/* Animated Background */}
+      <AnimatedBackground />
+      
+      {/* Parallax Decorative Elements */}
+      <ParallaxBackground
+        elements={[
+          {
+            speed: 0.1,
+            className: 'w-64 h-64 rounded-full bg-gradient-to-br from-accent/10 to-accent-light/5 blur-3xl',
+            style: { top: '10%', left: '5%' },
+          },
+          {
+            speed: 0.2,
+            className: 'w-48 h-48 rounded-full bg-gradient-to-br from-accent-light/10 to-accent/5 blur-3xl',
+            style: { top: '60%', right: '10%' },
+          },
+          {
+            speed: 0.15,
+            className: 'w-32 h-32 rounded-full bg-gradient-to-br from-accent/15 to-accent-dark/10 blur-3xl',
+            style: { top: '30%', right: '20%' },
+          },
+        ]}
+      />
+      
+      <div className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-12 items-start md:items-center py-8 relative z-10">
         {/* LEFT SIDE - Profile & Contact */}
         <motion.div
           className="space-y-4 sm:space-y-6 md:space-y-8 max-w-sm sm:max-w-md mx-auto md:max-w-none w-full"
@@ -82,19 +110,20 @@ const HeroProfile = () => {
           transition={{ duration: 0.5, ease: 'easeOut' }}
         >
           {/* Profile Photo */}
-          <div className="relative">
-            <div
-              className="blob-shape w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 mx-auto overflow-hidden shadow-xl border-4 border-accent cursor-pointer hover:scale-105 transition-transform duration-300"
-              onClick={handlePhotoClick}
-              role="button"
-              aria-label="Click for a fun surprise!"
-            >
-              <img
-                src="./profile-photo.jpeg"
-                alt="Yudistira Dwi Anggara"
-                className="w-full h-full object-cover"
-              />
-            </div>
+          <ParallaxElement speed={0.05} className="relative">
+            <div className="relative">
+              <div
+                className="blob-shape w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 mx-auto overflow-hidden shadow-xl border-4 border-accent cursor-pointer hover:scale-105 transition-transform duration-300"
+                onClick={handlePhotoClick}
+                role="button"
+                aria-label="Click for a fun surprise!"
+              >
+                <img
+                  src="./profile-photo.jpeg"
+                  alt="Yudistira Dwi Anggara"
+                  className="w-full h-full object-cover"
+                />
+              </div>
 
             {/* Easter Egg: Confetti + Fun Fact */}
             <AnimatePresence>
@@ -122,6 +151,7 @@ const HeroProfile = () => {
               )}
             </AnimatePresence>
           </div>
+          </ParallaxElement>
 
           {/* QR Code & Contact Info */}
           <div className="bg-bg-secondary rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-sm border border-border">
@@ -156,16 +186,18 @@ const HeroProfile = () => {
                 </div>
 
                 {/* Download CV Button */}
-                <a
-                  href="./CV Yudistira Dwi Anggara.pdf"
-                  download
-                  className="mt-3 sm:mt-4 w-full flex items-center justify-center gap-2 bg-accent hover:bg-accent-light text-white font-bold py-2.5 sm:py-3 px-3 sm:px-4 rounded-lg sm:rounded-xl transition-all duration-300 shadow-sm hover:shadow-md transform hover:-translate-y-0.5"
-                >
-                  <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                  </svg>
-                  <span className="text-xs sm:text-sm">Download CV</span>
-                </a>
+                <MagneticButton className="mt-3 sm:mt-4 w-full">
+                  <a
+                    href="./CV Yudistira Dwi Anggara.pdf"
+                    download
+                    className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-accent to-accent-dark hover:from-accent-light hover:to-accent text-white font-bold py-2.5 sm:py-3 px-3 sm:px-4 rounded-lg sm:rounded-xl transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5 glow"
+                  >
+                    <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                    <span className="text-xs sm:text-sm">Download CV</span>
+                  </a>
+                </MagneticButton>
               </div>
             </div>
           </div>
@@ -180,12 +212,33 @@ const HeroProfile = () => {
         >
           {/* Greeting */}
           <div>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-black text-text-primary mb-2 sm:mb-4">
+            <motion.h1 
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-black text-text-primary mb-2 sm:mb-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
               <span className="text-accent">"</span>HELLO.<span className="text-accent">"</span>
-            </h1>
-            <p className="text-sm sm:text-base md:text-lg text-text-secondary leading-relaxed">
-              Web Developer yang berdedikasi tinggi dengan rekam jejak dalam membangun aplikasi web fungsional dari tahap konsep hingga implementasi. Menguasai arsitektur pengembangan berbasis Laravel dan React.js, serta memiliki pengalaman merilis platform e-commerce terintegrasi. Siap memberikan kontribusi teknis yang solid di industri teknologi berskala besar.
-            </p>
+            </motion.h1>
+            
+            {/* Typing Animation */}
+            <div className="text-lg sm:text-xl md:text-2xl font-semibold text-text-secondary mb-3 sm:mb-4 h-8">
+              I'm a <TypingAnimation 
+                texts={['Web Developer', 'Laravel Developer', 'React Enthusiast', 'UI/UX Designer']}
+                typingSpeed={80}
+                deletingSpeed={40}
+                pauseDuration={1500}
+              />
+            </div>
+            
+            <motion.p 
+              className="text-sm sm:text-base md:text-lg text-text-secondary leading-relaxed gradient-text"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+            >
+              Web Developer yang berdedikasi dengan rekam jejak dalam membangun aplikasi web fungsional dari konsep hingga implementasi.
+            </motion.p>
           </div>
 
           {/* Education */}
@@ -208,16 +261,20 @@ const HeroProfile = () => {
               Software Skills
             </h2>
             <div className="flex flex-wrap gap-2 sm:gap-3">
-              {skills.map((skill) => (
-                <div
+              {skills.map((skill, index) => (
+                <motion.div
                   key={skill.name}
-                  className="bg-bg-secondary px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg sm:rounded-xl border border-border hover:border-accent hover:shadow-md transition-all cursor-default"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.3, delay: index * 0.05 }}
+                  whileHover={{ scale: 1.1, y: -5 }}
+                  className="bg-bg-secondary px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg sm:rounded-xl border border-border hover:border-accent hover:shadow-lg hover:glow transition-all duration-300 cursor-default group"
                 >
                   <div className="flex items-center gap-1.5 sm:gap-2">
-                    <span className="text-base sm:text-xl">{skill.icon}</span>
+                    <span className="text-base sm:text-xl group-hover:scale-125 transition-transform duration-300">{skill.icon}</span>
                     <span className="text-xs sm:text-sm font-semibold text-text-primary whitespace-nowrap">{skill.name}</span>
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
