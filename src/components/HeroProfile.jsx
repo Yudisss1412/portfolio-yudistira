@@ -90,7 +90,7 @@ const HeroProfile = () => {
               aria-label="Click for a fun surprise!"
             >
               <img
-                src="/profile-photo.jpeg"
+                src="./profile-photo.jpeg"
                 alt="Yudistira Dwi Anggara"
                 className="w-full h-full object-cover"
               />
@@ -130,7 +130,7 @@ const HeroProfile = () => {
               <div className="flex-shrink-0 mx-auto sm:mx-0">
                 <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white rounded-lg overflow-hidden border-2 border-accent shadow-sm">
                   <img
-                    src="/qr-code.png"
+                    src="./qr-code.png"
                     alt="QR Code"
                     className="w-full h-full object-cover"
                   />
@@ -157,7 +157,7 @@ const HeroProfile = () => {
 
                 {/* Download CV Button */}
                 <a
-                  href="/CV Yudistira Dwi Anggara.pdf"
+                  href="./CV Yudistira Dwi Anggara.pdf"
                   download
                   className="mt-3 sm:mt-4 w-full flex items-center justify-center gap-2 bg-accent hover:bg-accent-light text-white font-bold py-2.5 sm:py-3 px-3 sm:px-4 rounded-lg sm:rounded-xl transition-all duration-300 shadow-sm hover:shadow-md transform hover:-translate-y-0.5"
                 >
