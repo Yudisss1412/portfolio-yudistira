@@ -69,62 +69,182 @@ const ProjectShowcase = () => {
       ],
     },
     {
-      name: 'PROJECT_B',
-      label: 'Project Placeholder',
-      featured: 'ANOTHER PROJECT',
-      title: 'PROJECT',
-      titleAccent: 'PLACEHOLDER',
-      description: 'Ini adalah project placeholder. Kamu bisa mengganti deskripsi ini dengan detail project kedua kamu nantinya.',
+      name: 'TANITALK_V2',
+      label: 'TaniTalk V2',
+      featured: 'TEAM PROJECT',
+      title: 'AGRICULTURAL',
+      titleAccent: 'TANITALK',
+      description: 'TaniTalk V2 merupakan sistem informasi pertanian berbasis web yang dirancang untuk memberdayakan komunitas petani lokal. Platform ini menyediakan akses mudah ke informasi pertanian, tips bertani, dan forum diskusi antar petani. Dibangun dengan vanilla PHP dan MySQL untuk menunjukkan kemampuan pengembangan web tanpa framework.',
       highlights: [
         {
-          title: 'Highlight 1:',
-          desc: 'Deskripsi fitur atau highlight pertama dari project ini.',
+          title: 'Sistem Autentikasi Lengkap:',
+          desc: 'Fitur login, signup, dan session management yang aman untuk mengelola akses pengguna.',
         },
         {
-          title: 'Highlight 2:',
-          desc: 'Deskripsi fitur atau highlight kedua dari project ini.',
+          title: 'Custom PHP Architecture:',
+          desc: 'Dibangun dari scratch tanpa framework, menunjukkan pemahaman mendalam tentang PHP core dan MVC pattern.',
         },
         {
-          title: 'Highlight 3:',
-          desc: 'Deskripsi fitur atau highlight ketiga dari project ini.',
+          title: 'Database Design Terstruktur:',
+          desc: 'Skema MySQL yang efisien untuk menyimpan data pengguna, konten pertanian, dan forum diskusi.',
         },
         {
-          title: 'Highlight 4:',
-          desc: 'Deskripsi fitur atau highlight keempat dari project ini.',
+          title: 'Antarmuka Simpel & Fungsional:',
+          desc: 'Desain clean dan user-friendly yang mudah digunakan oleh petani dari berbagai kalangan.',
         },
       ],
       technologies: [
-        'Technology 1',
-        'Technology 2',
-        'Technology 3',
-        'Technology 4',
-        'Technology 5',
+        'PHP 8+ (Backend Core)',
+        'MySQL (Database Management)',
+        'Vanilla JavaScript (Frontend Interactivity)',
+        'CSS3 (Styling & Layout)',
+        'Custom MVC Pattern (Architecture)',
       ],
       mockups: [
         {
-          title: 'Mockup 1',
-          description: 'Deskripsi singkat mockup pertama.',
-          color: 'from-blue-400 to-cyan-500',
-        },
-        {
-          title: 'Mockup 2',
-          description: 'Deskripsi singkat mockup kedua.',
-          color: 'from-purple-400 to-pink-500',
-        },
-        {
-          title: 'Mockup 3',
-          description: 'Deskripsi singkat mockup ketiga.',
+          title: 'Homepage',
+          description: 'Halaman utama dengan informasi pertanian dan navigasi.',
           color: 'from-green-400 to-emerald-500',
         },
         {
-          title: 'Mockup 4',
-          description: 'Deskripsi singkat mockup keempat.',
-          color: 'from-red-400 to-rose-500',
+          title: 'Login Page',
+          description: 'Sistem autentikasi untuk pengguna terdaftar.',
+          color: 'from-teal-400 to-green-500',
         },
         {
-          title: 'Mockup 5',
-          description: 'Deskripsi singkat mockup kelima.',
-          color: 'from-indigo-400 to-blue-500',
+          title: 'Dashboard',
+          description: 'Panel pengguna dengan konten pertanian terbaru.',
+          color: 'from-emerald-400 to-teal-500',
+        },
+        {
+          title: 'Forum Diskusi',
+          description: 'Tempat berbagi pengalaman antar petani.',
+          color: 'from-green-500 to-lime-500',
+        },
+        {
+          title: 'Database Schema',
+          description: 'Struktur database yang terstruktur dan efisien.',
+          color: 'from-lime-400 to-green-600',
+        },
+      ],
+    },
+    {
+      name: 'IMK_CLOTHING',
+      label: 'IMK Clothing Store',
+      featured: 'ACADEMIC PROJECT',
+      title: 'CLOTHING',
+      titleAccent: 'E-COMMERCE',
+      description: 'Website toko pakaian yang dibangun dari awal menggunakan vanilla HTML, CSS, dan JavaScript. Menampilkan desain modern dengan fitur login modal interaktif, product grid responsif, dan integrasi Font Awesome untuk ikon. Project akademik yang menunjukkan kemampuan frontend development tanpa framework.',
+      highlights: [
+        {
+          title: 'Desain Frontend dari Scratch:',
+          desc: 'Seluruh layout dan styling dibuat manual tanpa Bootstrap atau framework CSS, menunjukkan pemahaman mendalam tentang CSS.',
+        },
+        {
+          title: 'Login Modal Interaktif:',
+          desc: 'Sistem login dengan animasi input fields dan SVG graphics untuk tampilan yang modern dan user-friendly.',
+        },
+        {
+          title: 'Product Grid Responsif:',
+          desc: 'Layout produk yang adaptif dengan hover effects dan call-to-action buttons yang menarik.',
+        },
+        {
+          title: 'Integrasi Social Media:',
+          desc: 'Footer dengan link ke berbagai platform social media (Instagram, Facebook, Twitter, WhatsApp).',
+        },
+      ],
+      technologies: [
+        'HTML5 (Structure & Semantic)',
+        'CSS3 (Custom Styling & Layout)',
+        'Vanilla JavaScript (DOM Manipulation)',
+        'Font Awesome (Icon Library)',
+        'Responsive Design Principles',
+      ],
+      mockups: [
+        {
+          title: 'Homepage',
+          description: 'Tampilan utama dengan hero section dan navigasi.',
+          color: 'from-blue-400 to-purple-500',
+        },
+        {
+          title: 'Login Modal',
+          description: 'Form login dengan animasi dan SVG graphics.',
+          color: 'from-purple-400 to-pink-500',
+        },
+        {
+          title: 'Product Cards',
+          description: 'Kartu produk dengan harga dan add-to-cart button.',
+          color: 'from-pink-400 to-rose-500',
+        },
+        {
+          title: 'Search Bar',
+          description: 'Fitur pencarian produk yang intuitif.',
+          color: 'from-rose-400 to-red-500',
+        },
+        {
+          title: 'Footer & Social Links',
+          description: 'Integrasi social media dan navigasi sekunder.',
+          color: 'from-red-400 to-orange-500',
+        },
+      ],
+    },
+    {
+      name: 'ZUMB_RESTAURANT',
+      label: 'Zumb Restaurant',
+      featured: 'ACADEMIC PROJECT',
+      title: 'RESTAURANT',
+      titleAccent: 'ZUMB',
+      description: 'Website restoran keluarga yang menampilkan sistem pemesanan table interaktif, menu makanan grid dengan harga, dan fitur shopping cart dengan perhitungan total otomatis. Dibangun dengan HTML, CSS advanced (Grid, Flexbox, Custom Properties), dan CSS animations untuk pengalaman pengguna yang menarik.',
+      highlights: [
+        {
+          title: 'Table Booking System:',
+          desc: 'Sistem pemesanan meja interaktif dengan pilihan tanggal, waktu, dan jumlah orang untuk reservasi restoran.',
+        },
+        {
+          title: 'Food Menu Grid Layout:',
+          desc: 'Tampilan menu makanan modern menggunakan CSS Grid dengan harga, status ketersediaan, dan gambar produk.',
+        },
+        {
+          title: 'Shopping Cart with Calculation:',
+          desc: 'Fitur keranjang belanja dengan input quantity, perhitungan subtotal, tax, dan total otomatis.',
+        },
+        {
+          title: 'Advanced CSS Animations:',
+          desc: 'Efek hover pada tombol dengan fill animation, floating food images, dan smooth scroll navigation.',
+        },
+      ],
+      technologies: [
+        'HTML5 (Semantic structure)',
+        'CSS3 (Grid, Flexbox, Custom Properties)',
+        'CSS Animations (floating, hover effects)',
+        'Google Fonts (Nunito)',
+        'Responsive Design (Media Queries)',
+      ],
+      mockups: [
+        {
+          title: 'Homepage & Booking',
+          description: 'Hero section dengan form booking table.',
+          color: 'from-yellow-400 to-orange-500',
+        },
+        {
+          title: 'Restaurant History',
+          description: 'About section dengan floating food image.',
+          color: 'from-orange-400 to-red-500',
+        },
+        {
+          title: 'Food Menu Grid',
+          description: 'Menu items dengan harga dan status.',
+          color: 'from-red-400 to-pink-500',
+        },
+        {
+          title: 'Shopping Cart',
+          description: 'Cart table dengan quantity input.',
+          color: 'from-pink-400 to-purple-500',
+        },
+        {
+          title: 'Subtotal Calculation',
+          description: 'Total keranjang dengan tax dan grand total.',
+          color: 'from-purple-400 to-indigo-500',
         },
       ],
     },
@@ -155,26 +275,46 @@ const ProjectShowcase = () => {
         ]}
       />
 
-      {/* Project Tab Selector */}
-      <div className="relative z-20 flex flex-wrap justify-center gap-2 sm:gap-4 pt-4 sm:pt-8 px-4">
-        {projects.map((project, index) => (
-          <button
-            key={project.name}
-            onClick={() => setActiveProject(index)}
-            className={`px-4 sm:px-6 py-2 sm:py-3 rounded-xl sm:rounded-2xl font-bold text-xs sm:text-sm transition-all ${
-              activeProject === index
-                ? 'bg-accent text-white shadow-lg scale-105'
-                : 'bg-bg-secondary text-text-muted border border-border hover:border-accent hover:text-accent'
-            }`}
-          >
-            {project.label}
-          </button>
-        ))}
+      {/* Project Tab Selector - Horizontal Scroll with Snap */}
+      <div className="relative z-20 px-3 xs:px-4 pt-3 xs:pt-4 sm:pt-6 md:pt-8">
+        <div 
+          className="flex gap-2 xs:gap-2.5 sm:gap-3 md:gap-4 overflow-x-auto scrollbar-hide pb-2"
+          style={{
+            scrollSnapType: 'x mandatory',
+            WebkitOverflowScrolling: 'touch',
+          }}
+        >
+          {projects.map((project, index) => (
+            <button
+              key={project.name}
+              onClick={() => setActiveProject(index)}
+              className={`flex-shrink-0 px-4 xs:px-5 sm:px-6 md:px-8 py-2 xs:py-2.5 sm:py-3 rounded-xl sm:rounded-2xl font-bold text-xs xs:text-sm whitespace-nowrap transition-all ${
+                activeProject === index
+                  ? 'bg-accent text-white shadow-lg'
+                  : 'bg-bg-secondary text-text-muted border border-border hover:border-accent hover:text-accent'
+              }`}
+              style={{ scrollSnapAlign: 'start' }}
+            >
+              {project.label}
+            </button>
+          ))}
+        </div>
+        
+        {/* Active Tab Indicator Line */}
+        <div className="mt-2 h-0.5 bg-border rounded-full overflow-hidden">
+          <div 
+            className="h-full bg-accent transition-transform duration-300 ease-out"
+            style={{
+              width: `${100 / projects.length}%`,
+              transform: `translateX(${activeProject * 100}%)`,
+            }}
+          />
+        </div>
       </div>
 
       {/* Scrollable Content */}
       <motion.div
-        className="flex-1 overflow-y-auto relative z-10 p-4 sm:p-6 md:p-12"
+        className="flex-1 overflow-y-auto relative z-10 px-3 xs:px-4 sm:px-6 md:px-8 lg:px-12 pt-3 xs:pt-4 sm:pt-6 md:pt-8 pb-4 xs:pb-6 sm:pb-8"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: 'easeOut' }}
@@ -182,34 +322,34 @@ const ProjectShowcase = () => {
       >
         <AnimatePresence mode="wait">
           <motion.div
-            className="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12"
+            className="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-4 xs:gap-6 sm:gap-8 md:gap-10 lg:gap-12"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
           >
           {/* LEFT SIDE - Project Description */}
-          <div className="space-y-8">
+          <div className="space-y-4 xs:space-y-6 sm:space-y-8">
             <div>
-              <div className="inline-block bg-accent-soft text-accent px-4 py-2 rounded-full text-sm font-bold mb-4">
+              <div className="inline-block bg-accent-soft text-accent px-2 xs:px-3 sm:px-4 py-1 xs:py-1.5 sm:py-2 rounded-full text-xs xs:text-sm font-bold mb-2 xs:mb-3 sm:mb-4">
                 ✨ {currentProject.featured}
               </div>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-text-primary mb-4 sm:mb-6 leading-tight">
+              <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-text-primary mb-2 xs:mb-3 sm:mb-4 md:mb-6 leading-tight">
                 {currentProject.title}
                 <br />
                 <span className="text-accent">{currentProject.titleAccent}</span>
               </h1>
-              <p className="text-sm sm:text-base md:text-lg text-text-secondary leading-relaxed">
+              <p className="text-xs xs:text-sm sm:text-base md:text-lg text-text-secondary leading-relaxed">
                 {currentProject.description}
               </p>
             </div>
 
-            <div className="bg-bg-secondary rounded-2xl p-6 border border-border-light shadow-sm">
-              <h3 className="text-lg font-bold text-text-primary mb-3">📋 Project Highlights</h3>
-              <ul className="space-y-3 text-text-secondary">
+            <div className="bg-bg-secondary rounded-lg xs:rounded-xl sm:rounded-2xl p-3 xs:p-4 sm:p-5 md:p-6 border border-border-light shadow-sm">
+              <h3 className="text-sm xs:text-base font-bold text-text-primary mb-2 xs:mb-3">📋 Project Highlights</h3>
+              <ul className="space-y-2 xs:space-y-3 text-text-secondary text-xs xs:text-sm">
                 {currentProject.highlights.map((highlight, index) => (
                   <li key={index} className="flex items-start gap-2">
-                    <span className="text-accent font-bold mt-1">✓</span>
+                    <span className="text-accent font-bold mt-0.5 flex-shrink-0">✓</span>
                     <span>
                       <strong className="text-text-primary">{highlight.title}</strong>{' '}
                       {highlight.desc}
@@ -221,12 +361,12 @@ const ProjectShowcase = () => {
 
             {/* Technologies Used */}
             <div>
-              <h3 className="text-lg font-bold text-text-primary mb-4">🛠️ Technologies Used</h3>
-              <div className="flex flex-wrap gap-3">
+              <h3 className="text-sm xs:text-base font-bold text-text-primary mb-2 xs:mb-3 sm:mb-4">🛠️ Technologies Used</h3>
+              <div className="flex flex-wrap gap-2 xs:gap-2.5 sm:gap-3">
                 {currentProject.technologies.map((tech) => (
                   <span
                     key={tech}
-                    className="bg-bg-secondary px-4 py-2 rounded-xl border border-border text-sm font-semibold text-text-secondary hover:border-accent hover:text-accent hover:shadow-md transition-all cursor-default"
+                    className="bg-bg-secondary px-2 xs:px-3 sm:px-4 py-1 xs:py-1.5 sm:py-2 rounded-lg xs:rounded-xl border border-border text-xs xs:text-sm font-semibold text-text-secondary hover:border-accent hover:text-accent hover:shadow-md transition-all cursor-default"
                   >
                     {tech}
                   </span>
@@ -235,14 +375,14 @@ const ProjectShowcase = () => {
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+            <div className="flex flex-col xs:flex-row gap-2 xs:gap-3 sm:gap-4">
               <MagneticButton>
-                <button className="bg-gradient-to-r from-accent to-accent-dark hover:from-accent-light hover:to-accent text-white font-bold px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 text-sm sm:text-base glow">
+                <button className="bg-gradient-to-r from-accent to-accent-dark hover:from-accent-light hover:to-accent text-white font-bold px-4 xs:px-5 sm:px-6 md:px-8 py-2.5 xs:py-3 sm:py-3.5 md:py-4 rounded-lg xs:rounded-xl sm:rounded-2xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 text-xs xs:text-sm sm:text-base w-full xs:w-auto glow">
                   View Live Demo →
                 </button>
               </MagneticButton>
               <MagneticButton>
-                <button className="bg-bg-secondary hover:bg-border-light text-text-primary font-bold px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl border-2 border-border hover:border-accent transition-all text-sm sm:text-base">
+                <button className="bg-bg-secondary hover:bg-border-light text-text-primary font-bold px-4 xs:px-5 sm:px-6 md:px-8 py-2.5 xs:py-3 sm:py-3.5 md:py-4 rounded-lg xs:rounded-xl sm:rounded-2xl border-2 border-border hover:border-accent transition-all text-xs xs:text-sm sm:text-base w-full xs:w-auto">
                   Source Code
                 </button>
               </MagneticButton>
@@ -250,28 +390,28 @@ const ProjectShowcase = () => {
           </div>
 
           {/* RIGHT SIDE - Project Mockups Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+          <div className="grid grid-cols-1 xs:grid-cols-2 gap-3 xs:gap-4 sm:gap-6">
             {currentProject.mockups.map((mockup, index) => (
               <ParallaxElement key={index} speed={0.02 * (index + 1)} className="w-full">
-                <TiltCard className={`image-card bg-bg-secondary overflow-hidden rounded-2xl ${
-                  index === 0 ? 'sm:col-span-2' : ''
+                <TiltCard className={`image-card bg-bg-secondary overflow-hidden rounded-xl xs:rounded-2xl ${
+                  index === 0 ? 'xs:col-span-2' : ''
                 }`}>
                 {/* Mockup Placeholder */}
                 <div
                   className={`w-full ${
-                    index === 0 ? 'h-48 sm:h-56' : 'h-36 sm:h-40'
+                    index === 0 ? 'h-40 xs:h-48 sm:h-56' : 'h-32 xs:h-36 sm:h-40'
                   } bg-gradient-to-br ${mockup.color} flex items-center justify-center relative group`}
                 >
-                  <div className="text-center text-white">
+                  <div className="text-center text-white px-2">
                     <motion.div 
-                      className="text-4xl mb-2"
+                      className="text-3xl xs:text-4xl mb-1 xs:mb-2"
                       whileHover={{ scale: 1.2, rotate: 10 }}
                       transition={{ type: 'spring', stiffness: 300 }}
                     >
                       🖼️
                     </motion.div>
-                    <p className="text-sm font-semibold opacity-90">{mockup.title}</p>
-                    <p className="text-xs opacity-75 mt-1">{mockup.description}</p>
+                    <p className="text-xs xs:text-sm font-semibold opacity-90">{mockup.title}</p>
+                    <p className="text-xs opacity-75 mt-0.5 xs:mt-1 line-clamp-2">{mockup.description}</p>
                   </div>
                   {/* Browser Window Frame Effect */}
                   <div className="absolute top-0 left-0 right-0 h-7 bg-white bg-opacity-20 flex items-center px-3 gap-2">

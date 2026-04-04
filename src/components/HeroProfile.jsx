@@ -2,7 +2,6 @@ import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useRef } from 'react';
 import TypingAnimation from './TypingAnimation';
-import AnimatedBackground from './AnimatedBackground';
 import MagneticButton from './MagneticButton';
 import { ParallaxBackground, ParallaxElement } from './ParallaxScroll';
 
@@ -56,14 +55,20 @@ const HeroProfile = () => {
     setTimeout(() => setShowEasterEgg(false), 3000);
   };
   const skills = [
-    { name: 'React', icon: '⚛️' },
-    { name: 'Laravel', icon: '🔺' },
-    { name: 'Tailwind', icon: '🌊' },
-    { name: 'MySQL', icon: '🗄️' },
-    { name: 'JavaScript', icon: '📜' },
+    { name: 'Laravel', icon: '🔴' },
     { name: 'PHP', icon: '🐘' },
+    { name: 'MySQL', icon: '🗄️' },
+    { name: 'Tailwind CSS', icon: '🌊' },
+    { name: 'Vite', icon: '⚡' },
+    { name: 'JavaScript', icon: '📜' },
+    { name: 'Midtrans', icon: '💳' },
     { name: 'Git', icon: '📦' },
-    { name: 'VS Code', icon: '💻' },
+    { name: 'Composer', icon: '🎵' },
+    { name: 'Axios', icon: '🌐' },
+    { name: 'HTML/CSS', icon: '🎨' },
+    { name: 'Font Awesome', icon: '⭐' },
+    { name: 'CSS Grid', icon: '📐' },
+    { name: 'CSS Animations', icon: '✨' },
   ];
 
   const experiences = [
@@ -71,40 +76,55 @@ const HeroProfile = () => {
       role: 'Web Developer',
       company: 'Freelance / Personal Project',
       period: '2024 - Present',
-      description: 'Building e-commerce platform AKRAB using Laravel and React.js for UMKM Banyuwangi.',
+      description: 'Building e-commerce platform AKRAB using Laravel and Tailwind CSS for UMKM Banyuwangi.',
+    },
+    {
+      role: 'Backend Developer',
+      company: 'Team Project - TaniTalk V2',
+      period: '2024',
+      description: 'Developed TaniTalk V2 - agricultural information system using vanilla PHP and MySQL for farmers community.',
+    },
+    {
+      role: 'Frontend Developer',
+      company: 'Academic Project - Zumb Restaurant',
+      period: '2024',
+      description: 'Built Zumb Restaurant website with table booking system, food menu grid, and shopping cart using advanced CSS Grid and animations.',
+    },
+    {
+      role: 'Frontend Developer',
+      company: 'Academic Project - IMK Clothing Store',
+      period: '2021',
+      description: 'Built clothing e-commerce frontend from scratch using vanilla HTML, CSS, JavaScript, and Font Awesome icons.',
     },
   ];
 
   return (
-    <div className="min-h-screen bg-bg-primary flex items-center justify-center p-3 sm:p-6 md:p-12 relative overflow-hidden">
-      {/* Animated Background */}
-      <AnimatedBackground />
-      
+    <div className="min-h-screen bg-bg-primary flex items-center justify-center px-3 py-4 xs:p-4 sm:p-6 md:p-8 lg:p-12 relative overflow-hidden">
       {/* Parallax Decorative Elements */}
       <ParallaxBackground
         elements={[
           {
             speed: 0.1,
-            className: 'w-64 h-64 rounded-full bg-gradient-to-br from-accent/10 to-accent-light/5 blur-3xl',
+            className: 'w-40 h-40 xs:w-48 xs:h-48 sm:w-64 sm:h-64 rounded-full bg-gradient-to-br from-accent/10 to-accent-light/5 blur-3xl',
             style: { top: '10%', left: '5%' },
           },
           {
             speed: 0.2,
-            className: 'w-48 h-48 rounded-full bg-gradient-to-br from-accent-light/10 to-accent/5 blur-3xl',
+            className: 'w-32 h-32 xs:w-40 xs:h-40 sm:w-48 sm:h-48 rounded-full bg-gradient-to-br from-accent-light/10 to-accent/5 blur-3xl',
             style: { top: '60%', right: '10%' },
           },
           {
             speed: 0.15,
-            className: 'w-32 h-32 rounded-full bg-gradient-to-br from-accent/15 to-accent-dark/10 blur-3xl',
+            className: 'w-24 h-24 xs:w-28 xs:h-28 sm:w-32 sm:h-32 rounded-full bg-gradient-to-br from-accent/15 to-accent-dark/10 blur-3xl',
             style: { top: '30%', right: '20%' },
           },
         ]}
       />
-      
-      <div className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-12 items-start md:items-center py-8 relative z-10">
+
+      <div className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-4 xs:gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-start md:items-center py-4 xs:py-6 sm:py-8 relative z-10">
         {/* LEFT SIDE - Profile & Contact */}
         <motion.div
-          className="space-y-4 sm:space-y-6 md:space-y-8 max-w-sm sm:max-w-md mx-auto md:max-w-none w-full"
+          className="space-y-3 xs:space-y-4 sm:space-y-6 md:space-y-8 max-w-xs xs:max-w-sm sm:max-w-md mx-auto md:max-w-none w-full"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: 'easeOut' }}
@@ -113,7 +133,7 @@ const HeroProfile = () => {
           <ParallaxElement speed={0.05} className="relative">
             <div className="relative">
               <div
-                className="blob-shape w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 mx-auto overflow-hidden shadow-xl border-4 border-accent cursor-pointer hover:scale-105 transition-transform duration-300"
+                className="blob-shape w-40 h-40 xs:w-48 xs:h-48 sm:w-56 sm:h-56 md:w-72 md:h-72 lg:w-80 lg:h-80 mx-auto overflow-hidden shadow-xl border-2 xs:border-4 border-accent cursor-pointer hover:scale-105 transition-transform duration-300"
                 onClick={handlePhotoClick}
                 role="button"
                 aria-label="Click for a fun surprise!"
@@ -213,7 +233,7 @@ const HeroProfile = () => {
           {/* Greeting */}
           <div>
             <motion.h1 
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-black text-text-primary mb-2 sm:mb-4"
+              className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-text-primary mb-1 xs:mb-2 sm:mb-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
@@ -222,7 +242,7 @@ const HeroProfile = () => {
             </motion.h1>
             
             {/* Typing Animation */}
-            <div className="text-lg sm:text-xl md:text-2xl font-semibold text-text-secondary mb-3 sm:mb-4 h-8">
+            <div className="text-base xs:text-lg sm:text-xl md:text-2xl font-semibold text-text-secondary mb-2 xs:mb-3 sm:mb-4 h-6 xs:h-7 sm:h-8">
               I'm a <TypingAnimation 
                 texts={['Web Developer', 'Laravel Developer', 'React Enthusiast', 'UI/UX Designer']}
                 typingSpeed={80}
@@ -232,7 +252,7 @@ const HeroProfile = () => {
             </div>
             
             <motion.p 
-              className="text-sm sm:text-base md:text-lg text-text-secondary leading-relaxed gradient-text"
+              className="text-xs xs:text-sm sm:text-base md:text-lg text-text-secondary leading-relaxed gradient-text"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
@@ -242,25 +262,25 @@ const HeroProfile = () => {
           </div>
 
           {/* Education */}
-          <div className="bg-bg-secondary rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-border-light">
-            <h2 className="text-base sm:text-xl font-bold text-text-primary mb-2 sm:mb-3 flex items-center gap-2">
-              <span className="w-2 h-2 bg-accent rounded-full flex-shrink-0"></span>
+          <div className="bg-bg-secondary rounded-lg xs:rounded-xl sm:rounded-2xl p-3 xs:p-4 sm:p-5 md:p-6 border border-border-light">
+            <h2 className="text-sm xs:text-base sm:text-lg md:text-xl font-bold text-text-primary mb-2 xs:mb-3 flex items-center gap-2">
+              <span className="w-1.5 h-1.5 xs:w-2 xs:h-2 bg-accent rounded-full flex-shrink-0"></span>
               Education
             </h2>
-            <p className="text-text-secondary leading-relaxed text-sm sm:text-base">
+            <p className="text-text-secondary leading-relaxed text-xs xs:text-sm sm:text-base">
               <strong className="text-text-primary">S1 Fakultas Ilmu Komputer</strong><br />
               Universitas Jember<br />
-              <span className="text-xs sm:text-sm">Focus on Software Engineering & Web Development</span>
+              <span className="text-xs">Focus on Software Engineering & Web Development</span>
             </p>
           </div>
 
           {/* Software Skills */}
           <div>
-            <h2 className="text-base sm:text-xl font-bold text-text-primary mb-3 sm:mb-4 flex items-center gap-2">
-              <span className="w-2 h-2 bg-accent rounded-full flex-shrink-0"></span>
+            <h2 className="text-sm xs:text-base sm:text-lg md:text-xl font-bold text-text-primary mb-2 xs:mb-3 sm:mb-4 flex items-center gap-2">
+              <span className="w-1.5 h-1.5 xs:w-2 xs:h-2 bg-accent rounded-full flex-shrink-0"></span>
               Software Skills
             </h2>
-            <div className="flex flex-wrap gap-2 sm:gap-3">
+            <div className="flex flex-wrap gap-1.5 xs:gap-2 sm:gap-3">
               {skills.map((skill, index) => (
                 <motion.div
                   key={skill.name}
@@ -268,11 +288,11 @@ const HeroProfile = () => {
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.3, delay: index * 0.05 }}
                   whileHover={{ scale: 1.1, y: -5 }}
-                  className="bg-bg-secondary px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg sm:rounded-xl border border-border hover:border-accent hover:shadow-lg hover:glow transition-all duration-300 cursor-default group"
+                  className="bg-bg-secondary px-2 py-1 xs:px-3 xs:py-1.5 sm:px-4 sm:py-2 rounded-md xs:rounded-lg sm:rounded-xl border border-border hover:border-accent hover:shadow-lg hover:glow transition-all duration-300 cursor-default group"
                 >
-                  <div className="flex items-center gap-1.5 sm:gap-2">
-                    <span className="text-base sm:text-xl group-hover:scale-125 transition-transform duration-300">{skill.icon}</span>
-                    <span className="text-xs sm:text-sm font-semibold text-text-primary whitespace-nowrap">{skill.name}</span>
+                  <div className="flex items-center gap-1 xs:gap-1.5 sm:gap-2">
+                    <span className="text-sm xs:text-base sm:text-xl group-hover:scale-125 transition-transform duration-300">{skill.icon}</span>
+                    <span className="text-xs font-semibold text-text-primary whitespace-nowrap">{skill.name}</span>
                   </div>
                 </motion.div>
               ))}
@@ -281,26 +301,26 @@ const HeroProfile = () => {
 
           {/* Working Experience */}
           <div>
-            <h2 className="text-base sm:text-xl font-bold text-text-primary mb-3 sm:mb-4 flex items-center gap-2">
-              <span className="w-2 h-2 bg-accent rounded-full flex-shrink-0"></span>
+            <h2 className="text-sm xs:text-base sm:text-lg md:text-xl font-bold text-text-primary mb-2 xs:mb-3 sm:mb-4 flex items-center gap-2">
+              <span className="w-1.5 h-1.5 xs:w-2 xs:h-2 bg-accent rounded-full flex-shrink-0"></span>
               Working Experience
             </h2>
-            <div className="space-y-3 sm:space-y-4">
+            <div className="space-y-2 xs:space-y-3 sm:space-y-4">
               {experiences.map((exp, index) => (
                 <div
                   key={index}
-                  className="bg-bg-secondary rounded-xl sm:rounded-2xl p-4 sm:p-5 border border-border-light hover:border-accent hover:shadow-md transition-all"
+                  className="bg-bg-secondary rounded-lg xs:rounded-xl sm:rounded-2xl p-3 xs:p-4 sm:p-5 border border-border-light hover:border-accent hover:shadow-md transition-all"
                 >
-                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 mb-2">
+                  <div className="flex flex-col xs:flex-row xs:justify-between xs:items-start gap-1.5 xs:gap-2 mb-2">
                     <div>
-                      <h3 className="font-bold text-text-primary text-sm sm:text-base">{exp.role}</h3>
-                      <p className="text-accent font-semibold text-xs sm:text-sm">{exp.company}</p>
+                      <h3 className="font-bold text-text-primary text-xs xs:text-sm sm:text-base">{exp.role}</h3>
+                      <p className="text-accent font-semibold text-xs">{exp.company}</p>
                     </div>
-                    <span className="text-xs text-text-muted bg-accent-soft px-2 sm:px-3 py-1 rounded-full font-medium self-start">
+                    <span className="text-xs text-text-muted bg-accent-soft px-2 xs:px-3 py-1 rounded-full font-medium self-start">
                       {exp.period}
                     </span>
                   </div>
-                  <p className="text-text-secondary text-xs sm:text-sm leading-relaxed">{exp.description}</p>
+                  <p className="text-text-secondary text-xs leading-relaxed">{exp.description}</p>
                 </div>
               ))}
             </div>
