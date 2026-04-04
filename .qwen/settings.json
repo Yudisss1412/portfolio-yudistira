@@ -6,7 +6,8 @@
       "Bash(npm run *)",
       "Bash(timeout *)",
       "Bash(copy *)",
-      "Bash(del *)"
+      "Bash(del *)",
+      "Bash(taskkill *)"
     ]
   },
   "$version": 3

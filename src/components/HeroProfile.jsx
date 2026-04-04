@@ -69,25 +69,33 @@ const HeroProfile = () => {
     { name: 'Font Awesome', icon: '⭐' },
     { name: 'CSS Grid', icon: '📐' },
     { name: 'CSS Animations', icon: '✨' },
+    { name: 'Flutter', icon: '📱' },
+    { name: 'Dart', icon: '🎯' },
+    { name: 'Firebase', icon: '🔥' },
+    { name: 'Figma', icon: '✏️' },
+    { name: 'UI/UX Design', icon: '🎨' },
+    { name: 'Bootstrap 5', icon: '🅱️' },
+    { name: 'RFID Technology', icon: '📡' },
+    { name: 'WMS', icon: '📦' },
   ];
 
   const experiences = [
     {
       role: 'Web Developer',
       company: 'Freelance / Personal Project',
-      period: '2024 - Present',
+      period: '2025',
       description: 'Building e-commerce platform AKRAB using Laravel and Tailwind CSS for UMKM Banyuwangi.',
     },
     {
       role: 'Backend Developer',
       company: 'Team Project - TaniTalk V2',
-      period: '2024',
+      period: '2023',
       description: 'Developed TaniTalk V2 - agricultural information system using vanilla PHP and MySQL for farmers community.',
     },
     {
       role: 'Frontend Developer',
       company: 'Academic Project - Zumb Restaurant',
-      period: '2024',
+      period: '2022',
       description: 'Built Zumb Restaurant website with table booking system, food menu grid, and shopping cart using advanced CSS Grid and animations.',
     },
     {
@@ -95,6 +103,24 @@ const HeroProfile = () => {
       company: 'Academic Project - IMK Clothing Store',
       period: '2021',
       description: 'Built clothing e-commerce frontend from scratch using vanilla HTML, CSS, JavaScript, and Font Awesome icons.',
+    },
+    {
+      role: 'Mobile Developer',
+      company: 'Personal Project - GASS_IN',
+      period: '2024',
+      description: 'Developed cross-platform mobile application using Flutter and Firebase with authentication, real-time database, Google Maps integration, and custom UI/UX design.',
+    },
+    {
+      role: 'Frontend Developer',
+      company: 'Team Project - Kampus Merdeka Vending Machine Dashboard',
+      period: '2024',
+      description: 'Built interactive analytics dashboard for vending machine monitoring with real-time metrics, data filtering, theme customization, and responsive design using vanilla HTML, CSS, and JavaScript.',
+    },
+    {
+      role: 'UI/UX Specialist',
+      company: 'Internship - PT Stechoq Robotika Indonesia',
+      period: '2023',
+      description: 'Designed mobile application for warehouse management system (WMS) using Figma, implementing barcode scanning, real-time stock monitoring, FIFO inventory method, and RFID integration for manufacturing industry.',
     },
   ];
 
@@ -121,7 +147,7 @@ const HeroProfile = () => {
         ]}
       />
 
-      <div className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-4 xs:gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-start md:items-center py-4 xs:py-6 sm:py-8 relative z-10">
+      <div className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-4 xs:gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-start md:items-start py-4 xs:py-6 sm:py-8 relative z-10">
         {/* LEFT SIDE - Profile & Contact */}
         <motion.div
           className="space-y-3 xs:space-y-4 sm:space-y-6 md:space-y-8 max-w-xs xs:max-w-sm sm:max-w-md mx-auto md:max-w-none w-full"
@@ -129,11 +155,12 @@ const HeroProfile = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: 'easeOut' }}
         >
-          {/* Profile Photo */}
-          <ParallaxElement speed={0.05} className="relative">
+          {/* Profile Photo - Sticky */}
+          <div className="md:sticky md:top-4">
+            <ParallaxElement speed={0.05} className="relative">
             <div className="relative">
               <div
-                className="blob-shape w-40 h-40 xs:w-48 xs:h-48 sm:w-56 sm:h-56 md:w-72 md:h-72 lg:w-80 lg:h-80 mx-auto overflow-hidden shadow-xl border-2 xs:border-4 border-accent cursor-pointer hover:scale-105 transition-transform duration-300"
+                className="blob-shape w-40 h-40 xs:w-48 xs:h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 mx-auto overflow-hidden shadow-xl border-2 xs:border-4 border-accent cursor-pointer hover:scale-105 transition-transform duration-300 bg-gradient-to-br from-accent/20 to-accent-light/20 flex items-center justify-center"
                 onClick={handlePhotoClick}
                 role="button"
                 aria-label="Click for a fun surprise!"
@@ -142,6 +169,10 @@ const HeroProfile = () => {
                   src="./profile-photo.jpeg"
                   alt="Yudistira Dwi Anggara"
                   className="w-full h-full object-cover"
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                    e.target.parentElement.innerHTML = '<span class="text-6xl md:text-7xl">👤</span>';
+                  }}
                 />
               </div>
 
@@ -172,50 +203,62 @@ const HeroProfile = () => {
             </AnimatePresence>
           </div>
           </ParallaxElement>
+          </div>
 
-          {/* QR Code & Contact Info */}
-          <div className="bg-bg-secondary rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-sm border border-border">
-            <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
-              {/* QR Code */}
-              <div className="flex-shrink-0 mx-auto sm:mx-0">
-                <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white rounded-lg overflow-hidden border-2 border-accent shadow-sm">
+          {/* QR Code & Contact Info - Non-sticky, scrolls normally */}
+          <div className="bg-bg-secondary rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 shadow-sm border border-border">
+            <div className="flex flex-col items-center gap-4 sm:gap-6">
+              {/* QR Code - Larger */}
+              <div className="flex-shrink-0">
+                <div className="w-28 h-28 xs:w-32 xs:h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 bg-white rounded-xl overflow-hidden border-4 border-accent shadow-lg">
                   <img
                     src="./qr-code.png"
                     alt="QR Code"
                     className="w-full h-full object-cover"
+                    onError={(e) => {
+                      e.target.style.display = 'none';
+                      e.target.parentElement.innerHTML = '<div class="flex items-center justify-center h-full bg-gradient-to-br from-accent/10 to-accent-light/10"><span class="text-4xl md:text-5xl">📱</span></div>';
+                    }}
                   />
                 </div>
+                <p className="text-xs text-text-muted mt-2 text-center">Scan to connect</p>
               </div>
 
-              {/* Contact Details */}
-              <div className="flex-1 space-y-2 sm:space-y-3 w-full">
-                <h3 className="text-base sm:text-lg font-bold text-text-primary text-center sm:text-left">Get In Touch</h3>
-                <div className="space-y-2">
-                  <a href="mailto:dwianggara1412@gmail.com" className="flex items-center gap-2 text-text-secondary hover:text-accent transition-colors">
-                    <FaEnvelope className="text-accent flex-shrink-0 text-sm" />
-                    <span className="text-xs sm:text-sm break-all">dwianggara1412@gmail.com</span>
+              {/* Contact Details - More Prominent */}
+              <div className="w-full space-y-3 sm:space-y-4">
+                <h3 className="text-lg sm:text-xl font-bold text-text-primary text-center">Get In Touch</h3>
+                <div className="space-y-3">
+                  <a href="mailto:dwianggara1412@gmail.com" className="flex items-center gap-3 p-3 rounded-lg bg-bg-primary hover:bg-accent/5 transition-colors group">
+                    <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0 group-hover:bg-accent/20 transition-colors">
+                      <FaEnvelope className="text-accent text-lg" />
+                    </div>
+                    <span className="text-sm font-medium text-text-secondary group-hover:text-accent transition-colors break-all">dwianggara1412@gmail.com</span>
                   </a>
-                  <a href="https://www.linkedin.com/in/yudistira-dwi-anggara-a42a85220/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-text-secondary hover:text-accent transition-colors">
-                    <FaLinkedin className="text-accent flex-shrink-0 text-sm" />
-                    <span className="text-xs sm:text-sm">linkedin.com/in/yudistira-dwi-anggara</span>
+                  <a href="https://www.linkedin.com/in/yudistira-dwi-anggara-a42a85220/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-3 rounded-lg bg-bg-primary hover:bg-accent/5 transition-colors group">
+                    <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0 group-hover:bg-accent/20 transition-colors">
+                      <FaLinkedin className="text-accent text-lg" />
+                    </div>
+                    <span className="text-sm font-medium text-text-secondary group-hover:text-accent transition-colors">LinkedIn Profile</span>
                   </a>
-                  <a href="https://github.com/Yudisss1412/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-text-secondary hover:text-accent transition-colors">
-                    <FaGithub className="text-accent flex-shrink-0 text-sm" />
-                    <span className="text-xs sm:text-sm">github.com/Yudisss1412</span>
+                  <a href="https://github.com/Yudisss1412/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-3 rounded-lg bg-bg-primary hover:bg-accent/5 transition-colors group">
+                    <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0 group-hover:bg-accent/20 transition-colors">
+                      <FaGithub className="text-accent text-lg" />
+                    </div>
+                    <span className="text-sm font-medium text-text-secondary group-hover:text-accent transition-colors">GitHub Profile</span>
                   </a>
                 </div>
 
-                {/* Download CV Button */}
-                <MagneticButton className="mt-3 sm:mt-4 w-full">
+                {/* Download CV Button - More Prominent */}
+                <MagneticButton className="w-full">
                   <a
                     href="./CV Yudistira Dwi Anggara.pdf"
                     download
-                    className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-accent to-accent-dark hover:from-accent-light hover:to-accent text-white font-bold py-2.5 sm:py-3 px-3 sm:px-4 rounded-lg sm:rounded-xl transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5 glow"
+                    className="w-full flex items-center justify-center gap-3 bg-gradient-to-r from-accent to-accent-dark hover:from-accent-light hover:to-accent text-white font-bold py-4 px-6 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 glow text-base"
                   >
-                    <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                     </svg>
-                    <span className="text-xs sm:text-sm">Download CV</span>
+                    <span>Download CV</span>
                   </a>
                 </MagneticButton>
               </div>

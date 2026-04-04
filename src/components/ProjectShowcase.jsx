@@ -248,6 +248,187 @@ const ProjectShowcase = () => {
         },
       ],
     },
+    {
+      name: 'GASS_IN',
+      label: 'GASS_IN Mobile App',
+      featured: 'PERSONAL PROJECT',
+      title: 'MOBILE',
+      titleAccent: 'GASS_IN',
+      description: 'Aplikasi mobile cross-platform yang dikembangkan menggunakan Flutter dan Firebase. Menampilkan integrasi lengkap dengan Firebase Authentication, Cloud Firestore untuk real-time data, Google Maps untuk fitur lokasi, serta custom UI/UX design dengan branding yang konsisten.',
+      highlights: [
+        {
+          title: 'Firebase Authentication & Firestore:',
+          desc: 'Sistem autentikasi user yang aman dan database real-time untuk sinkronisasi data across devices.',
+        },
+        {
+          title: 'Google Maps Integration:',
+          desc: 'Integrasi Google Maps dengan Places autocomplete untuk fitur lokasi dan navigasi yang intuitif.',
+        },
+        {
+          title: 'State Management with Provider:',
+          desc: 'Implementasi Provider pattern untuk state management yang clean dan maintainable.',
+        },
+        {
+          title: 'Custom UI & Branding:',
+          desc: 'Desain UI dengan custom fonts (TT Norm Pro), icons, dan assets untuk branding yang konsisten.',
+        },
+      ],
+      technologies: [
+        'Flutter (Cross-platform Framework)',
+        'Dart (Programming Language)',
+        'Firebase Auth & Firestore',
+        'Google Maps Flutter',
+        'Provider (State Management)',
+        'Dio (HTTP Client)',
+      ],
+      mockups: [
+        {
+          title: 'Authentication Screen',
+          description: 'Login & register dengan Firebase Auth.',
+          color: 'from-blue-400 to-cyan-500',
+        },
+        {
+          title: 'Home Dashboard',
+          description: 'Main dashboard dengan navigasi dan konten utama.',
+          color: 'from-cyan-400 to-teal-500',
+        },
+        {
+          title: 'Maps & Location',
+          description: 'Google Maps integration dengan Places search.',
+          color: 'from-teal-400 to-green-500',
+        },
+        {
+          title: 'Image Picker Feature',
+          description: 'Upload gambar dari camera atau gallery.',
+          color: 'from-green-400 to-emerald-500',
+        },
+        {
+          title: 'Custom UI Components',
+          description: 'Branded UI dengan custom fonts dan icons.',
+          color: 'from-emerald-400 to-green-600',
+        },
+      ],
+    },
+    {
+      name: 'KAMPUS_MERDEKA',
+      label: 'KM Vending Machine Dashboard',
+      featured: 'KAMPUS MERDEKA PROGRAM',
+      title: 'VENDING MACHINE',
+      titleAccent: 'DASHBOARD',
+      description: 'Dashboard analytics dan monitoring untuk manajemen vending machine multi-lokasi. Menampilkan performa penjualan, tracking inventory, filter data real-time, serta fitur kustomisasi tema dan responsive preview. Dibangun menggunakan vanilla HTML, CSS, dan JavaScript dengan local JSON data source.',
+      highlights: [
+        {
+          title: 'Performance Metrics Dashboard:',
+          desc: 'Real-time display dari Total Products, Total Sales, Transactions, dan Revenue untuk multiple vending machines.',
+        },
+        {
+          title: 'Advanced Data Filtering:',
+          desc: 'Multi-level filtering by Location, Machine ID, dan Product Category (Carbonated, Food, Non-carbonated, Water).',
+        },
+        {
+          title: 'Activity Trends Visualization:',
+          desc: 'Weekly dan Monthly view toggle untuk visualisasi trend penjualan dan aktivitas vending machines.',
+        },
+        {
+          title: 'Theme Customization & Responsive Preview:',
+          desc: 'Device layout toggler (Phone/Tablet/PC) dan background/theme personalization untuk testing responsive design.',
+        },
+      ],
+      technologies: [
+        'HTML5 (Semantic structure)',
+        'CSS3 (Responsive design & theming)',
+        'Vanilla JavaScript (DOM manipulation)',
+        'JSON (Data source)',
+        'Local Storage (User preferences)',
+      ],
+      mockups: [
+        {
+          title: 'Dashboard Analytics',
+          description: 'Main dashboard dengan metrics dan KPIs.',
+          color: 'from-purple-400 to-indigo-500',
+        },
+        {
+          title: 'Monitoring Data',
+          description: 'Real-time tracking vending machines per lokasi.',
+          color: 'from-indigo-400 to-blue-500',
+        },
+        {
+          title: 'Product Analytics',
+          description: 'Top 5 products table dengan quantity sold.',
+          color: 'from-blue-400 to-cyan-500',
+        },
+        {
+          title: 'Activity Trends',
+          description: 'Weekly/Monthly activity visualization.',
+          color: 'from-cyan-400 to-teal-500',
+        },
+        {
+          title: 'Settings & Customization',
+          description: 'Theme selector dan device preview toggler.',
+          color: 'from-teal-400 to-green-500',
+        },
+      ],
+    },
+    {
+      name: 'ZONEINSTICNT_WMS',
+      label: 'Zoneinsticnt Warehouse Apps',
+      featured: 'INTERNSHIP PROJECT',
+      title: 'WAREHOUSE MANAGEMENT',
+      titleAccent: 'SYSTEM',
+      description: 'Aplikasi mobile untuk manajemen gudang (Warehouse Management System) di industri manufaktur sepatu. Menampilkan fitur pemindaian barcode, pemantauan stok real-time, tracking pengiriman, dan integrasi RFID untuk efisiensi pengelolaan inventaris dengan metode FIFO (First In First Out).',
+      highlights: [
+        {
+          title: 'Barcode Scanning & RFID Integration:',
+          desc: 'Pemindaian barcode dan integrasi RFID untuk pelacakan item yang efisien dan manajemen inventaris otomatis.',
+        },
+        {
+          title: 'Real-time Stock Monitoring:',
+          desc: 'Pemantauan level stok gudang dan lokasi produk secara real-time untuk akurasi data inventaris.',
+        },
+        {
+          title: 'Order Shipping Tracking:',
+          desc: 'Tracking status pengiriman dan pembaruan delivery secara real-time untuk logistik yang transparan.',
+        },
+        {
+          title: 'FIFO Inventory Method:',
+          desc: 'Implementasi metode First In First Out untuk optimasi rotasi stok dan analisis kapasitas gudang.',
+        },
+      ],
+      technologies: [
+        'Figma (UI/UX Design & Prototyping)',
+        'UI/UX Research & Design System',
+        'HTML/CSS/JavaScript (Basic Web)',
+        'Bootstrap 5 (Responsive Layout)',
+        'Local JSON (Data Source)',
+      ],
+      mockups: [
+        {
+          title: 'Dashboard Overview',
+          description: 'Main dashboard dengan metrics inventaris gudang.',
+          color: 'from-orange-400 to-red-500',
+        },
+        {
+          title: 'Barcode Scanner',
+          description: 'Interface pemindai barcode untuk lookup item cepat.',
+          color: 'from-red-400 to-pink-500',
+        },
+        {
+          title: 'Stock Monitoring',
+          description: 'Level stok real-time dan tracking lokasi produk.',
+          color: 'from-pink-400 to-rose-500',
+        },
+        {
+          title: 'Order Shipping',
+          description: 'Tracking pengiriman dan status delivery.',
+          color: 'from-rose-400 to-orange-500',
+        },
+        {
+          title: 'Inventory Management',
+          description: 'Implementasi metode FIFO dan analisis kapasitas.',
+          color: 'from-orange-500 to-red-600',
+        },
+      ],
+    },
   ];
 
   const currentProject = projects[activeProject];
@@ -408,74 +589,34 @@ const ProjectShowcase = () => {
           </div>
 
           {/* RIGHT SIDE - Project Mockups Grid */}
-          <div className="relative">
-            {/* Mobile: Horizontal Scroll Carousel */}
-            <div className="lg:hidden overflow-x-auto scrollbar-hide pb-4 -mx-3 px-3">
-              <div className="flex gap-4" style={{ scrollSnapType: 'x mandatory', WebkitOverflowScrolling: 'touch' }}>
-                {currentProject.mockups.map((mockup, index) => (
-                  <div key={index} className="flex-shrink-0 w-72 xs:w-80" style={{ scrollSnapAlign: 'start' }}>
-                    <TiltCard className="image-card bg-bg-secondary overflow-hidden rounded-xl">
-                      {/* Mockup Placeholder */}
-                      <div className={`w-full h-44 bg-gradient-to-br ${mockup.color} flex items-center justify-center relative group p-4`}>
-                        <div className="text-center text-white">
-                          <motion.div className="text-3xl mb-2" whileHover={{ scale: 1.2, rotate: 10 }} transition={{ type: 'spring', stiffness: 300 }}>🖼️</motion.div>
-                          <p className="text-sm font-semibold opacity-90 leading-tight mb-1">{mockup.title}</p>
-                          <p className="text-xs opacity-75 leading-tight line-clamp-2">{mockup.description}</p>
-                        </div>
-                        {/* Browser Window Frame Effect */}
-                        <div className="absolute top-0 left-0 right-0 h-8 bg-white bg-opacity-20 flex items-center px-3 gap-2">
-                          <div className="w-3 h-3 rounded-full bg-white bg-opacity-60"></div>
-                          <div className="w-3 h-3 rounded-full bg-white bg-opacity-60"></div>
-                          <div className="w-3 h-3 rounded-full bg-white bg-opacity-60"></div>
-                        </div>
-                        {/* Hover Overlay */}
-                        <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
-                          <span className="text-white font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm">View Details →</span>
-                        </div>
-                      </div>
-                      {/* Project Info */}
-                      <div className="p-4">
-                        <h3 className="font-bold text-text-primary mb-1 text-sm">{mockup.title}</h3>
-                        <p className="text-xs text-text-secondary leading-relaxed">{mockup.description}</p>
-                      </div>
-                    </TiltCard>
+          <div className="grid grid-cols-1 gap-6">
+            {currentProject.mockups.map((mockup, index) => (
+              <TiltCard key={index} className="image-card bg-bg-secondary overflow-hidden rounded-xl">
+                  {/* Mockup Placeholder */}
+                  <div className={`w-full h-48 xs:h-56 bg-gradient-to-br ${mockup.color} flex items-center justify-center relative group p-6`}>
+                    <div className="text-center text-white">
+                      <motion.div className="text-4xl xs:text-5xl mb-3" whileHover={{ scale: 1.2, rotate: 10 }} transition={{ type: 'spring', stiffness: 300 }}>🖼️</motion.div>
+                      <p className="text-base xs:text-lg font-semibold opacity-90 leading-tight mb-2">{mockup.title}</p>
+                      <p className="text-sm xs:text-base opacity-75 leading-relaxed line-clamp-2">{mockup.description}</p>
+                    </div>
+                    {/* Browser Window Frame Effect */}
+                    <div className="absolute top-0 left-0 right-0 h-8 bg-white bg-opacity-20 flex items-center px-3 gap-2">
+                      <div className="w-3 h-3 rounded-full bg-white bg-opacity-60"></div>
+                      <div className="w-3 h-3 rounded-full bg-white bg-opacity-60"></div>
+                      <div className="w-3 h-3 rounded-full bg-white bg-opacity-60"></div>
+                    </div>
+                    {/* Hover Overlay */}
+                    <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
+                      <span className="text-white font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm">View Details →</span>
+                    </div>
                   </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Desktop: Grid Layout */}
-            <div className="hidden lg:grid lg:grid-cols-2 gap-6">
-              {currentProject.mockups.map((mockup, index) => (
-                <ParallaxElement key={index} speed={0.02 * (index + 1)} className="w-full">
-                  <TiltCard className="image-card bg-bg-secondary overflow-hidden rounded-xl">
-                    {/* Mockup Placeholder */}
-                    <div className={`w-full h-56 bg-gradient-to-br ${mockup.color} flex items-center justify-center relative group p-4`}>
-                      <div className="text-center text-white">
-                        <motion.div className="text-4xl mb-2" whileHover={{ scale: 1.2, rotate: 10 }} transition={{ type: 'spring', stiffness: 300 }}>🖼️</motion.div>
-                        <p className="text-base font-semibold opacity-90 leading-tight mb-1">{mockup.title}</p>
-                        <p className="text-sm opacity-75 leading-tight line-clamp-2">{mockup.description}</p>
-                      </div>
-                      {/* Browser Window Frame Effect */}
-                      <div className="absolute top-0 left-0 right-0 h-8 bg-white bg-opacity-20 flex items-center px-3 gap-2">
-                        <div className="w-3 h-3 rounded-full bg-white bg-opacity-60"></div>
-                        <div className="w-3 h-3 rounded-full bg-white bg-opacity-60"></div>
-                        <div className="w-3 h-3 rounded-full bg-white bg-opacity-60"></div>
-                      </div>
-                      {/* Hover Overlay */}
-                      <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
-                        <span className="text-white font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm">View Details →</span>
-                      </div>
-                    </div>
-                    {/* Project Info */}
-                    <div className="p-5">
-                      <h3 className="font-bold text-text-primary mb-1 text-base">{mockup.title}</h3>
-                      <p className="text-sm text-text-secondary leading-relaxed">{mockup.description}</p>
-                    </div>
-                  </TiltCard>
-                </ParallaxElement>
-              ))}
-            </div>
+                  {/* Project Info */}
+                  <div className="p-5 xs:p-6">
+                    <h3 className="font-bold text-text-primary mb-2 text-base xs:text-lg">{mockup.title}</h3>
+                    <p className="text-sm xs:text-base text-text-secondary leading-relaxed">{mockup.description}</p>
+                  </div>
+                </TiltCard>
+            ))}
           </div>
           </motion.div>
         </AnimatePresence>
