@@ -275,40 +275,58 @@ const ProjectShowcase = () => {
         ]}
       />
 
-      {/* Project Tab Selector - Horizontal Scroll with Snap */}
+      {/* Project Selector - Dropdown for Mobile, Tabs for Desktop */}
       <div className="relative z-20 px-3 xs:px-4 pt-3 xs:pt-4 sm:pt-6 md:pt-8">
-        <div 
-          className="flex gap-2 xs:gap-2.5 sm:gap-3 md:gap-4 overflow-x-auto scrollbar-hide pb-2"
-          style={{
-            scrollSnapType: 'x mandatory',
-            WebkitOverflowScrolling: 'touch',
-          }}
-        >
-          {projects.map((project, index) => (
-            <button
-              key={project.name}
-              onClick={() => setActiveProject(index)}
-              className={`flex-shrink-0 px-4 xs:px-5 sm:px-6 md:px-8 py-2 xs:py-2.5 sm:py-3 rounded-xl sm:rounded-2xl font-bold text-xs xs:text-sm whitespace-nowrap transition-all ${
-                activeProject === index
-                  ? 'bg-accent text-white shadow-lg'
-                  : 'bg-bg-secondary text-text-muted border border-border hover:border-accent hover:text-accent'
-              }`}
-              style={{ scrollSnapAlign: 'start' }}
-            >
-              {project.label}
-            </button>
-          ))}
+        {/* Mobile Dropdown */}
+        <div className="block lg:hidden">
+          <select
+            value={activeProject}
+            onChange={(e) => setActiveProject(Number(e.target.value))}
+            className="w-full px-4 py-3 rounded-xl bg-bg-secondary border border-border text-text-primary font-bold text-sm focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all cursor-pointer"
+          >
+            {projects.map((project, index) => (
+              <option key={project.name} value={index}>
+                {project.label}
+              </option>
+            ))}
+          </select>
         </div>
-        
-        {/* Active Tab Indicator Line */}
-        <div className="mt-2 h-0.5 bg-border rounded-full overflow-hidden">
+
+        {/* Desktop Tabs */}
+        <div className="hidden lg:block">
           <div 
-            className="h-full bg-accent transition-transform duration-300 ease-out"
+            className="flex gap-3 overflow-x-auto scrollbar-hide pb-2"
             style={{
-              width: `${100 / projects.length}%`,
-              transform: `translateX(${activeProject * 100}%)`,
+              scrollSnapType: 'x mandatory',
+              WebkitOverflowScrolling: 'touch',
             }}
-          />
+          >
+            {projects.map((project, index) => (
+              <button
+                key={project.name}
+                onClick={() => setActiveProject(index)}
+                className={`flex-shrink-0 px-6 md:px-8 py-3 rounded-2xl font-bold text-sm whitespace-nowrap transition-all ${
+                  activeProject === index
+                    ? 'bg-accent text-white shadow-lg'
+                    : 'bg-bg-secondary text-text-muted border border-border hover:border-accent hover:text-accent'
+                }`}
+                style={{ scrollSnapAlign: 'start' }}
+              >
+                {project.label}
+              </button>
+            ))}
+          </div>
+          
+          {/* Active Tab Indicator Line - Desktop Only */}
+          <div className="mt-2 h-0.5 bg-border rounded-full overflow-hidden">
+            <div 
+              className="h-full bg-accent transition-transform duration-300 ease-out"
+              style={{
+                width: `${100 / projects.length}%`,
+                transform: `translateX(${activeProject * 100}%)`,
+              }}
+            />
+          </div>
         </div>
       </div>
 
@@ -390,52 +408,74 @@ const ProjectShowcase = () => {
           </div>
 
           {/* RIGHT SIDE - Project Mockups Grid */}
-          <div className="grid grid-cols-1 xs:grid-cols-2 gap-3 xs:gap-4 sm:gap-6">
-            {currentProject.mockups.map((mockup, index) => (
-              <ParallaxElement key={index} speed={0.02 * (index + 1)} className="w-full">
-                <TiltCard className={`image-card bg-bg-secondary overflow-hidden rounded-xl xs:rounded-2xl ${
-                  index === 0 ? 'xs:col-span-2' : ''
-                }`}>
-                {/* Mockup Placeholder */}
-                <div
-                  className={`w-full ${
-                    index === 0 ? 'h-40 xs:h-48 sm:h-56' : 'h-32 xs:h-36 sm:h-40'
-                  } bg-gradient-to-br ${mockup.color} flex items-center justify-center relative group`}
-                >
-                  <div className="text-center text-white px-2">
-                    <motion.div 
-                      className="text-3xl xs:text-4xl mb-1 xs:mb-2"
-                      whileHover={{ scale: 1.2, rotate: 10 }}
-                      transition={{ type: 'spring', stiffness: 300 }}
-                    >
-                      🖼️
-                    </motion.div>
-                    <p className="text-xs xs:text-sm font-semibold opacity-90">{mockup.title}</p>
-                    <p className="text-xs opacity-75 mt-0.5 xs:mt-1 line-clamp-2">{mockup.description}</p>
+          <div className="relative">
+            {/* Mobile: Horizontal Scroll Carousel */}
+            <div className="lg:hidden overflow-x-auto scrollbar-hide pb-4 -mx-3 px-3">
+              <div className="flex gap-4" style={{ scrollSnapType: 'x mandatory', WebkitOverflowScrolling: 'touch' }}>
+                {currentProject.mockups.map((mockup, index) => (
+                  <div key={index} className="flex-shrink-0 w-72 xs:w-80" style={{ scrollSnapAlign: 'start' }}>
+                    <TiltCard className="image-card bg-bg-secondary overflow-hidden rounded-xl">
+                      {/* Mockup Placeholder */}
+                      <div className={`w-full h-44 bg-gradient-to-br ${mockup.color} flex items-center justify-center relative group p-4`}>
+                        <div className="text-center text-white">
+                          <motion.div className="text-3xl mb-2" whileHover={{ scale: 1.2, rotate: 10 }} transition={{ type: 'spring', stiffness: 300 }}>🖼️</motion.div>
+                          <p className="text-sm font-semibold opacity-90 leading-tight mb-1">{mockup.title}</p>
+                          <p className="text-xs opacity-75 leading-tight line-clamp-2">{mockup.description}</p>
+                        </div>
+                        {/* Browser Window Frame Effect */}
+                        <div className="absolute top-0 left-0 right-0 h-8 bg-white bg-opacity-20 flex items-center px-3 gap-2">
+                          <div className="w-3 h-3 rounded-full bg-white bg-opacity-60"></div>
+                          <div className="w-3 h-3 rounded-full bg-white bg-opacity-60"></div>
+                          <div className="w-3 h-3 rounded-full bg-white bg-opacity-60"></div>
+                        </div>
+                        {/* Hover Overlay */}
+                        <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
+                          <span className="text-white font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm">View Details →</span>
+                        </div>
+                      </div>
+                      {/* Project Info */}
+                      <div className="p-4">
+                        <h3 className="font-bold text-text-primary mb-1 text-sm">{mockup.title}</h3>
+                        <p className="text-xs text-text-secondary leading-relaxed">{mockup.description}</p>
+                      </div>
+                    </TiltCard>
                   </div>
-                  {/* Browser Window Frame Effect */}
-                  <div className="absolute top-0 left-0 right-0 h-7 bg-white bg-opacity-20 flex items-center px-3 gap-2">
-                    <div className="w-2.5 h-2.5 rounded-full bg-white bg-opacity-60"></div>
-                    <div className="w-2.5 h-2.5 rounded-full bg-white bg-opacity-60"></div>
-                    <div className="w-2.5 h-2.5 rounded-full bg-white bg-opacity-60"></div>
-                  </div>
-                  
-                  {/* Hover Overlay */}
-                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
-                    <span className="text-white font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm">
-                      View Details →
-                    </span>
-                  </div>
-                </div>
+                ))}
+              </div>
+            </div>
 
-                {/* Project Info */}
-                <div className="p-4">
-                  <h3 className="font-bold text-text-primary mb-1">{mockup.title}</h3>
-                  <p className="text-sm text-text-secondary">{mockup.description}</p>
-                </div>
-              </TiltCard>
-              </ParallaxElement>
-            ))}
+            {/* Desktop: Grid Layout */}
+            <div className="hidden lg:grid lg:grid-cols-2 gap-6">
+              {currentProject.mockups.map((mockup, index) => (
+                <ParallaxElement key={index} speed={0.02 * (index + 1)} className="w-full">
+                  <TiltCard className="image-card bg-bg-secondary overflow-hidden rounded-xl">
+                    {/* Mockup Placeholder */}
+                    <div className={`w-full h-56 bg-gradient-to-br ${mockup.color} flex items-center justify-center relative group p-4`}>
+                      <div className="text-center text-white">
+                        <motion.div className="text-4xl mb-2" whileHover={{ scale: 1.2, rotate: 10 }} transition={{ type: 'spring', stiffness: 300 }}>🖼️</motion.div>
+                        <p className="text-base font-semibold opacity-90 leading-tight mb-1">{mockup.title}</p>
+                        <p className="text-sm opacity-75 leading-tight line-clamp-2">{mockup.description}</p>
+                      </div>
+                      {/* Browser Window Frame Effect */}
+                      <div className="absolute top-0 left-0 right-0 h-8 bg-white bg-opacity-20 flex items-center px-3 gap-2">
+                        <div className="w-3 h-3 rounded-full bg-white bg-opacity-60"></div>
+                        <div className="w-3 h-3 rounded-full bg-white bg-opacity-60"></div>
+                        <div className="w-3 h-3 rounded-full bg-white bg-opacity-60"></div>
+                      </div>
+                      {/* Hover Overlay */}
+                      <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
+                        <span className="text-white font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm">View Details →</span>
+                      </div>
+                    </div>
+                    {/* Project Info */}
+                    <div className="p-5">
+                      <h3 className="font-bold text-text-primary mb-1 text-base">{mockup.title}</h3>
+                      <p className="text-sm text-text-secondary leading-relaxed">{mockup.description}</p>
+                    </div>
+                  </TiltCard>
+                </ParallaxElement>
+              ))}
+            </div>
           </div>
           </motion.div>
         </AnimatePresence>

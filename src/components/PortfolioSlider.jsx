@@ -7,13 +7,11 @@ import 'swiper/css/effect-fade';
 import HeroProfile from './HeroProfile';
 import ProjectShowcase from './ProjectShowcase';
 import DarkModeToggle from './DarkModeToggle';
-import BackToTop from './BackToTop';
 
 const PortfolioSlider = () => {
   return (
     <div className="portfolio-slider">
       <DarkModeToggle />
-      <BackToTop />
       <Swiper
         modules={[Navigation, Pagination, Keyboard, EffectFade]}
         effect="slide"
