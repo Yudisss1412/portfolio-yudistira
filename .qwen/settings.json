@@ -7,7 +7,11 @@
       "Bash(timeout *)",
       "Bash(copy *)",
       "Bash(del *)",
-      "Bash(taskkill *)"
+      "Bash(taskkill *)",
+      "Bash(dir *)",
+      "Bash(move *)",
+      "Bash(curl *)",
+      "Bash(rmdir *)"
     ]
   },
   "$version": 3

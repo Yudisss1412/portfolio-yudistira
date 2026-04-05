@@ -224,26 +224,31 @@ const ProjectShowcase = () => {
         {
           title: 'Homepage & Booking',
           description: 'Hero section dengan form booking table.',
+          image: '/portfolio-yudistira/zumb-homepage-booking.png',
           color: 'from-yellow-400 to-orange-500',
         },
         {
-          title: 'Restaurant History',
-          description: 'About section dengan floating food image.',
+          title: 'Food Menu Grid',
+          description: 'Menu items dengan harga dan status ketersediaan.',
+          image: '/portfolio-yudistira/zumb-food-menu.png',
           color: 'from-orange-400 to-red-500',
         },
         {
-          title: 'Food Menu Grid',
-          description: 'Menu items dengan harga dan status.',
+          title: 'Shopping Cart',
+          description: 'Cart dengan quantity input dan perhitungan otomatis.',
+          image: '/portfolio-yudistira/zumb-shopping-cart.png',
           color: 'from-red-400 to-pink-500',
         },
         {
-          title: 'Shopping Cart',
-          description: 'Cart table dengan quantity input.',
+          title: 'Payment Method',
+          description: 'Pilihan metode pembayaran: Tunai, E-Money, Kredit/Debit.',
+          image: '/portfolio-yudistira/zumb-payment-method.png',
           color: 'from-pink-400 to-purple-500',
         },
         {
-          title: 'Subtotal Calculation',
-          description: 'Total keranjang dengan tax dan grand total.',
+          title: 'Rating & Review',
+          description: 'Sistem rating restoran dan review dari pelanggan.',
+          image: '/portfolio-yudistira/zumb-rating-review.png',
           color: 'from-purple-400 to-indigo-500',
         },
       ],
@@ -592,24 +597,51 @@ const ProjectShowcase = () => {
           <div className="grid grid-cols-1 gap-6">
             {currentProject.mockups.map((mockup, index) => (
               <TiltCard key={index} className="image-card bg-bg-secondary overflow-hidden rounded-xl">
-                  {/* Mockup Placeholder */}
-                  <div className={`w-full h-48 xs:h-56 bg-gradient-to-br ${mockup.color} flex items-center justify-center relative group p-6`}>
-                    <div className="text-center text-white">
-                      <motion.div className="text-4xl xs:text-5xl mb-3" whileHover={{ scale: 1.2, rotate: 10 }} transition={{ type: 'spring', stiffness: 300 }}>🖼️</motion.div>
-                      <p className="text-base xs:text-lg font-semibold opacity-90 leading-tight mb-2">{mockup.title}</p>
-                      <p className="text-sm xs:text-base opacity-75 leading-relaxed line-clamp-2">{mockup.description}</p>
-                    </div>
-                    {/* Browser Window Frame Effect */}
-                    <div className="absolute top-0 left-0 right-0 h-8 bg-white bg-opacity-20 flex items-center px-3 gap-2">
-                      <div className="w-3 h-3 rounded-full bg-white bg-opacity-60"></div>
-                      <div className="w-3 h-3 rounded-full bg-white bg-opacity-60"></div>
-                      <div className="w-3 h-3 rounded-full bg-white bg-opacity-60"></div>
-                    </div>
-                    {/* Hover Overlay */}
-                    <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
-                      <span className="text-white font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm">View Details →</span>
-                    </div>
-                  </div>
+                  {mockup.image ? (
+                    <>
+                      {/* Real Screenshot Image */}
+                      <div className="w-full relative group overflow-hidden rounded-t-xl">
+                        <img
+                          src={mockup.image}
+                          alt={mockup.title}
+                          className="w-full h-auto max-h-[350px] object-contain bg-white block"
+                          loading="eager"
+                          onError={(e) => { console.error('Failed to load:', mockup.image); e.target.style.display='none'; }}
+                        />
+                        {/* Browser Window Frame Effect */}
+                        <div className="absolute top-0 left-0 right-0 h-8 bg-gradient-to-b from-black/50 to-transparent flex items-center px-3 gap-2">
+                          <div className="w-3 h-3 rounded-full bg-red-500"></div>
+                          <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+                          <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                        </div>
+                        {/* Hover Overlay */}
+                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center">
+                          <span className="text-white font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm">View Details →</span>
+                        </div>
+                      </div>
+                    </>
+                  ) : (
+                    <>
+                      {/* Mockup Placeholder */}
+                      <div className={`w-full h-48 xs:h-56 bg-gradient-to-br ${mockup.color} flex items-center justify-center relative group p-6`}>
+                        <div className="text-center text-white">
+                          <motion.div className="text-4xl xs:text-5xl mb-3" whileHover={{ scale: 1.2, rotate: 10 }} transition={{ type: 'spring', stiffness: 300 }}>🖼️</motion.div>
+                          <p className="text-base xs:text-lg font-semibold opacity-90 leading-tight mb-2">{mockup.title}</p>
+                          <p className="text-sm xs:text-base opacity-75 leading-relaxed line-clamp-2">{mockup.description}</p>
+                        </div>
+                        {/* Browser Window Frame Effect */}
+                        <div className="absolute top-0 left-0 right-0 h-8 bg-white bg-opacity-20 flex items-center px-3 gap-2">
+                          <div className="w-3 h-3 rounded-full bg-white bg-opacity-60"></div>
+                          <div className="w-3 h-3 rounded-full bg-white bg-opacity-60"></div>
+                          <div className="w-3 h-3 rounded-full bg-white bg-opacity-60"></div>
+                        </div>
+                        {/* Hover Overlay */}
+                        <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
+                          <span className="text-white font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm">View Details →</span>
+                        </div>
+                      </div>
+                    </>
+                  )}
                   {/* Project Info */}
                   <div className="p-5 xs:p-6">
                     <h3 className="font-bold text-text-primary mb-2 text-base xs:text-lg">{mockup.title}</h3>
