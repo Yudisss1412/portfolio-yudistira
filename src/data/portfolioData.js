@@ -15,11 +15,14 @@ export const portfolioData = {
 
   // Skills Section
   skills: [
-    { name: "React", level: 90 },
+    { name: "Laravel", level: 90 },
+    { name: "PHP", level: 88 },
+    { name: "MySQL", level: 85 },
     { name: "JavaScript", level: 85 },
+    { name: "Vite", level: 80 },
     { name: "Tailwind CSS", level: 88 },
-    { name: "HTML/CSS", level: 92 },
-    // Add more skills as needed
+    { name: "Git", level: 82 },
+    { name: "Midtrans", level: 78 },
   ],
 
   // Projects Section

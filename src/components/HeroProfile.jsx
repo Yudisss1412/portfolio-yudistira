@@ -58,25 +58,11 @@ const HeroProfile = () => {
     { name: 'Laravel', icon: '🔴' },
     { name: 'PHP', icon: '🐘' },
     { name: 'MySQL', icon: '🗄️' },
-    { name: 'Tailwind CSS', icon: '🌊' },
-    { name: 'Vite', icon: '⚡' },
     { name: 'JavaScript', icon: '📜' },
-    { name: 'Midtrans', icon: '💳' },
+    { name: 'Vite', icon: '⚡' },
+    { name: 'Tailwind CSS', icon: '🌊' },
     { name: 'Git', icon: '📦' },
-    { name: 'Composer', icon: '🎵' },
-    { name: 'Axios', icon: '🌐' },
-    { name: 'HTML/CSS', icon: '🎨' },
-    { name: 'Font Awesome', icon: '⭐' },
-    { name: 'CSS Grid', icon: '📐' },
-    { name: 'CSS Animations', icon: '✨' },
-    { name: 'Flutter', icon: '📱' },
-    { name: 'Dart', icon: '🎯' },
-    { name: 'Firebase', icon: '🔥' },
-    { name: 'Figma', icon: '✏️' },
-    { name: 'UI/UX Design', icon: '🎨' },
-    { name: 'Bootstrap 5', icon: '🅱️' },
-    { name: 'RFID Technology', icon: '📡' },
-    { name: 'WMS', icon: '📦' },
+    { name: 'Midtrans', icon: '💳' },
   ];
 
   const experiences = [
@@ -85,24 +71,6 @@ const HeroProfile = () => {
       company: 'Freelance / Personal Project',
       period: '2025',
       description: 'Building e-commerce platform AKRAB using Laravel and Tailwind CSS for UMKM Banyuwangi.',
-    },
-    {
-      role: 'Backend Developer',
-      company: 'Team Project - TaniTalk V2',
-      period: '2023',
-      description: 'Developed TaniTalk V2 - agricultural information system using vanilla PHP and MySQL for farmers community.',
-    },
-    {
-      role: 'Frontend Developer',
-      company: 'Academic Project - Zumb Restaurant',
-      period: '2022',
-      description: 'Built Zumb Restaurant website with table booking system, food menu grid, and shopping cart using advanced CSS Grid and animations.',
-    },
-    {
-      role: 'Frontend Developer',
-      company: 'Academic Project - IMK Clothing Store',
-      period: '2021',
-      description: 'Built clothing e-commerce frontend from scratch using vanilla HTML, CSS, JavaScript, and Font Awesome icons.',
     },
     {
       role: 'Mobile Developer',
@@ -117,10 +85,28 @@ const HeroProfile = () => {
       description: 'Built interactive analytics dashboard for vending machine monitoring with real-time metrics, data filtering, theme customization, and responsive design using vanilla HTML, CSS, and JavaScript.',
     },
     {
+      role: 'Backend Developer',
+      company: 'Team Project - TaniTalk V2',
+      period: '2023',
+      description: 'Developed TaniTalk V2 - agricultural information system using vanilla PHP and MySQL for farmers community.',
+    },
+    {
       role: 'UI/UX Specialist',
       company: 'Internship - PT Stechoq Robotika Indonesia',
       period: '2023',
       description: 'Designed mobile application for warehouse management system (WMS) using Figma, implementing barcode scanning, real-time stock monitoring, FIFO inventory method, and RFID integration for manufacturing industry.',
+    },
+    {
+      role: 'Frontend Developer',
+      company: 'Academic Project - Zumb Restaurant',
+      period: '2022',
+      description: 'Built Zumb Restaurant website with table booking system, food menu grid, and shopping cart using advanced CSS Grid and animations.',
+    },
+    {
+      role: 'Frontend Developer',
+      company: 'Academic Project - IMK Clothing Store',
+      period: '2021',
+      description: 'Built clothing e-commerce frontend from scratch using vanilla HTML, CSS, JavaScript, and Font Awesome icons.',
     },
   ];
 
