@@ -253,67 +253,6 @@ const ProjectShowcase = () => {
       ],
     },
     {
-      name: 'GASS_IN',
-      label: 'GASS_IN Mobile App',
-      featured: 'PERSONAL PROJECT',
-      title: 'MOBILE',
-      titleAccent: 'GASS_IN',
-      description: 'Aplikasi mobile cross-platform yang dikembangkan menggunakan Flutter dan Firebase. Menampilkan integrasi lengkap dengan Firebase Authentication, Cloud Firestore untuk real-time data, Google Maps untuk fitur lokasi, serta custom UI/UX design dengan branding yang konsisten.',
-      highlights: [
-        {
-          title: 'Firebase Authentication & Firestore:',
-          desc: 'Sistem autentikasi user yang aman dan database real-time untuk sinkronisasi data across devices.',
-        },
-        {
-          title: 'Google Maps Integration:',
-          desc: 'Integrasi Google Maps dengan Places autocomplete untuk fitur lokasi dan navigasi yang intuitif.',
-        },
-        {
-          title: 'State Management with Provider:',
-          desc: 'Implementasi Provider pattern untuk state management yang clean dan maintainable.',
-        },
-        {
-          title: 'Custom UI & Branding:',
-          desc: 'Desain UI dengan custom fonts (TT Norm Pro), icons, dan assets untuk branding yang konsisten.',
-        },
-      ],
-      technologies: [
-        'Flutter (Cross-platform Framework)',
-        'Dart (Programming Language)',
-        'Firebase Auth & Firestore',
-        'Google Maps Flutter',
-        'Provider (State Management)',
-        'Dio (HTTP Client)',
-      ],
-      mockups: [
-        {
-          title: 'Authentication Screen',
-          description: 'Login & register dengan Firebase Auth.',
-          color: 'from-blue-400 to-cyan-500',
-        },
-        {
-          title: 'Home Dashboard',
-          description: 'Main dashboard dengan navigasi dan konten utama.',
-          color: 'from-cyan-400 to-teal-500',
-        },
-        {
-          title: 'Maps & Location',
-          description: 'Google Maps integration dengan Places search.',
-          color: 'from-teal-400 to-green-500',
-        },
-        {
-          title: 'Image Picker Feature',
-          description: 'Upload gambar dari camera atau gallery.',
-          color: 'from-green-400 to-emerald-500',
-        },
-        {
-          title: 'Custom UI Components',
-          description: 'Branded UI dengan custom fonts dan icons.',
-          color: 'from-emerald-400 to-green-600',
-        },
-      ],
-    },
-    {
       name: 'KAMPUS_MERDEKA',
       label: 'KM Vending Machine Dashboard',
       featured: 'KAMPUS MERDEKA PROGRAM',
@@ -409,26 +348,31 @@ const ProjectShowcase = () => {
         {
           title: 'Dashboard Overview',
           description: 'Main dashboard dengan metrics inventaris gudang.',
+          image: 'iPhone 14 & 15 Pro Max - 3 HOMEPAGE.png',
           color: 'from-orange-400 to-red-500',
         },
         {
           title: 'Barcode Scanner',
           description: 'Interface pemindai barcode untuk lookup item cepat.',
+          image: 'original-08b320e17be7ee148af1614a41c3a01a.png',
           color: 'from-red-400 to-pink-500',
         },
         {
           title: 'Stock Monitoring',
           description: 'Level stok real-time dan tracking lokasi produk.',
+          image: 'inventory list row hover.png',
           color: 'from-pink-400 to-rose-500',
         },
         {
           title: 'Order Shipping',
           description: 'Tracking pengiriman dan status delivery.',
+          image: 'iPhone 14 & 15 Pro Max - 3 Tracking.png',
           color: 'from-rose-400 to-orange-500',
         },
         {
           title: 'Inventory Management',
           description: 'Implementasi metode FIFO dan analisis kapasitas.',
+          image: 'inventory list drop downs.png',
           color: 'from-orange-500 to-red-600',
         },
       ],
