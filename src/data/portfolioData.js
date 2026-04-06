@@ -28,18 +28,18 @@ export const portfolioData = {
   // Projects Section
   projects: [
     {
-      title: "Project One",
-      description: "Description of your amazing project goes here...",
-      tech: ["React", "Tailwind", "Vite"],
-      image: "", // path to project screenshot
+      title: "Clothing Store",
+      description: "E-commerce clothing store with product pages, login system, and shopping features. Built with modern UI/UX design.",
+      tech: ["HTML", "CSS", "JavaScript", "UI/UX Design"],
+      image: "/Screenshot (1895).png",
       liveUrl: "#",
       githubUrl: "#",
     },
     {
-      title: "Project Two",
-      description: "Another impressive project description...",
-      tech: ["Next.js", "TypeScript"],
-      image: "",
+      title: "Clothing Store - Product Detail",
+      description: "Product detail page featuring outdoor and lifestyle products with interactive shopping experience.",
+      tech: ["HTML", "CSS", "JavaScript", "Responsive Design"],
+      image: "/Screenshot (1897).png",
       liveUrl: "#",
       githubUrl: "#",
     },
