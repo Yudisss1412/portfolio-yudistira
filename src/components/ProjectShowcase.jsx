@@ -15,6 +15,10 @@ const ProjectShowcase = () => {
       title: 'E-COMMERCE',
       titleAccent: 'AKRAB',
       description: 'Platform E-Commerce AKRAB merupakan solusi digital terintegrasi yang dirancang untuk mendigitalisasi ekosistem perdagangan pada Paguyuban UMKM AKRAB di Banyuwangi. Proyek ini dibangun dengan fokus pada kemudahan pengelolaan inventaris dan perluasan jangkauan pasar bagi para pelaku usaha lokal melalui antarmuka yang modern dan fungsional.',
+      liveUrl: 'https://akrab-production-9a4e.up.railway.app/',
+      githubUrl: 'https://github.com/Yudisss1412/akrab',
+      buttonLabel: 'View Live Demo',
+      buttonLabel2: 'Source Code',
       highlights: [
         {
           title: 'Sistem Manajemen Inventaris Terpadu:',
@@ -44,26 +48,31 @@ const ProjectShowcase = () => {
         {
           title: 'Dashboard Admin',
           description: 'Panel admin untuk mengelola produk, pesanan, dan data pelanggan UMKM.',
+          image: 'akrab-admin-dashboard.png',
           color: 'from-orange-400 to-amber-500',
         },
         {
           title: 'Katalog Produk',
           description: 'Tampilan katalog dengan filter kategori dan pencarian produk.',
+          image: 'akrab-katalog-produk.png',
           color: 'from-yellow-400 to-orange-500',
         },
         {
           title: 'Keranjang Belanja',
           description: 'Fitur keranjang dengan update quantity real-time.',
+          image: 'akrab-keranjang-belanja.png',
           color: 'from-amber-400 to-yellow-500',
         },
         {
           title: 'Halaman Checkout',
           description: 'Proses pembayaran terintegrasi dengan konfirmasi pesanan.',
+          image: 'akrab-halaman-checkout.png',
           color: 'from-orange-500 to-amber-600',
         },
         {
           title: 'Manajemen Inventaris',
           description: 'Sistem pengelolaan stok dan kategori produk untuk admin UMKM.',
+          image: 'akrab-manajemen-inventaris.png',
           color: 'from-amber-500 to-orange-600',
         },
       ],
@@ -127,6 +136,10 @@ const ProjectShowcase = () => {
           color: 'from-lime-400 to-green-600',
         },
       ],
+      liveUrl: '#',
+      githubUrl: '#',
+      buttonLabel: 'View Details',
+      buttonLabel2: 'Source Code',
     },
     {
       name: 'IMK_CLOTHING',
@@ -259,6 +272,10 @@ const ProjectShowcase = () => {
       title: 'VENDING MACHINE',
       titleAccent: 'DASHBOARD',
       description: 'Dashboard analytics dan monitoring untuk manajemen vending machine multi-lokasi. Menampilkan performa penjualan, tracking inventory, filter data real-time, serta fitur kustomisasi tema dan responsive preview. Dibangun menggunakan vanilla HTML, CSS, dan JavaScript dengan local JSON data source.',
+      liveUrl: 'https://github.com/Kampus-Merdeka-Software-Engineering/km-feb24-jakarta-3',
+      githubUrl: 'https://github.com/Kampus-Merdeka-Software-Engineering/km-feb24-jakarta-3',
+      buttonLabel: 'View Repository',
+      buttonLabel2: 'Source Code',
       highlights: [
         {
           title: 'Performance Metrics Dashboard:',
@@ -321,34 +338,38 @@ const ProjectShowcase = () => {
       name: 'ZONEINSTICNT_WMS',
       label: 'Zoneinsticnt Warehouse Apps',
       featured: 'INTERNSHIP PROJECT',
-      title: 'WAREHOUSE MANAGEMENT',
-      titleAccent: 'SYSTEM',
-      description: 'Aplikasi mobile untuk manajemen gudang (Warehouse Management System) di industri manufaktur sepatu. Menampilkan fitur pemindaian barcode, pemantauan stok real-time, tracking pengiriman, dan integrasi RFID untuk efisiensi pengelolaan inventaris dengan metode FIFO (First In First Out).',
+      title: 'FIGMA UI/UX',
+      titleAccent: 'DESIGN',
+      description: 'Desain dan prototipe aplikasi Warehouse Management System (WMS) untuk industri manufaktur sepatu menggunakan Figma. Project ini merupakan hasil dari program Magang & Studi Independen Bersertifikat (MSIB) di PT Stechoq Robotika Indonesia dengan fokus pada UI/UX Research, Design Thinking, dan pembuatan high-fidelity prototype untuk solusi pengelolaan gudang yang lebih efisien.',
       highlights: [
         {
-          title: 'Barcode Scanning & RFID Integration:',
-          desc: 'Pemindaian barcode dan integrasi RFID untuk pelacakan item yang efisien dan manajemen inventaris otomatis.',
+          title: 'UI/UX Research & Design Thinking:',
+          desc: 'Melakukan riset pengguna mendalam dengan metode Design Thinking (Empathize, Define, Ideate, Prototype, Testing) untuk memahami kebutuhan dan pain points pengguna.',
         },
         {
-          title: 'Real-time Stock Monitoring:',
-          desc: 'Pemantauan level stok gudang dan lokasi produk secara real-time untuk akurasi data inventaris.',
+          title: 'User Flow & Wireframing:',
+          desc: 'Merancang user flow, wireframe, dan storyboard untuk memvisualisasikan alur kerja aplikasi mulai dari barcode scanning hingga inventory management.',
         },
         {
-          title: 'Order Shipping Tracking:',
-          desc: 'Tracking status pengiriman dan pembaruan delivery secara real-time untuk logistik yang transparan.',
+          title: 'Design System & Prototyping:',
+          desc: 'Membangun design system yang konsisten di Figma termasuk typography, spacing, color palette, dan komponen reusable untuk prototyping interaktif.',
         },
         {
-          title: 'FIFO Inventory Method:',
-          desc: 'Implementasi metode First In First Out untuk optimasi rotasi stok dan analisis kapasitas gudang.',
+          title: 'Usability Testing:',
+          desc: 'Melakukan usability testing dengan metrik seperti completion rate, duration, dan error count untuk memvalidasi efektivitas desain.',
         },
       ],
       technologies: [
-        'Figma (UI/UX Design & Prototyping)',
-        'UI/UX Research & Design System',
-        'HTML/CSS/JavaScript (Basic Web)',
-        'Bootstrap 5 (Responsive Layout)',
-        'Local JSON (Data Source)',
+        'Figma (Design & Prototyping)',
+        'UI/UX Research Methods',
+        'Design Thinking Framework',
+        'User Flow & Wireframing',
+        'Usability Testing & Metrics',
       ],
+      liveUrl: 'https://www.figma.com/proto/6S15rLbwzVObcvKWb9bUan/Project---Pandawa-Team?node-id=0-1&t=6BQAqnCkAj0bC4aU-1',
+      githubUrl: 'https://www.figma.com/design/6S15rLbwzVObcvKWb9bUan/Project---Pandawa-Team?node-id=0-1&p=f&t=6BQAqnCkAj0bC4aU-0',
+      buttonLabel: 'View Prototype',
+      buttonLabel2: 'Design File',
       mockups: [
         {
           title: 'Dashboard Overview',
@@ -529,14 +550,24 @@ const ProjectShowcase = () => {
             {/* CTA Buttons */}
             <div className="flex flex-col xs:flex-row gap-2 xs:gap-3 sm:gap-4">
               <MagneticButton>
-                <button className="bg-gradient-to-r from-accent to-accent-dark hover:from-accent-light hover:to-accent text-white font-bold px-4 xs:px-5 sm:px-6 md:px-8 py-2.5 xs:py-3 sm:py-3.5 md:py-4 rounded-lg xs:rounded-xl sm:rounded-2xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 text-xs xs:text-sm sm:text-base w-full xs:w-auto glow">
-                  View Live Demo →
-                </button>
+                <a
+                  href={currentProject.liveUrl || '#'}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-gradient-to-r from-accent to-accent-dark hover:from-accent-light hover:to-accent text-white font-bold px-4 xs:px-5 sm:px-6 md:px-8 py-2.5 xs:py-3 sm:py-3.5 md:py-4 rounded-lg xs:rounded-xl sm:rounded-2xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 text-xs xs:text-sm sm:text-base w-full xs:w-auto glow inline-block text-center"
+                >
+                  {currentProject.buttonLabel || 'View Live Demo'} →
+                </a>
               </MagneticButton>
               <MagneticButton>
-                <button className="bg-bg-secondary hover:bg-border-light text-text-primary font-bold px-4 xs:px-5 sm:px-6 md:px-8 py-2.5 xs:py-3 sm:py-3.5 md:py-4 rounded-lg xs:rounded-xl sm:rounded-2xl border-2 border-border hover:border-accent transition-all text-xs xs:text-sm sm:text-base w-full xs:w-auto">
-                  Source Code
-                </button>
+                <a
+                  href={currentProject.githubUrl || '#'}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-bg-secondary hover:bg-border-light text-text-primary font-bold px-4 xs:px-5 sm:px-6 md:px-8 py-2.5 xs:py-3 sm:py-3.5 md:py-4 rounded-lg xs:rounded-xl sm:rounded-2xl border-2 border-border hover:border-accent transition-all text-xs xs:text-sm sm:text-base w-full xs:w-auto inline-block text-center"
+                >
+                  {currentProject.buttonLabel2 || 'Source Code'}
+                </a>
               </MagneticButton>
             </div>
           </div>

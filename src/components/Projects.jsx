@@ -37,10 +37,22 @@ export default function Projects() {
               transition={{ duration: 0.5, delay: index * 0.15 }}
               className="bg-white dark:bg-dark rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow"
             >
-              {/* Project Image Placeholder */}
-              <div className="h-48 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
-                <span className="text-6xl">🚀</span>
-                {/* Replace with: <img src={project.image} alt={project.title} className="w-full h-48 object-cover" /> */}
+              {/* Project Image */}
+              <div className="h-48 overflow-hidden bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
+                {project.image ? (
+                  <img 
+                    src={project.image} 
+                    alt={project.title} 
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      console.error('Failed to load image:', project.image);
+                      e.target.style.display = 'none';
+                      e.target.parentElement.innerHTML = '<span class="text-6xl">🚀</span>';
+                    }}
+                  />
+                ) : (
+                  <span className="text-6xl">🚀</span>
+                )}
               </div>
 
               <div className="p-6">
