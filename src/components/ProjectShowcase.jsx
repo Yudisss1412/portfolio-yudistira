@@ -374,26 +374,31 @@ const ProjectShowcase = () => {
         {
           title: 'Login Experience',
           description: 'Halaman login dengan branding Mukti Sari Group dan value proposition WMS.',
+          image: 'mukti-sari-wms-login.png',
           color: 'from-emerald-400 to-teal-500',
         },
         {
           title: 'Dashboard Overview',
           description: 'Ringkasan total produk, stok menipis, shift aktif, penjualan harian, dan aktivitas stok terbaru.',
+          image: 'mukti-sari-wms-dashboard.png',
           color: 'from-teal-400 to-cyan-500',
         },
         {
           title: 'Master Data Management',
           description: 'Modul pengelolaan pengguna, kategori, unit, produk, varian produk, POS, dan customer.',
+          image: 'mukti-sari-wms-master-produk.png',
           color: 'from-cyan-400 to-blue-500',
         },
         {
           title: 'Inventory Operations',
           description: 'Halaman stok barang, stok movement, stok opname, stok masuk, dan stok keluar dengan tabel reusable.',
+          image: 'mukti-sari-wms-stok-barang.png',
           color: 'from-blue-400 to-indigo-500',
         },
         {
           title: 'Shift & Reports',
           description: 'Kontrol shift, filter tanggal, ringkasan transaksi, serta halaman laporan penjualan dan kasir.',
+          image: 'mukti-sari-wms-shift.png',
           color: 'from-indigo-400 to-emerald-500',
         },
       ],
