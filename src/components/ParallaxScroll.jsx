@@ -2,11 +2,13 @@ import { useEffect, useRef, useState, useCallback } from 'react';
 
 // Hook untuk detect reduced motion preference
 const useReducedMotion = () => {
-  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(() => {
+    if (typeof window === 'undefined') return false;
+    return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  });
 
   useEffect(() => {
     const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-    setPrefersReducedMotion(mediaQuery.matches);
 
     const handleChange = (e) => {
       setPrefersReducedMotion(e.matches);
@@ -22,14 +24,10 @@ const useReducedMotion = () => {
 // Parallax Hook dengan throttle requestAnimationFrame
 const useParallax = (ref, speed = 0.5, enabled = true) => {
   const requestRef = useRef(null);
-  const previousScrollY = useRef(0);
   const prefersReducedMotion = useReducedMotion();
 
-  // Skip parallax jika reduced motion atau disabled
-  if (prefersReducedMotion || !enabled) return;
-
   const updateParallax = useCallback(() => {
-    if (!ref.current) return;
+    if (prefersReducedMotion || !enabled || !ref.current) return;
 
     const scrolled = window.pageYOffset;
     const rect = ref.current.getBoundingClientRect();
@@ -40,20 +38,29 @@ const useParallax = (ref, speed = 0.5, enabled = true) => {
       const yPos = (scrolled - elementTop) * speed;
       ref.current.style.transform = `translate3d(0, ${yPos}px, 0)`;
     }
-
-    previousScrollY.current = scrolled;
-    requestRef.current = requestAnimationFrame(updateParallax);
-  }, [ref, speed]);
+  }, [enabled, prefersReducedMotion, ref, speed]);
 
   useEffect(() => {
-    requestRef.current = requestAnimationFrame(updateParallax);
+    if (prefersReducedMotion || !enabled) {
+      if (ref.current) {
+        ref.current.style.transform = 'translate3d(0, 0, 0)';
+      }
+      return;
+    }
+
+    const animate = () => {
+      updateParallax();
+      requestRef.current = requestAnimationFrame(animate);
+    };
+
+    requestRef.current = requestAnimationFrame(animate);
 
     return () => {
       if (requestRef.current) {
         cancelAnimationFrame(requestRef.current);
       }
     };
-  }, [updateParallax]);
+  }, [enabled, prefersReducedMotion, ref, updateParallax]);
 };
 
 // Parallax Component
@@ -61,8 +68,7 @@ export const ParallaxElement = ({
   children, 
   speed = 0.5, 
   className = '',
-  enabled = true,
-  direction = 'vertical' // 'vertical' atau 'horizontal'
+  enabled = true
 }) => {
   const ref = useRef(null);
   const prefersReducedMotion = useReducedMotion();
@@ -152,13 +158,14 @@ export const ParallaxSection = ({ children, className = '', offset = 0 }) => {
       { threshold: 0.1, rootMargin: `${offset}px` }
     );
 
-    if (ref.current) {
-      observer.observe(ref.current);
+    const section = ref.current;
+    if (section) {
+      observer.observe(section);
     }
 
     return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
+      if (section) {
+        observer.unobserve(section);
       }
     };
   }, [offset]);

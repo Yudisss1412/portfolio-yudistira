@@ -42,7 +42,7 @@ export default function Contact() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12"
         >
-          {socialLinks.map((link, index) => (
+          {socialLinks.map((link) => (
             <a
               key={link.name}
               href={link.url}

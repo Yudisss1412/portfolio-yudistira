@@ -1,6 +1,6 @@
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import TypingAnimation from './TypingAnimation';
 import MagneticButton from './MagneticButton';
 import { ParallaxBackground, ParallaxElement } from './ParallaxScroll';
