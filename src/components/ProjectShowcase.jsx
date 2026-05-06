@@ -335,6 +335,70 @@ const ProjectShowcase = () => {
       ],
     },
     {
+      name: 'MUKTI_SARI_WMS',
+      label: 'Mukti Sari WMS Admin',
+      featured: 'FRONTEND PROJECT',
+      title: 'WMS ADMIN',
+      titleAccent: 'DASHBOARD',
+      description: 'Mukti Sari WMS Admin adalah dashboard frontend untuk sistem Warehouse Management System yang dirancang untuk operasional gudang dan admin. Project ini berfokus pada tampilan admin yang rapi, navigasi modul yang jelas, pengelolaan master data, inventory, shift, laporan, serta simulasi data menggunakan dummy data sebelum integrasi backend.',
+      highlights: [
+        {
+          title: 'Frontend-only Admin Dashboard:',
+          desc: 'Membangun antarmuka WMS menggunakan Next.js App Router dengan route admin untuk dashboard, master data, inventory, shift, laporan, dan setting.',
+        },
+        {
+          title: 'Reusable Data Table Component:',
+          desc: 'Menyediakan komponen tabel yang bisa dipakai ulang dengan fitur search, filter drawer, pagination, status pill, dan action menu.',
+        },
+        {
+          title: 'Inventory Workflow Pages:',
+          desc: 'Menyiapkan halaman stok barang, stok movement, stok opname, stok masuk, dan stok keluar sebagai fondasi alur pengelolaan gudang.',
+        },
+        {
+          title: 'Responsive Admin Shell:',
+          desc: 'Merancang sidebar, header, mobile drawer, dan layout admin yang tetap nyaman digunakan pada desktop maupun layar kecil.',
+        },
+      ],
+      technologies: [
+        'Next.js 14 (App Router)',
+        'React 18 (Component UI)',
+        'Tailwind CSS (Dashboard Styling)',
+        'Bun (Package Manager)',
+        'Dummy Data Layer (Frontend Prototype)',
+      ],
+      liveUrl: '#',
+      githubUrl: '#',
+      buttonLabel: 'View Details',
+      buttonLabel2: 'Source Code',
+      mockups: [
+        {
+          title: 'Login Experience',
+          description: 'Halaman login dengan branding Mukti Sari Group dan value proposition WMS.',
+          color: 'from-emerald-400 to-teal-500',
+        },
+        {
+          title: 'Dashboard Overview',
+          description: 'Ringkasan total produk, stok menipis, shift aktif, penjualan harian, dan aktivitas stok terbaru.',
+          color: 'from-teal-400 to-cyan-500',
+        },
+        {
+          title: 'Master Data Management',
+          description: 'Modul pengelolaan pengguna, kategori, unit, produk, varian produk, POS, dan customer.',
+          color: 'from-cyan-400 to-blue-500',
+        },
+        {
+          title: 'Inventory Operations',
+          description: 'Halaman stok barang, stok movement, stok opname, stok masuk, dan stok keluar dengan tabel reusable.',
+          color: 'from-blue-400 to-indigo-500',
+        },
+        {
+          title: 'Shift & Reports',
+          description: 'Kontrol shift, filter tanggal, ringkasan transaksi, serta halaman laporan penjualan dan kasir.',
+          color: 'from-indigo-400 to-emerald-500',
+        },
+      ],
+    },
+    {
       name: 'ZONEINSTICNT_WMS',
       label: 'Zoneinsticnt Warehouse Apps',
       featured: 'INTERNSHIP PROJECT',
