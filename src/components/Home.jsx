@@ -62,7 +62,7 @@ export default function Home({ setPage, setCaseStudyId }) {
           {/* Main Photo Frame */}
           <div className="relative group overflow-hidden rounded-3xl border-4 border-white dark:border-bg-secondary shadow-2xl max-w-[320px] sm:max-w-[360px] aspect-square">
             <img 
-              src="/profile-photo.jpeg" 
+              src="./profile-photo.jpeg" 
               alt="Yudistira" 
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               onError={(e) => {
@@ -74,7 +74,7 @@ export default function Home({ setPage, setCaseStudyId }) {
       </section>
 
       {/* 2. SELECTED PROJECTS SECTION */}
-      <section className="space-y-12">
+      <section id="projects-home" className="space-y-12">
         <div className="text-center max-w-2xl mx-auto space-y-4">
           <h2 className="text-3xl sm:text-4xl font-black text-text-primary">Selected Projects</h2>
           <p className="text-text-secondary text-sm sm:text-base">
@@ -92,7 +92,7 @@ export default function Home({ setPage, setCaseStudyId }) {
           >
             <div className="relative rounded-2xl overflow-hidden aspect-[16/10] bg-slate-50 border border-border-light group">
               <img 
-                src="/akrab-admin-dashboard.png" 
+                src="./akrab-admin-dashboard.png" 
                 alt="Akrab Admin Dashboard" 
                 className="w-full h-full object-cover object-top"
               />
@@ -131,7 +131,7 @@ export default function Home({ setPage, setCaseStudyId }) {
             >
               <div className="relative rounded-xl overflow-hidden aspect-[16/9] bg-slate-50 border border-border-light">
                 <img 
-                  src="/akrab-katalog-produk.png" 
+                  src="./akrab-katalog-produk.png" 
                   alt="Katalog Produk" 
                   className="w-full h-full object-cover object-top"
                 />
@@ -152,7 +152,7 @@ export default function Home({ setPage, setCaseStudyId }) {
             >
               <div className="relative rounded-xl overflow-hidden aspect-[16/9] bg-slate-50 border border-border-light">
                 <img 
-                  src="/akrab-manajemen-inventaris.png" 
+                  src="./akrab-manajemen-inventaris.png" 
                   alt="Manajemen Inventaris" 
                   className="w-full h-full object-cover object-top"
                 />
@@ -177,7 +177,7 @@ export default function Home({ setPage, setCaseStudyId }) {
           >
             <div className="relative rounded-2xl overflow-hidden aspect-[16/9] bg-slate-50 border border-border-light">
               <img 
-                src="/akrab-keranjang-belanja.png" 
+                src="./akrab-keranjang-belanja.png" 
                 alt="Keranjang Belanja" 
                 className="w-full h-full object-cover object-top"
               />
@@ -198,7 +198,7 @@ export default function Home({ setPage, setCaseStudyId }) {
           >
             <div className="relative rounded-2xl overflow-hidden aspect-[16/9] bg-slate-50 border border-border-light">
               <img 
-                src="/akrab-halaman-checkout.png" 
+                src="./akrab-halaman-checkout.png" 
                 alt="Halaman Checkout" 
                 className="w-full h-full object-cover object-top"
               />

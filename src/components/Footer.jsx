@@ -32,7 +32,7 @@ export default function Footer({ setPage }) {
           <button onClick={() => handleNav('home')} className="hover:text-accent transition-colors">Home</button>
           <button onClick={() => handleNav('projects')} className="hover:text-accent transition-colors">Projects</button>
           <button onClick={() => handleNav('home', 'skills')} className="hover:text-accent transition-colors">Skills</button>
-          <button onClick={() => handleNav('home', 'contact')} className="hover:text-accent transition-colors">Contact</button>
+          <button onClick={() => handleNav('contact')} className="hover:text-accent transition-colors">Contact</button>
         </div>
 
         {/* Right: Copyright */}

@@ -1,8 +1,44 @@
-import { useState } from 'react';
-import DarkModeToggle from './DarkModeToggle';
+import { useState, useEffect } from 'react';
 
 export default function Navbar({ page, setPage }) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
+
+  useEffect(() => {
+    if (page !== 'home') {
+      setActiveSection('');
+      return;
+    }
+
+    const handleScroll = () => {
+      const sections = [
+        { id: 'projects-home', name: 'projects' },
+        { id: 'skills', name: 'skills' },
+        { id: 'contact', name: 'contact' }
+      ];
+      
+      let current = 'home';
+      
+      for (const section of sections) {
+        const el = document.getElementById(section.id);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          // If the section top is above 40% of viewport and bottom is below 25% of viewport
+          if (rect.top <= window.innerHeight * 0.4 && rect.bottom >= window.innerHeight * 0.25) {
+            current = section.name;
+            break;
+          }
+        }
+      }
+      
+      setActiveSection(current);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // initial check
+    
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [page]);
 
   const handleNav = (targetPage, sectionId) => {
     setMenuOpen(false);
@@ -35,7 +71,7 @@ export default function Navbar({ page, setPage }) {
           <button
             onClick={() => handleNav('home')}
             className={`hover:text-accent transition-colors relative py-1 ${
-              page === 'home' ? 'text-accent border-b-2 border-accent' : ''
+              page === 'home' && (activeSection === 'home' || activeSection === '') ? 'text-accent border-b-2 border-accent' : ''
             }`}
           >
             Home
@@ -43,20 +79,24 @@ export default function Navbar({ page, setPage }) {
           <button
             onClick={() => handleNav('projects')}
             className={`hover:text-accent transition-colors relative py-1 ${
-              page === 'projects' || page === 'case-study' ? 'text-accent border-b-2 border-accent' : ''
+              page === 'projects' || page === 'case-study' || (page === 'home' && activeSection === 'projects') ? 'text-accent border-b-2 border-accent' : ''
             }`}
           >
             Projects
           </button>
           <button
             onClick={() => handleNav('home', 'skills')}
-            className="hover:text-accent transition-colors py-1"
+            className={`hover:text-accent transition-colors relative py-1 ${
+              page === 'home' && activeSection === 'skills' ? 'text-accent border-b-2 border-accent' : ''
+            }`}
           >
             Skills
           </button>
           <button
-            onClick={() => handleNav('home', 'contact')}
-            className="hover:text-accent transition-colors py-1"
+            onClick={() => handleNav('contact')}
+            className={`hover:text-accent transition-colors relative py-1 ${
+              page === 'contact' || (page === 'home' && activeSection === 'contact') ? 'text-accent border-b-2 border-accent' : ''
+            }`}
           >
             Contact
           </button>
@@ -64,7 +104,6 @@ export default function Navbar({ page, setPage }) {
 
         {/* Right: Actions */}
         <div className="flex items-center gap-4">
-          <DarkModeToggle />
           <a
             href="/CV Yudistira Dwi Anggara.pdf"
             download
@@ -92,25 +131,25 @@ export default function Navbar({ page, setPage }) {
           <nav className="flex flex-col px-6 py-4 gap-4 text-sm font-bold text-text-secondary">
             <button
               onClick={() => handleNav('home')}
-              className={`text-left py-2 ${page === 'home' ? 'text-accent' : 'hover:text-accent'}`}
+              className={`text-left py-2 ${page === 'home' && (activeSection === 'home' || activeSection === '') ? 'text-accent' : 'hover:text-accent'}`}
             >
               Home
             </button>
             <button
               onClick={() => handleNav('projects')}
-              className={`text-left py-2 ${page === 'projects' || page === 'case-study' ? 'text-accent' : 'hover:text-accent'}`}
+              className={`text-left py-2 ${page === 'projects' || page === 'case-study' || (page === 'home' && activeSection === 'projects') ? 'text-accent' : 'hover:text-accent'}`}
             >
               Projects
             </button>
             <button
               onClick={() => handleNav('home', 'skills')}
-              className="text-left py-2 hover:text-accent"
+              className={`text-left py-2 ${page === 'home' && activeSection === 'skills' ? 'text-accent' : 'hover:text-accent'}`}
             >
               Skills
             </button>
             <button
-              onClick={() => handleNav('home', 'contact')}
-              className="text-left py-2 hover:text-accent"
+              onClick={() => handleNav('contact')}
+              className={`text-left py-2 ${page === 'contact' || (page === 'home' && activeSection === 'contact') ? 'text-accent' : 'hover:text-accent'}`}
             >
               Contact
             </button>

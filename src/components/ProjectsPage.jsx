@@ -59,17 +59,13 @@ export default function ProjectsPage({ setPage, setCaseStudyId }) {
         ))}
       </div>
 
-      {/* Projects Grid */}
-      <motion.div 
-        className="grid grid-cols-1 md:grid-cols-2 gap-8"
-        layout
-      >
+      {/* 'layout' is removed from grid to prevent reflow loops */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <AnimatePresence mode="popLayout">
           {filteredProjects.map((project) => (
             <motion.div
               key={project.id}
               className="bg-bg-secondary border border-border rounded-3xl overflow-hidden shadow-sm hover:shadow-lg transition-all flex flex-col group"
-              layout
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
@@ -127,7 +123,7 @@ export default function ProjectsPage({ setPage, setCaseStudyId }) {
             </motion.div>
           ))}
         </AnimatePresence>
-      </motion.div>
+      </div>
     </div>
   );
 }

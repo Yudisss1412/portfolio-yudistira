@@ -4,7 +4,7 @@ export const caseStudies = {
     id: "akrab",
     category: "Management & E-Commerce",
     title: "Akrab — Empowering the UMKM Ecosystem through Digital Transformation",
-    featuredImage: "/akrab-admin-dashboard.png",
+    featuredImage: "./akrab-admin-dashboard.png",
     role: "Lead Fullstack Developer",
     industry: "Retail & E-Commerce",
     githubUrl: "https://github.com/Yudisss1412/akrab",
@@ -30,27 +30,27 @@ export const caseStudies = {
       {
         title: "Dashboard Admin",
         description: "Panel admin terpusat untuk memantau ringkasan penjualan, transaksi, dan stok barang menipis.",
-        image: "/akrab-admin-dashboard.png"
+        image: "./akrab-admin-dashboard.png"
       },
       {
         title: "Katalog Produk",
         description: "Halaman katalog utama dengan fitur pencarian dan filter kategori produk UMKM.",
-        image: "/akrab-katalog-produk.png"
+        image: "./akrab-katalog-produk.png"
       },
       {
         title: "Keranjang Belanja",
         description: "Fitur keranjang belanja interaktif yang memungkinkan pengguna menambah dan mengubah jumlah pesanan.",
-        image: "/akrab-keranjang-belanja.png"
+        image: "./akrab-keranjang-belanja.png"
       },
       {
         title: "Halaman Checkout",
         description: "Formulir pemesanan terintegrasi dengan ringkasan biaya sebelum proses checkout.",
-        image: "/akrab-halaman-checkout.png"
+        image: "./akrab-halaman-checkout.png"
       },
       {
         title: "Manajemen Inventaris",
         description: "Modul khusus admin untuk mempermudah restock barang dan mengedit detail produk.",
-        image: "/akrab-manajemen-inventaris.png"
+        image: "./akrab-manajemen-inventaris.png"
       }
     ]
   },
@@ -58,7 +58,7 @@ export const caseStudies = {
     id: "tanitalk",
     category: "Agricultural Web Portal",
     title: "TaniTalk V2 — Empowering Local Farmers Communities",
-    featuredImage: "/portfolio-yudistira/zumb-homepage-booking.png", // fallback placeholder
+    featuredImage: "./zumb-homepage-booking.png", // fallback placeholder
     role: "Backend & Database Developer",
     industry: "Agriculture & Tech",
     githubUrl: "#",
@@ -84,12 +84,12 @@ export const caseStudies = {
       {
         title: "Homepage Portal",
         description: "Halaman beranda utama menyajikan informasi tips bertani dan harga pasar terpopuler.",
-        image: "/zumb-homepage-booking.png"
+        image: "./zumb-homepage-booking.png"
       },
       {
         title: "Forum Diskusi",
         description: "Halaman diskusi komunitas tempat petani saling mengajukan pertanyaan dan berbagi solusi.",
-        image: "/zumb-rating-review.png"
+        image: "./zumb-rating-review.png"
       }
     ]
   },
@@ -97,7 +97,7 @@ export const caseStudies = {
     id: "imk_clothing",
     category: "Responsive E-Commerce",
     title: "IMK Clothing Store — Clean and Modern Frontend Shop Experience",
-    featuredImage: "/Screenshot (1895).png",
+    featuredImage: "./Screenshot (1895).png",
     role: "Frontend Developer",
     industry: "Fashion & Retail",
     githubUrl: "#",
@@ -123,17 +123,17 @@ export const caseStudies = {
       {
         title: "Homepage Catalog",
         description: "Tampilan utama toko dengan katalog produk terpopuler dan banner promo.",
-        image: "/Screenshot (1895).png"
+        image: "./Screenshot (1895).png"
       },
       {
         title: "Login Modal",
         description: "Popup modal login interaktif dengan form validasi sisi klien.",
-        image: "/Screenshot (1896).png"
+        image: "./Screenshot (1896).png"
       },
       {
         title: "Product Detail",
         description: "Detail spesifikasi pakaian dengan galeri gambar dan tombol keranjang.",
-        image: "/Screenshot (1897).png"
+        image: "./Screenshot (1897).png"
       }
     ]
   },
@@ -141,7 +141,7 @@ export const caseStudies = {
     id: "zumb",
     category: "Restaurant Reservation",
     title: "Zumb Restaurant — Immersive Dine-In Booking System",
-    featuredImage: "/zumb-homepage-booking.png",
+    featuredImage: "./zumb-homepage-booking.png",
     role: "Frontend Designer & Developer",
     industry: "Food & Hospitality",
     githubUrl: "#",
@@ -166,27 +166,27 @@ export const caseStudies = {
       {
         title: "Homepage & Reservation",
         description: "Halaman utama restoran lengkap dengan formulir instan pemesanan meja.",
-        image: "/zumb-homepage-booking.png"
+        image: "./zumb-homepage-booking.png"
       },
       {
         title: "Food Menu Grid",
         description: "Daftar menu andalan dengan desain grid yang menarik minat kuliner pembaca.",
-        image: "/zumb-food-menu.png"
+        image: "./zumb-food-menu.png"
       },
       {
         title: "Shopping Cart",
         description: "Popup keranjang belanja pesanan makanan beserta kalkulator total harga otomatis.",
-        image: "/zumb-shopping-cart.png"
+        image: "./zumb-shopping-cart.png"
       },
       {
         title: "Payment Methods",
         description: "Pilihan metode pembayaran (Cash, E-Money, Card) untuk kemudahan transaksi.",
-        image: "/zumb-payment-method.png"
+        image: "./zumb-payment-method.png"
       },
       {
         title: "Reviews",
         description: "Sistem ulasan bintang dan testimoni dari pelanggan setia Zumb Restaurant.",
-        image: "/zumb-rating-review.png"
+        image: "./zumb-rating-review.png"
       }
     ]
   },
@@ -194,7 +194,7 @@ export const caseStudies = {
     id: "vending_machine",
     category: "Analytics Dashboard",
     title: "KM Vending Machine Dashboard — Multi-Location Monitoring Tool",
-    featuredImage: "/Home (2).png",
+    featuredImage: "./Home (2).png",
     role: "Lead Frontend Engineer",
     industry: "IoT & Analytics",
     githubUrl: "https://github.com/Kampus-Merdeka-Software-Engineering/km-feb24-jakarta-3",
@@ -220,27 +220,27 @@ export const caseStudies = {
       {
         title: "Dashboard Overview",
         description: "Halaman utama visualisasi grafik total transaksi, pendapatan, dan stok produk.",
-        image: "/Home (2).png"
+        image: "./Home (2).png"
       },
       {
         title: "Landing Page",
         description: "Halaman pengantar portal monitoring vending machine.",
-        image: "/Intro.png"
+        image: "./Intro.png"
       },
       {
         title: "Login Page",
         description: "Autentikasi admin dashboard menggunakan standard input validation.",
-        image: "/Login.png"
+        image: "./Login.png"
       },
       {
         title: "Create Account",
         description: "Formulir pendaftaran admin baru dengan kustomisasi preferensi tema.",
-        image: "/Create Account.png"
+        image: "./Create Account.png"
       },
       {
         title: "About Us",
         description: "Halaman profil tim pengembang dan informasi tujuan proyek perangkat lunak.",
-        image: "/About Us.png"
+        image: "./About Us.png"
       }
     ]
   },
@@ -248,7 +248,7 @@ export const caseStudies = {
     id: "wms_admin",
     category: "Warehouse Administration",
     title: "Mukti Sari WMS Admin — Next.js Enterprise Warehouse Management Dashboard",
-    featuredImage: "/mukti-sari-wms-dashboard.png",
+    featuredImage: "./mukti-sari-wms-dashboard.png",
     role: "Frontend Developer",
     industry: "Logistics & Supply Chain",
     githubUrl: "#",
@@ -274,27 +274,27 @@ export const caseStudies = {
       {
         title: "Dashboard Overview",
         description: "Ringkasan total produk, status stok menipis, log shift operator, dan grafik penjualan harian.",
-        image: "/mukti-sari-wms-dashboard.png"
+        image: "./mukti-sari-wms-dashboard.png"
       },
       {
         title: "Login Page",
         description: "Halaman login dengan branding korporasi Mukti Sari Group.",
-        image: "/mukti-sari-wms-login.png"
+        image: "./mukti-sari-wms-login.png"
       },
       {
         title: "Master Data Produk",
         description: "Tabel data produk gudang lengkap dengan fitur edit varian harga dan barcode.",
-        image: "/mukti-sari-wms-master-produk.png"
+        image: "./mukti-sari-wms-master-produk.png"
       },
       {
         title: "Stok Barang",
         description: "Modul pelacakan stok opname dan riwayat pergerakan logistik gudang.",
-        image: "/mukti-sari-wms-stok-barang.png"
+        image: "./mukti-sari-wms-stok-barang.png"
       },
       {
         title: "Shift Operator",
         description: "Jadwal dan status shift kerja operator gudang serta pelaporan kas masuk harian.",
-        image: "/mukti-sari-wms-shift.png"
+        image: "./mukti-sari-wms-shift.png"
       }
     ]
   },
@@ -302,7 +302,7 @@ export const caseStudies = {
     id: "zoneinsticnt",
     category: "UI/UX Research & Design",
     title: "Zoneinsticnt WMS — Shoe Manufacture Mobile App Prototype",
-    featuredImage: "/iPhone 14 & 15 Pro Max - 3 HOMEPAGE.png",
+    featuredImage: "./iPhone 14 & 15 Pro Max - 3 HOMEPAGE.png",
     role: "UI/UX Researcher & Designer",
     industry: "Manufacturing & Design",
     githubUrl: "https://www.figma.com/design/6S15rLbwzVObcvKWb9bUan/Project---Pandawa-Team?node-id=0-1&p=f&t=6BQAqnCkAj0bC4aU-0",
@@ -327,27 +327,27 @@ export const caseStudies = {
       {
         title: "Mobile Homepage",
         description: "Tampilan beranda utama aplikasi gudang di perangkat mobile.",
-        image: "/iPhone 14 & 15 Pro Max - 3 HOMEPAGE.png"
+        image: "./iPhone 14 & 15 Pro Max - 3 HOMEPAGE.png"
       },
       {
         title: "Barcode Scanner",
         description: "Desain antarmuka scan barcode cepat untuk memeriksa info barang masuk/keluar.",
-        image: "/original-08b320e17be7ee148af1614a41c3a01a.png"
+        image: "./original-08b320e17be7ee148af1614a41c3a01a.png"
       },
       {
         title: "Stock Monitoring",
         description: "Halaman daftar stok barang dengan navigasi pencarian instan.",
-        image: "/inventory list row hover.png"
+        image: "./inventory list row hover.png"
       },
       {
         title: "Order Shipping & Tracking",
         description: "Halaman pemantauan rincian pengiriman barang dari gudang.",
-        image: "/iPhone 14 & 15 Pro Max - 3 Tracking.png"
+        image: "./iPhone 14 & 15 Pro Max - 3 Tracking.png"
       },
       {
         title: "Inventory Dropdowns",
         description: "Elemen navigasi dropdown detail kategori sepatu untuk memudahkan sorting data.",
-        image: "/inventory list drop downs.png"
+        image: "./inventory list drop downs.png"
       }
     ]
   },
@@ -355,7 +355,7 @@ export const caseStudies = {
     id: "galeri_seni",
     category: "Interactive Art Exhibition",
     title: "Galeri Seni Studio — Contemporary Art Exhibition & Audio Guide Portal",
-    featuredImage: "/galeri-seni-home.png",
+    featuredImage: "./galeri-seni-home.png",
     role: "Lead Fullstack Developer",
     industry: "Art, Education & Web",
     githubUrl: "#",
@@ -382,27 +382,27 @@ export const caseStudies = {
       {
         title: "Homepage Gallery",
         description: "Halaman depan galeri seni yang menyajikan 3D Carousel lukisan terpopuler dan Splash Loader.",
-        image: "/galeri-seni-home.png"
+        image: "./galeri-seni-home.png"
       },
       {
         title: "Virtual Gallery Collection",
         description: "Daftar eksibisi lukisan kurasi lengkap dengan filter klasifikasi media lukis.",
-        image: "/galeri-seni-gallery.png"
+        image: "./galeri-seni-gallery.png"
       },
       {
         title: "Artwork Detail & Audio Guide",
         description: "Halaman deskripsi lukisan Mimpi di Musim Gugur dengan kontrol pemutar audio penjelasan filosofi.",
-        image: "/galeri-seni-detail.png"
+        image: "./galeri-seni-detail.png"
       },
       {
         title: "Art Journal",
         description: "Blog kumpulan artikel ulasan perkembangan kesenian kontemporer dari kurator studio.",
-        image: "/galeri-seni-journal.png"
+        image: "./galeri-seni-journal.png"
       },
       {
         title: "Online Viewing Room (OVR)",
         description: "Ruang eksklusif digital dengan efek visual horizontal scroll lukisan resolusi tinggi.",
-        image: "/galeri-seni-ovr.png"
+        image: "./galeri-seni-ovr.png"
       }
     ]
   },
@@ -410,7 +410,7 @@ export const caseStudies = {
     id: "saas_serangkai",
     category: "Integrated Business SaaS ERP",
     title: "SaaS Serangkai — All-In-One Enterprise Business Operations Ecosystem",
-    featuredImage: "/serangkai-home.png",
+    featuredImage: "./serangkai-home.png",
     role: "Fullstack Web Architect",
     industry: "B2B, SaaS & Enterprise ERP",
     githubUrl: "#",
@@ -437,27 +437,27 @@ export const caseStudies = {
       {
         title: "SaaS Homepage",
         description: "Landing page utama SaaS Serangkai dengan visualisasi interaktif ekosistem bisnis.",
-        image: "/serangkai-home.png"
+        image: "./serangkai-home.png"
       },
       {
         title: "ERP Modules & Products",
         description: "Modul utama yang mencakup sistem Talenta, Jurnal, dan Kelola.",
-        image: "/serangkai-produk.png"
+        image: "./serangkai-produk.png"
       },
       {
         title: "Pricing & Plans",
         description: "Skema paket harga berlangganan interaktif yang disesuaikan skala operasional perusahaan.",
-        image: "/serangkai-harga.png"
+        image: "./serangkai-harga.png"
       },
       {
         title: "Business Solutions",
         description: "Halaman detail solusi untuk segmen UMKM, Menengah, dan Korporasi Enterprise.",
-        image: "/serangkai-solusi.png"
+        image: "./serangkai-solusi.png"
       },
       {
         title: "Resource Center & Insights",
         description: "Dokumentasi bantuan, panduan tutorial, dan integrasi OpenAPI pengembang.",
-        image: "/serangkai-insights.png"
+        image: "./serangkai-insights.png"
       }
     ]
   }
