@@ -472,6 +472,108 @@ const ProjectShowcase = () => {
         },
       ],
     },
+    {
+      name: 'GALERI_SENI',
+      label: 'Galeri Seni Studio',
+      featured: 'FEATURED PROJECT',
+      title: 'VIRTUAL GALLERY',
+      titleAccent: 'STUDIO',
+      description: 'Galeri Seni Studio merupakan platform eksibisi seni kontemporer berbasis web yang dirancang untuk memamerkan koleksi lukisan secara dinamis. Platform ini menghadirkan pengalaman visual sinematik dengan splash loader interaktif, 3D carousel, scroll horizontal untuk karya unggulan, dan fitur panduan audio terintegrasi untuk menceritakan filosofi setiap lukisan.',
+      liveUrl: '#',
+      githubUrl: '#',
+      buttonLabel: 'View Project',
+      buttonLabel2: 'Source Code',
+      highlights: [
+        {
+          title: 'Splash Loader & Interaktivitas:',
+          desc: 'Splash screen loader artistik dengan perhitungan persentase counter untuk memberikan kesan premium saat pertama kali dimuat.',
+        },
+        {
+          title: 'Horizontal Scroll & 3D Carousel:',
+          desc: 'Eksplorasi karya seni melalui track horizontal scroll sinematik dan 3D slider untuk pengalaman galeri yang imersif.',
+        },
+        {
+          title: 'Audio Guide Integration:',
+          desc: 'Menyediakan panduan deskripsi suara (audio text) untuk menjelaskan detail latar belakang dan filosofi di balik setiap mahakarya.',
+        },
+        {
+          title: 'Desain Responsif & Modern:',
+          desc: 'Tampilan bersih, elegan, dan minimalis yang dioptimalkan menggunakan Tailwind CSS dan transisi animasi Framer Motion.',
+        },
+      ],
+      technologies: [
+        'Laravel 12 (Core Framework)',
+        'Blade Templating (UI Structure)',
+        'Tailwind CSS v4 (Modern Styling)',
+        'Vanilla JavaScript (DOM Interactions)',
+        'Framer Motion (Animations & Smooth Transitions)',
+      ],
+      mockups: [
+        {
+          title: 'Gallery Homepage',
+          description: 'Halaman depan galeri dengan 3D Carousel interaktif.',
+          image: 'galeri-seni-mockup.png',
+          color: 'from-neutral-800 to-neutral-950',
+        },
+        {
+          title: 'Featured Artworks',
+          description: 'Modul scroll horizontal sinematik untuk lukisan unggulan.',
+          image: 'galeri-seni-mockup.png',
+          color: 'from-zinc-700 to-zinc-900',
+        },
+      ],
+    },
+    {
+      name: 'SAAS_SERANGKAI',
+      label: 'SaaS Serangkai',
+      featured: 'SAAS ERP PROJECT',
+      title: 'BUSINESS OPERATIONS',
+      titleAccent: 'SERANGKAI',
+      description: 'SaaS Serangkai adalah ekosistem operasional bisnis terintegrasi all-in-one yang menghubungkan manajemen HR (Serangkai Talenta), pembukuan & akuntansi (Serangkai Jurnal), serta manajemen inventaris & rantai pasok (Serangkai Kelola). Platform ini dibangun untuk membantu transformasi digital operasional perusahaan skala UMKM hingga Enterprise.',
+      liveUrl: '#',
+      githubUrl: '#',
+      buttonLabel: 'View Project',
+      buttonLabel2: 'Source Code',
+      highlights: [
+        {
+          title: 'Serangkai Talenta (HRMS):',
+          desc: 'Manajemen data karyawan, absensi digital, pengajuan cuti, serta perhitungan payroll otomatis lengkap dengan PPh 21.',
+        },
+        {
+          title: 'Serangkai Jurnal (Accounting):',
+          desc: 'Pembukuan digital otomatis, pencatatan transaksi kas masuk/keluar, pembuatan invoice, dan laporan keuangan real-time.',
+        },
+        {
+          title: 'Serangkai Kelola (Inventory):',
+          desc: 'Pengelolaan stok barang multi-gudang, pelacakan stok opname, mutasi barang, serta dashboard supply chain.',
+        },
+        {
+          title: 'Standard Enterprise Security:',
+          desc: 'Arsitektur aman dengan proteksi enkripsi AES 256-bit dan standard sertifikasi ISO 27001.',
+        },
+      ],
+      technologies: [
+        'Laravel 12 (Backend Engine)',
+        'Tailwind CSS (SaaS UI System)',
+        'Vite & Vanilla JavaScript',
+        'AWS Cloud (Local Server)',
+        'MySQL (Database Management)',
+      ],
+      mockups: [
+        {
+          title: 'SaaS Homepage',
+          description: 'Landing page ekosistem SaaS Serangkai dengan visualisasi interaktif.',
+          image: 'serangkai-mockup.png',
+          color: 'from-indigo-600 to-violet-700',
+        },
+        {
+          title: 'Operations Ecosystem',
+          description: 'Gambaran modul terintegrasi antara Talenta, Jurnal, dan Kelola.',
+          image: 'serangkai-mockup.png',
+          color: 'from-violet-600 to-fuchsia-700',
+        },
+      ],
+    },
   ];
 
   const currentProject = projects[activeProject];

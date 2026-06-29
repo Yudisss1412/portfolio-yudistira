@@ -43,6 +43,22 @@ export const portfolioData = {
       liveUrl: "#",
       githubUrl: "#",
     },
+    {
+      title: "Galeri Seni Studio",
+      description: "Virtual art gallery featuring splash loader, horizontal scroll, 3D carousel, and interactive audio guides.",
+      tech: ["Laravel 12", "PHP", "Tailwind CSS v4", "JavaScript", "Framer Motion"],
+      image: "/galeri-seni-mockup.png",
+      liveUrl: "#",
+      githubUrl: "#",
+    },
+    {
+      title: "SaaS Serangkai",
+      description: "All-in-one business operations ecosystem integrating HR (Talenta), accounting (Jurnal), and inventory (Kelola).",
+      tech: ["Laravel 12", "PHP", "Tailwind CSS", "JavaScript", "MySQL", "AWS"],
+      image: "/serangkai-mockup.png",
+      liveUrl: "#",
+      githubUrl: "#",
+    },
   ],
 
   // Contact Section
