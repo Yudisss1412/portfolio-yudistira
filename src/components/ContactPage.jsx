@@ -52,7 +52,9 @@ export default function ContactPage() {
             <div className="space-y-4">
               {/* Email Link block */}
               <a 
-                href="mailto:dwianggara1412@gmail.com" 
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=dwianggara1412@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer" 
                 className="flex items-center gap-4 p-4 bg-bg-primary/50 hover:bg-bg-primary border border-border/60 hover:border-accent/40 rounded-2xl transition-all group"
               >
                 <div className="p-3.5 bg-accent-soft text-accent rounded-full border border-accent/15 group-hover:scale-105 transition-transform">

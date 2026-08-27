@@ -292,7 +292,9 @@ export default function Home({ setPage, setCaseStudyId }) {
         </p>
         <div className="flex flex-wrap gap-4 justify-center pt-4">
           <a 
-            href="mailto:dwianggara1412@gmail.com"
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=dwianggara1412@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
             className="bg-accent hover:bg-accent-dark text-white font-bold px-6 py-3.5 rounded-xl shadow-md hover:shadow-lg transition-all inline-flex items-center gap-2 text-sm sm:text-base"
           >
             <FaEnvelope /> Email Me
