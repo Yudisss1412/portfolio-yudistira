@@ -58,7 +58,7 @@ export const caseStudies = {
     id: "tanitalk",
     category: "Agricultural Web Portal",
     title: "TaniTalk V2 — Empowering Local Farmers Communities",
-    featuredImage: "./zumb-homepage-booking.png", // fallback placeholder
+    featuredImage: "./tanitalk-placeholder.png",
     role: "Backend & Database Developer",
     industry: "Agriculture & Tech",
     githubUrl: "#",
@@ -82,14 +82,14 @@ export const caseStudies = {
     ],
     mockups: [
       {
-        title: "Homepage Portal",
+        title: "Homepage Portal (Image Missing)",
         description: "Halaman beranda utama menyajikan informasi tips bertani dan harga pasar terpopuler.",
-        image: "./zumb-homepage-booking.png"
+        image: "./tanitalk-placeholder.png"
       },
       {
-        title: "Forum Diskusi",
+        title: "Forum Diskusi (Image Missing)",
         description: "Halaman diskusi komunitas tempat petani saling mengajukan pertanyaan dan berbagi solusi.",
-        image: "./zumb-rating-review.png"
+        image: "./tanitalk-placeholder.png"
       }
     ]
   },
@@ -460,5 +460,61 @@ export const caseStudies = {
         image: "./serangkai-insights.png"
       }
     ]
+  },
+  sample_video_edit: {
+    id: "sample_video_edit",
+    type: "video",
+    category: "Cinematic Vlog",
+    title: "3 Hari di Jogja — Cinematic Travel Diary",
+    featuredImage: "./video-thumbnail-1.png",
+    videoUrl: "https://drive.google.com/file/d/16Hb-8ltwo1tRNZIkijhpBqLWdamWyC8Q/preview", // Menggunakan format preview Gdrive
+    role: "Videographer & Video Editor",
+    industry: "Travel & Lifestyle",
+    githubUrl: "#",
+    liveUrl: "#",
+    vision: "Sebuah travel diary sinematik yang mengabadikan momen berharga selama 3 hari perjalanan di Jogja dan Solo. Proyek ini didesain dengan sentuhan warna warm dan vintage untuk menyampaikan nuansa romantis dan kehangatan dari setiap kenangan yang terekam.",
+    problems: [
+      "Menggabungkan dan mengatur transisi dua ritme lagu yang cukup berbeda (Sal Priadi dan Hindia) agar tetap menyatu dengan emosi adegan.",
+      "Mencapai profil warna (color grading) yang spesifik—remang dan kekuningan (warm)—guna memperkuat estetika romantis.",
+      "Memastikan footage rekaman tetap stabil dan mulus meskipun diambil secara handheld (tanpa gimbal profesional)."
+    ],
+    solutions: [
+      "Melakukan audio beat-matching manual secara presisi di CapCut untuk menyelaraskan transisi lagu Sal Priadi dan Hindia dengan perpindahan adegan (cut).",
+      "Memanfaatkan Dazz Cam saat proses perekaman untuk langsung mendapatkan profil warna vintage kekuningan, menghemat waktu color grading.",
+      "Menggunakan fitur built-in stabilizer dan slow-motion dari Dazz Cam untuk meredam guncangan kamera dan menciptakan efek sinematik."
+    ],
+    technologies: [
+      { name: "CapCut", desc: "Aplikasi utama untuk penyusunan timeline, pemotongan klip, dan audio mixing" },
+      { name: "Dazz Cam", desc: "Aplikasi perekaman (camera app) untuk color profile vintage dan stabilisasi" }
+    ],
+    mockups: []
+  },
+  sample_video_edit_2: {
+    id: "sample_video_edit_2",
+    type: "video",
+    category: "Event Documentation",
+    title: "Intimate Engagement Story",
+    featuredImage: "./video-thumbnail-2.png",
+    videoUrl: "https://drive.google.com/file/d/1wPksHWEd0SOz7Y0dOdeMAXB0VjTPoygo/preview", 
+    role: "Videographer & Video Editor",
+    industry: "Wedding & Events",
+    githubUrl: "#",
+    liveUrl: "#",
+    vision: "Mengabadikan momen sakral dan emosional dari acara lamaran yang hanya terjadi sekali seumur hidup. Video ini dirancang untuk menjadi peninggalan visual (keepsake) berharga bagi klien dengan nuansa yang hangat, natural, dan personal.",
+    problems: [
+      "Menangkap momen-momen krusial (candid) dalam acara langsung (live event) yang sama sekali tidak bisa diulang.",
+      "Menyesuaikan mood visual dan transisi adegan dengan lagu pengiring spesifik yang direquest langsung oleh klien.",
+      "Menjaga profesionalitas dan fokus (tidak canggung) saat merekam secara leluasa di tengah keramaian tamu dan keluarga besar."
+    ],
+    solutions: [
+      "Mempertahankan tingkat fokus yang tinggi (situational awareness) dan selalu standby agar momen emas terekam dengan sempurna.",
+      "Melakukan audio beat-matching manual secara teliti dan secara proaktif meminta feedback dari klien hingga video sesuai dengan ekspektasi mereka.",
+      "Memanfaatkan kelincahan perekaman menggunakan smartphone (iPhone 13) untuk bermanuver di ruang acara tanpa mengganggu kesakralan prosesi."
+    ],
+    technologies: [
+      { name: "iPhone 13 (Camera)", desc: "Perangkat utama untuk perekaman video yang *mobile* dan beresolusi tinggi" },
+      { name: "CapCut", desc: "Software utama untuk penyusunan timeline, beat-matching musik, dan rendering" }
+    ],
+    mockups: []
   }
 };

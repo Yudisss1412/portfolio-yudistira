@@ -1,8 +1,10 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaGithub, FaExternalLinkAlt, FaArrowLeft, FaCheckCircle, FaExclamationCircle } from 'react-icons/fa';
+import { FaGithub, FaExternalLinkAlt, FaArrowLeft, FaCheckCircle, FaExclamationCircle, FaPlay } from 'react-icons/fa';
 import { caseStudies } from '../data/caseStudiesData';
 
 export default function CaseStudy({ caseStudyId, setPage }) {
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
   const currentStudy = caseStudies[caseStudyId];
 
   if (!currentStudy) {
@@ -47,27 +49,57 @@ export default function CaseStudy({ caseStudyId, setPage }) {
         </div>
       </div>
 
-      {/* 2. FEATURED IMAGE (Browser frame) */}
+      {/* 2. FEATURED MEDIA (Video iframe OR Browser frame) */}
       <motion.div 
         className="relative rounded-3xl overflow-hidden shadow-2xl border border-border bg-bg-secondary aspect-[16/9]"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <img 
-          src={currentStudy.featuredImage} 
-          alt={currentStudy.title} 
-          className="w-full h-full object-cover object-top"
-          onError={(e) => {
-            e.target.src = "https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&w=1000&auto=format&fit=crop";
-          }}
-        />
-        {/* Browser dots */}
-        <div className="absolute top-0 left-0 right-0 h-8 bg-gradient-to-b from-black/35 to-transparent flex items-center px-4 gap-2">
-          <div className="w-2.5 h-2.5 rounded-full bg-red-500"></div>
-          <div className="w-2.5 h-2.5 rounded-full bg-yellow-500"></div>
-          <div className="w-2.5 h-2.5 rounded-full bg-green-500"></div>
-        </div>
+        {currentStudy.type === 'video' && currentStudy.videoUrl ? (
+          isVideoPlaying ? (
+            <iframe 
+              src={currentStudy.videoUrl} 
+              title={currentStudy.title}
+              className="w-full h-full border-0 absolute inset-0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          ) : (
+            <div className="w-full h-full relative cursor-pointer group" onClick={() => setIsVideoPlaying(true)}>
+              <img 
+                src={currentStudy.featuredImage} 
+                alt={currentStudy.title} 
+                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                onError={(e) => {
+                  e.target.src = "https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&w=1000&auto=format&fit=crop";
+                }}
+              />
+              <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 bg-accent rounded-full flex items-center justify-center pl-1.5 group-hover:scale-110 group-hover:bg-accent-dark transition-all duration-300 shadow-2xl">
+                  <FaPlay className="text-white text-2xl sm:text-3xl" />
+                </div>
+              </div>
+            </div>
+          )
+        ) : (
+          <>
+            <img 
+              src={currentStudy.featuredImage} 
+              alt={currentStudy.title} 
+              className="w-full h-full object-cover object-top"
+              onError={(e) => {
+                e.target.src = "https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&w=1000&auto=format&fit=crop";
+              }}
+            />
+            {/* Browser dots */}
+            <div className="absolute top-0 left-0 right-0 h-8 bg-gradient-to-b from-black/35 to-transparent flex items-center px-4 gap-2">
+              <div className="w-2.5 h-2.5 rounded-full bg-red-500"></div>
+              <div className="w-2.5 h-2.5 rounded-full bg-yellow-500"></div>
+              <div className="w-2.5 h-2.5 rounded-full bg-green-500"></div>
+            </div>
+          </>
+        )}
       </motion.div>
 
       {/* 3. TWO COLUMNS LAYOUT: Vision + Problems/Solutions VS Sidebar Metadata */}
@@ -133,34 +165,38 @@ export default function CaseStudy({ caseStudyId, setPage }) {
             </div>
           </div>
 
-          <div className="flex flex-col gap-3">
-            <a 
-              href={currentStudy.githubUrl} 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className={`w-full font-bold px-4 py-3 rounded-xl border border-border hover:border-accent hover:text-accent text-center text-xs sm:text-sm transition-all inline-flex items-center justify-center gap-2 ${
-                currentStudy.githubUrl === '#' ? 'pointer-events-none opacity-50' : ''
-              }`}
-            >
-              <FaGithub /> Source Code
-            </a>
-            <a 
-              href={currentStudy.liveUrl} 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className={`w-full bg-accent hover:bg-accent-dark text-white font-bold px-4 py-3 rounded-xl shadow-sm text-center text-xs sm:text-sm transition-all inline-flex items-center justify-center gap-2 ${
-                currentStudy.liveUrl === '#' ? 'pointer-events-none opacity-50' : ''
-              }`}
-            >
-              <FaExternalLinkAlt /> View Live Site
-            </a>
-          </div>
+          {currentStudy.type !== 'video' && (
+            <div className="flex flex-col gap-3">
+              <a 
+                href={currentStudy.githubUrl} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className={`w-full font-bold px-4 py-3 rounded-xl border border-border hover:border-accent hover:text-accent text-center text-xs sm:text-sm transition-all inline-flex items-center justify-center gap-2 ${
+                  currentStudy.githubUrl === '#' ? 'pointer-events-none opacity-50' : ''
+                }`}
+              >
+                <FaGithub /> Source Code
+              </a>
+              <a 
+                href={currentStudy.liveUrl} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className={`w-full bg-accent hover:bg-accent-dark text-white font-bold px-4 py-3 rounded-xl shadow-sm text-center text-xs sm:text-sm transition-all inline-flex items-center justify-center gap-2 ${
+                  currentStudy.liveUrl === '#' ? 'pointer-events-none opacity-50' : ''
+                }`}
+              >
+                <FaExternalLinkAlt /> View Live Site
+              </a>
+            </div>
+          )}
         </div>
       </div>
 
-      {/* 4. TECHNICAL ECOSYSTEM */}
+      {/* 4. TECHNICAL ECOSYSTEM / TOOLS */}
       <div className="space-y-6">
-        <h2 className="text-xl sm:text-2xl font-black text-text-primary border-l-4 border-accent pl-3">Technical Ecosystem</h2>
+        <h2 className="text-xl sm:text-2xl font-black text-text-primary border-l-4 border-accent pl-3">
+          {currentStudy.type === 'video' ? 'Tools & Software' : 'Technical Ecosystem'}
+        </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
           {currentStudy.technologies.map((tech, i) => (
             <div key={i} className="bg-bg-secondary border border-border rounded-2xl p-5 space-y-2 hover:border-accent transition-colors shadow-xxs">
@@ -175,10 +211,11 @@ export default function CaseStudy({ caseStudyId, setPage }) {
       </div>
 
       {/* 5. VISUAL EXPERIENCE GALLERY */}
-      <div className="space-y-6">
-        <h2 className="text-xl sm:text-2xl font-black text-text-primary border-l-4 border-accent pl-3">Visual Experience</h2>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {currentStudy.mockups && currentStudy.mockups.length > 0 && (
+        <div className="space-y-6">
+          <h2 className="text-xl sm:text-2xl font-black text-text-primary border-l-4 border-accent pl-3">Visual Experience</h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {currentStudy.mockups.map((mockup, i) => (
             <div key={i} className="bg-bg-secondary border border-border rounded-2xl overflow-hidden shadow-xs hover:shadow-md transition-shadow">
               <div className="relative aspect-[16/10] bg-slate-50 border-b border-border">
@@ -203,8 +240,9 @@ export default function CaseStudy({ caseStudyId, setPage }) {
               </div>
             </div>
           ))}
+          </div>
         </div>
-      </div>
+      )}
 
       {/* 6. INTERESTED CTA & FOOTER SWITCH BUTTONS */}
       <div className="bg-bg-secondary border border-border rounded-3xl p-8 md:p-12 text-center space-y-6 shadow-sm max-w-3xl mx-auto">

@@ -1,17 +1,32 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { caseStudies } from '../data/caseStudiesData';
 
-export default function ProjectsPage({ setPage, setCaseStudyId }) {
+export default function ProjectsPage({ setPage, setCaseStudyId, projectMode = 'web' }) {
   const [activeFilter, setActiveFilter] = useState('All');
 
-  const filters = ['All', 'Management System', 'E-commerce', 'Web App'];
+  // Reset active filter to 'All' whenever mode changes
+  useEffect(() => {
+    setActiveFilter('All');
+  }, [projectMode]);
+
+  // Define tabs based on the active mode
+  const filters = projectMode === 'video' 
+    ? ['All', 'Cinematic Vlog', 'Commercial'] // Kategori video bisa ditambah di sini
+    : ['All', 'Management System', 'E-commerce', 'Web App'];
 
   const projectList = Object.values(caseStudies);
 
   // Filter categories helper
   const filteredProjects = projectList.filter((project) => {
+    // 1. Filter by mode (Web vs Video)
+    if (projectMode === 'video' && project.type !== 'video') return false;
+    if (projectMode === 'web' && project.type === 'video') return false;
+
+    // 2. Filter by tab category
     if (activeFilter === 'All') return true;
+    
+    // Web Filters
     if (activeFilter === 'Management System') {
       return project.category.includes('Management') || project.category.includes('WMS') || project.category.includes('Administration') || project.category.includes('Dashboard') || project.category.includes('SaaS');
     }
@@ -20,6 +35,14 @@ export default function ProjectsPage({ setPage, setCaseStudyId }) {
     }
     if (activeFilter === 'Web App') {
       return project.category.includes('Web App') || project.category.includes('Portal') || project.category.includes('Reservation') || project.category.includes('Exhibition');
+    }
+
+    // Video Filters (example mapping)
+    if (activeFilter === 'Cinematic Vlog') {
+      return project.category.includes('Vlog') || project.category.includes('Cinematic');
+    }
+    if (activeFilter === 'Commercial') {
+      return project.category.includes('Commercial') || project.category.includes('Ad');
     }
     return true;
   });
@@ -71,22 +94,32 @@ export default function ProjectsPage({ setPage, setCaseStudyId }) {
               exit={{ opacity: 0, scale: 0.95 }}
               transition={{ duration: 0.3 }}
             >
-              {/* Browser mockup frame */}
-              <div className="relative aspect-[16/10] bg-slate-50 border-b border-border overflow-hidden">
+              {/* Thumbnail / Mockup frame */}
+              <div className="relative aspect-[16/10] bg-slate-50 border-b border-border overflow-hidden flex items-center justify-center group/img">
                 <img 
                   src={project.featuredImage} 
                   alt={project.title} 
-                  className="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-500"
+                  className="w-full h-full object-cover object-center group-hover/img:scale-[1.02] transition-transform duration-500"
                   onError={(e) => {
                     e.target.src = "https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&w=600&auto=format&fit=crop";
                   }}
                 />
-                {/* Browser dots */}
-                <div className="absolute top-0 left-0 right-0 h-6 bg-gradient-to-b from-black/20 to-transparent flex items-center px-3 gap-1">
-                  <div className="w-1.5 h-1.5 rounded-full bg-red-400"></div>
-                  <div className="w-1.5 h-1.5 rounded-full bg-yellow-400"></div>
-                  <div className="w-1.5 h-1.5 rounded-full bg-green-400"></div>
-                </div>
+                
+                {project.type === 'video' ? (
+                  // Video Play Icon Overlay
+                  <div className="absolute inset-0 bg-black/20 flex items-center justify-center group-hover:bg-black/10 transition-colors pointer-events-none">
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-accent text-white flex items-center justify-center shadow-lg">
+                      <svg className="w-5 h-5 sm:w-6 sm:h-6 ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+                    </div>
+                  </div>
+                ) : (
+                  // Browser dots
+                  <div className="absolute top-0 left-0 right-0 h-6 bg-gradient-to-b from-black/20 to-transparent flex items-center px-3 gap-1">
+                    <div className="w-1.5 h-1.5 rounded-full bg-red-400"></div>
+                    <div className="w-1.5 h-1.5 rounded-full bg-yellow-400"></div>
+                    <div className="w-1.5 h-1.5 rounded-full bg-green-400"></div>
+                  </div>
+                )}
               </div>
 
               {/* Card info */}

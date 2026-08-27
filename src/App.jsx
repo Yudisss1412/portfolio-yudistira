@@ -10,6 +10,7 @@ import DarkModeToggle from './components/DarkModeToggle';
 function App() {
   const [page, setPage] = useState('home'); // 'home', 'projects', 'case-study', 'contact'
   const [caseStudyId, setCaseStudyId] = useState('akrab');
+  const [projectMode, setProjectMode] = useState('web'); // 'web' or 'video'
 
   return (
     <div className="min-h-screen bg-bg-primary text-text-primary transition-colors duration-300 flex flex-col justify-between">
@@ -18,11 +19,11 @@ function App() {
         <Navbar page={page} setPage={setPage} />
         
         {page === 'home' && (
-          <Home setPage={setPage} setCaseStudyId={setCaseStudyId} />
+          <Home setPage={setPage} setCaseStudyId={setCaseStudyId} setProjectMode={setProjectMode} />
         )}
 
         {page === 'projects' && (
-          <ProjectsPage setPage={setPage} setCaseStudyId={setCaseStudyId} />
+          <ProjectsPage setPage={setPage} setCaseStudyId={setCaseStudyId} projectMode={projectMode} />
         )}
 
         {page === 'case-study' && (
