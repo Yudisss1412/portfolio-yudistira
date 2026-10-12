@@ -2,6 +2,9 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaEnvelope, FaMapMarkerAlt, FaBullhorn, FaBookOpen, FaVideo, FaPaperPlane } from 'react-icons/fa';
 
+// Ganti dengan Form ID dari Formspree: https://formspree.io -> form -> Settings -> Endpoint
+const FORMSPREE_FORM_ID = 'xoejnkbb';
+
 export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: '',
@@ -10,23 +13,57 @@ export default function ContactPage() {
     message: ''
   });
   const [status, setStatus] = useState({ type: '', message: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) {
       setStatus({ type: 'error', message: 'Harap isi semua kolom input!' });
       return;
     }
-    // Simulate API call
-    setStatus({ type: 'success', message: 'Pesan Anda berhasil dikirim!' });
-    setTimeout(() => {
-      setFormData({ name: '', email: '', subject: 'New Project Inquiry', message: '' });
-      setStatus({ type: '', message: '' });
-    }, 3000);
+    if (FORMSPREE_FORM_ID === 'YOUR_FORM_ID') {
+      setStatus({ type: 'error', message: 'Form belum dikonfigurasi (Formspree Form ID belum diisi).' });
+      return;
+    }
+
+    setIsSubmitting(true);
+    setStatus({ type: '', message: '' });
+
+    try {
+      const res = await fetch(`https://formspree.io/f/${FORMSPREE_FORM_ID}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json'
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message
+        })
+      });
+
+      if (res.ok) {
+        setStatus({ type: 'success', message: 'Pesan Anda berhasil dikirim! Saya akan membalas secepatnya.' });
+        setFormData({ name: '', email: '', subject: 'New Project Inquiry', message: '' });
+        setTimeout(() => setStatus({ type: '', message: '' }), 5000);
+      } else {
+        const data = await res.json().catch(() => ({}));
+        setStatus({
+          type: 'error',
+          message: data.errors?.[0]?.message || 'Gagal mengirim pesan. Silakan coba lagi atau email langsung.'
+        });
+      }
+    } catch {
+      setStatus({ type: 'error', message: 'Gagal mengirim pesan. Periksa koneksi internet Anda.' });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -218,10 +255,15 @@ export default function ContactPage() {
               <div className="pt-2">
                 <button
                   type="submit"
-                  className="w-full sm:w-auto bg-accent hover:bg-accent-dark text-white font-bold px-8 py-4 rounded-xl shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2.5 cursor-pointer text-sm sm:text-base"
+                  disabled={isSubmitting}
+                  className="w-full sm:w-auto bg-accent hover:bg-accent-dark text-white font-bold px-8 py-4 rounded-xl shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2.5 cursor-pointer text-sm sm:text-base disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:translate-y-0"
                 >
-                  <span>SEND MESSAGE</span>
-                  <FaPaperPlane className="text-xs sm:text-sm" />
+                  <span>{isSubmitting ? 'SENDING...' : 'SEND MESSAGE'}</span>
+                  {isSubmitting ? (
+                    <span className="w-3.5 h-3.5 sm:w-4 sm:h-4 border-2 border-white/40 border-t-white rounded-full animate-spin" />
+                  ) : (
+                    <FaPaperPlane className="text-xs sm:text-sm" />
+                  )}
                 </button>
               </div>
             </form>
