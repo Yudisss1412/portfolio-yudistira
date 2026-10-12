@@ -1,13 +1,7 @@
 import { motion } from 'framer-motion';
 import { FaLaravel, FaPhp, FaCss3Alt, FaDatabase, FaGitAlt, FaJsSquare, FaEnvelope, FaLinkedin, FaLaptopCode, FaFilm } from 'react-icons/fa';
 
-export default function Home({ setPage, setCaseStudyId, setProjectMode }) {
-  const handleViewAkrab = () => {
-    setCaseStudyId("akrab");
-    setPage("case-study");
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
+export default function Home({ setPage, setProjectMode }) {
   const handleSeeWork = () => {
     setPage("projects");
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -216,7 +210,7 @@ export default function Home({ setPage, setCaseStudyId, setProjectMode }) {
             <FaEnvelope /> Email Me
           </a>
           <a
-            href="https://linkedin.com/in/yourusername" // placeholders updated by data
+            href="https://www.linkedin.com/in/yudistira-dwi-anggara-a42a85220/"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-transparent hover:bg-bg-primary text-text-primary border-2 border-border hover:border-accent font-bold px-6 py-3.5 rounded-xl transition-all inline-flex items-center gap-2 text-sm sm:text-base"

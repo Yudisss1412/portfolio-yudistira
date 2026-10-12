@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaEnvelope, FaMapMarkerAlt, FaBullhorn, FaBookOpen, FaVideo, FaPaperPlane } from 'react-icons/fa';
+import { FaEnvelope, FaMapMarkerAlt, FaGithub, FaLinkedin, FaInstagram, FaPaperPlane } from 'react-icons/fa';
 
 // Ganti dengan Form ID dari Formspree: https://formspree.io -> form -> Settings -> Endpoint
 const FORMSPREE_FORM_ID = 'xoejnkbb';
@@ -122,25 +122,25 @@ export default function ContactPage() {
               <p className="text-xs text-text-muted font-bold uppercase tracking-wider">Follow My Work</p>
               <div className="flex gap-3">
                 <a 
-                  href="#" 
+                  href="https://github.com/Yudisss1412" target="_blank" rel="noopener noreferrer" 
                   className="p-3 bg-bg-primary hover:bg-accent-soft text-text-secondary hover:text-accent border border-border rounded-xl transition-all hover:-translate-y-0.5"
-                  aria-label="Speaker"
+                  aria-label="GitHub"
                 >
-                  <FaBullhorn className="text-base" />
+                  <FaGithub className="text-base" />
                 </a>
                 <a 
-                  href="#" 
+                  href="https://www.linkedin.com/in/yudistira-dwi-anggara-a42a85220/" target="_blank" rel="noopener noreferrer" 
                   className="p-3 bg-bg-primary hover:bg-accent-soft text-text-secondary hover:text-accent border border-border rounded-xl transition-all hover:-translate-y-0.5"
-                  aria-label="Journal"
+                  aria-label="LinkedIn"
                 >
-                  <FaBookOpen className="text-base" />
+                  <FaLinkedin className="text-base" />
                 </a>
                 <a 
-                  href="#" 
+                  href="https://www.instagram.com/yudistiradwianggara__" target="_blank" rel="noopener noreferrer" 
                   className="p-3 bg-bg-primary hover:bg-accent-soft text-text-secondary hover:text-accent border border-border rounded-xl transition-all hover:-translate-y-0.5"
-                  aria-label="Media"
+                  aria-label="Instagram"
                 >
-                  <FaVideo className="text-base" />
+                  <FaInstagram className="text-base" />
                 </a>
               </div>
             </div>
