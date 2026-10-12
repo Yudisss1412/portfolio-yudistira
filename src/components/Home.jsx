@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { FaLaravel, FaPhp, FaCss3Alt, FaDatabase, FaGitAlt, FaJsSquare, FaEnvelope, FaLinkedin, FaLaptopCode, FaFilm } from 'react-icons/fa';
+import { FaLaravel, FaPhp, FaCss3Alt, FaDatabase, FaGitAlt, FaJsSquare, FaPaperPlane, FaLaptopCode, FaFilm } from 'react-icons/fa';
 
 export default function Home({ setPage, setProjectMode }) {
   const handleSeeWork = () => {
@@ -201,22 +201,15 @@ export default function Home({ setPage, setProjectMode }) {
           I'm open to industrial partnerships, freelance opportunities, or full-time roles. If you have a project in mind or want to collaborate, feel free to reach out.
         </p>
         <div className="flex flex-wrap gap-4 justify-center pt-4">
-          <a
-            href="https://mail.google.com/mail/?view=cm&fs=1&to=dwianggara1412@gmail.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-accent hover:bg-accent-dark text-white font-bold px-6 py-3.5 rounded-xl shadow-md hover:shadow-lg transition-all inline-flex items-center gap-2 text-sm sm:text-base"
+          <button
+            onClick={() => {
+              setPage('contact');
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+            className="bg-accent hover:bg-accent-dark text-white font-bold px-6 py-3.5 rounded-xl shadow-md hover:shadow-lg transition-all inline-flex items-center gap-2 text-sm sm:text-base cursor-pointer"
           >
-            <FaEnvelope /> Email Me
-          </a>
-          <a
-            href="https://www.linkedin.com/in/yudistira-dwi-anggara-a42a85220/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-transparent hover:bg-bg-primary text-text-primary border-2 border-border hover:border-accent font-bold px-6 py-3.5 rounded-xl transition-all inline-flex items-center gap-2 text-sm sm:text-base"
-          >
-            <FaLinkedin /> LinkedIn
-          </a>
+            <FaPaperPlane /> Get In Touch
+          </button>
         </div>
       </section>
     </div>
