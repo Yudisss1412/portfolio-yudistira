@@ -5,10 +5,7 @@ export default function Navbar({ page, setPage }) {
   const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
-    if (page !== 'home') {
-      setActiveSection('');
-      return;
-    }
+    if (page !== 'home') return;
 
     const handleScroll = () => {
       const sections = [
@@ -105,11 +102,10 @@ export default function Navbar({ page, setPage }) {
         {/* Right: Actions */}
         <div className="flex items-center gap-4">
           <a
-            href="/CV Yudistira Dwi Anggara.pdf"
-            download
+            href="./CV Yudistira Dwi Anggara.pdf" target="_blank" rel="noopener noreferrer"
             className="hidden sm:inline-block bg-accent hover:bg-accent-dark text-white font-bold px-5 py-2.5 rounded-full text-xs sm:text-sm shadow-xs hover:shadow-md transition-all text-center"
           >
-            Download CV
+            View CV
           </a>
 
           {/* Burger Menu Button (Mobile) */}
@@ -154,11 +150,10 @@ export default function Navbar({ page, setPage }) {
               Contact
             </button>
             <a
-              href="/CV Yudistira Dwi Anggara.pdf"
-              download
+              href="./CV Yudistira Dwi Anggara.pdf" target="_blank" rel="noopener noreferrer"
               className="mt-2 w-full bg-accent hover:bg-accent-dark text-white font-bold py-3 rounded-xl text-center text-sm shadow-sm"
             >
-              Download CV
+              View CV
             </a>
           </nav>
         </div>

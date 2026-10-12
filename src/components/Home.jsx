@@ -29,11 +29,10 @@ export default function Home({ setPage, setProjectMode }) {
           </p>
           <div className="flex flex-wrap gap-4 pt-4">
             <a
-              href="/CV Yudistira Dwi Anggara.pdf"
-              download
+              href="./CV Yudistira Dwi Anggara.pdf" target="_blank" rel="noopener noreferrer"
               className="bg-accent hover:bg-accent-dark text-white font-bold px-6 py-3.5 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 inline-block text-center text-sm sm:text-base"
             >
-              Download CV
+              View CV
             </a>
             <button
               onClick={handleSeeWork}
