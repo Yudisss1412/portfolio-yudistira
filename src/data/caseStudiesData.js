@@ -461,6 +461,61 @@ export const caseStudies = {
       }
     ]
   },
+  baznas: {
+    id: "baznas",
+    category: "Zakat & Donation Web Portal",
+    title: "BAZNAS Portal Kebaikan — Digitalizing the Zakat, Infaq & Sedekah Ecosystem",
+    featuredImage: "./baznas-dashboard.png",
+    role: "Frontend Developer",
+    industry: "Islamic Finance & Social Impact",
+    githubUrl: "https://github.com/Yudisss1412/frontend-baznas",
+    liveUrl: "#",
+    vision: "BAZNAS Portal Kebaikan merupakan platform digital berbasis web yang menghubungkan muzakki dengan penyaluran dana ZIS (Zakat, Infaq, Sedekah, dan Terikat) secara transparan dan terukur. Ekosistem ini menyatukan dashboard muzakki, dompet digital, katalog program donasi, kalkulator zakat, hingga laporan keuangan audited dalam satu portal yang mudah diakses dari berbagai perangkat.",
+    problems: [
+      "Proses penyaluran zakat dan donasi konvensional masih bergantung pada kunjungan fisik ke lembaga amil, sehingga membatasi jangkauan muzakki yang sibuk atau berada di luar daerah.",
+      "Kurangnya transparansi real-time terhadap penghimpunan dan penyaluran dana ZIS menurunkan kepercayaan muzakki terhadap amanah lembaga pengelola.",
+      "Muzakki tidak memiliki cara yang mudah untuk menghitung kewajiban zakatnya sendiri maupun melacak riwayat dan dampak donasi yang pernah mereka salurkan."
+    ],
+    solutions: [
+      "Membangun dashboard muzakki interaktif dengan saldo dompet ZIS, donasi cepat, ringkasan tahunan zakat/infaq/sedekah, serta impact score berbasis frekuensi transaksi.",
+      "Menyediakan halaman Laporan Keuangan Audited dengan ringkasan penerimaan vs penyaluran per jenis dana, rasio efisiensi, opini WTP, dan grafik alokasi 8 ashnaf untuk menjaga akuntabilitas publik.",
+      "Mengembangkan kalkulator zakat mandiri (zakat penghasilan 2,5%) dan katalog program donasi dengan progress bar pendanaan, filter kategori, dan pencarian program berbasis kata kunci."
+    ],
+    technologies: [
+      { name: "Next.js 16", desc: "App Router untuk struktur multi-rute portal donasi & optimasi rendering halaman" },
+      { name: "React 19", desc: "Komponen interaktif dashboard dengan global context untuk state user & saldo" },
+      { name: "Tailwind CSS 4", desc: "Sistem desain responsif dengan skema warna hijau khas identitas visual BAZNAS" },
+      { name: "lucide-react", desc: "Ikon stroke ringan untuk seluruh elemen UI dashboard dan navigasi" },
+      { name: "react-countup", desc: "Animasi angka berjalan pada kartu statistik penghimpunan dana ZIS" }
+    ],
+    mockups: [
+      {
+        title: "Dashboard Muzakki",
+        description: "Halaman utama muzakki berisi sapaan personal, saldo dompet ZIS, aksi donasi cepat & top-up, serta ringkasan total zakat/infaq/sedekah tahunan.",
+        image: "./baznas-dashboard.png"
+      },
+      {
+        title: "Katalog Program Donasi",
+        description: "Halaman 'Semua Program Kebaikan' menampilkan 21 program ZIS lengkap dengan pencarian, filter kategori, dan progress bar pendanaan tiap program.",
+        image: "./baznas-programs.png"
+      },
+      {
+        title: "Program Zakat & Kalkulator Mini",
+        description: "Halaman khusus zakat dengan filter jenis zakat (penghasilan, harta, fitrah, perdagangan) dan kalkulator zakat penghasilan 2,5% interaktif.",
+        image: "./baznas-zakat.png"
+      },
+      {
+        title: "Laporan Keuangan Audited",
+        description: "Portal transparansi dengan ringkasan penerimaan dan penyaluran tahunan, opini WTP, rasio efisiensi, serta grafik alokasi 8 ashnaf fakir miskin.",
+        image: "./baznas-laporan.png"
+      },
+      {
+        title: "Panel Admin Amil",
+        description: "Dashboard internal petugas amil untuk memantau dana zakat, verifikasi transaksi pending, kelola program, dan agenda penyaluran lapangan.",
+        image: "./baznas-admin.png"
+      }
+    ]
+  },
   sample_video_edit: {
     id: "sample_video_edit",
     type: "video",
