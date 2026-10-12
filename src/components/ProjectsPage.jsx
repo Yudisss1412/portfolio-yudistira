@@ -14,7 +14,7 @@ export default function ProjectsPage({ setPage, setCaseStudyId, projectMode = 'w
 
   // Define tabs based on the active mode
   const filters = projectMode === 'video' 
-    ? ['All', 'Cinematic Vlog', 'Commercial'] // Kategori video bisa ditambah di sini
+    ? ['All', 'Cinematic Vlog', 'Commercial', 'Wedding & Events']
     : ['All', 'Management System', 'E-commerce', 'Web App'];
 
   const projectList = Object.values(caseStudies);
@@ -45,6 +45,9 @@ export default function ProjectsPage({ setPage, setCaseStudyId, projectMode = 'w
     }
     if (activeFilter === 'Commercial') {
       return project.category.includes('Commercial') || project.category.includes('Ad');
+    }
+    if (activeFilter === 'Wedding & Events') {
+      return project.category.includes('Event') || project.category.includes('Wedding');
     }
     return true;
   });
