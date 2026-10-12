@@ -516,6 +516,61 @@ export const caseStudies = {
       }
     ]
   },
+  sinecamp: {
+    id: "sinecamp",
+    category: "Tourism & Booking Web Portal",
+    title: "Sine Camp Outdoor — Digitalizing the Coastal Tent Glamping Reservation Experience",
+    featuredImage: "./sinecamp-home.png",
+    role: "Frontend Developer",
+    industry: "Travel & Hospitality",
+    githubUrl: "https://github.com/galangputr0/sine-camp",
+    liveUrl: "#",
+    vision: "Sine Camp Outdoor merupakan portal pemesanan online layanan sewa tenda glamping di kawasan wisata pinggir pantai. Platform ini menyatukan eksplorasi paket tenda, informasi zona dan fasilitas, galeri suasana kamp, peraturan resmi, hingga proses pemesanan end-to-end melalui checkout wizard lima langkah — sehingga calon pengunjung dapat merencanakan kunjungan sepenuhnya dari layar perangkat mereka sebelum tiba di lokasi.",
+    problems: [
+      "Pemesanan sewa tenda yang masih berjalan manual lewat chat atau catatan fisik rentan menyebabkan tabrak jadwal (double booking) dan salah input tanggal check-in atau check-out.",
+      "Calon pengunjung tidak memiliki kanal resmi untuk membandingkan paket tenda, harga per malam, kapasitas, fasilitas, dan lokasi zona area camping sebelum datang.",
+      "Ketentuan pemesanan seperti aturan pembayaran, kebijakan non-refundable, dan jadwal reschedule sering tidak tersampaikan secara tertulis dan konsisten kepada setiap pemesan."
+    ],
+    solutions: [
+      "Membangun checkout wizard lima langkah (Pesanan, Add-ons, Data Diri, Pembayaran, Konfirmasi) yang memandu pengunjung menyelesaikan pemesanan secara runtut dalam satu alur tanpa kehilangan konteks.",
+      "Menyediakan halaman Katalog Paket & Lokasi dengan kartu tenda yang menampilkan badge harga per malam, kapasitas orang, zona lokasi, hingga rincian fasilitas seperti matras, kompor, listrik, dan set BBQ.",
+      "Menerbitkan halaman Peraturan & SOP dan Galeri terpusat agar kebijakan non-refundable, batas reschedule H-3, serta visual suasana kamp tersampaikan transparan sebelum pengunjung memesan."
+    ],
+    technologies: [
+      { name: "Laravel 13", desc: "Core backend MVC: routing halaman publik, komponen Blade, dan relasi Eloquent 27 model / 30+ tabel" },
+      { name: "PHP 8.3", desc: "Bahasa server untuk logika bisnis reservasi, sesi, dan validasi data pemesanan" },
+      { name: "Blade Templates", desc: "Komponen layout reusable (layout-guest, layout-checkout, header) untuk konsistensi UI lintas halaman" },
+      { name: "Bootstrap 5 & Custom CSS", desc: "Grid responsif dan styling hero, kartu paket, serta galeri dengan identitas visual coastal" },
+      { name: "jQuery & Vanilla JS", desc: "Interaktivitas wizard checkout, slider beranda, pencarian paket, dan lightbox galeri" }
+    ],
+    mockups: [
+      {
+        title: "Beranda & Quick Booking",
+        description: "Hero full-height 'Menyatu dengan Alam, Tepat di Bibir Pantai' dilengkapi bar pemesanan cepat: pilih paket tenda, tanggal check-in, tanggal check-out, dan jumlah tenda.",
+        image: "./sinecamp-home.png"
+      },
+      {
+        title: "Katalog Paket & Lokasi",
+        description: "Daftar Paket Tenda A/B/C dengan badge harga per malam, kapasitas 2-6 orang, zona lokasi (dekat sungai, pusat area, area atas), dan rincian fasilitas tiap paket.",
+        image: "./sinecamp-packages.png"
+      },
+      {
+        title: "Checkout Wizard 5 Langkah",
+        description: "Alur pemesanan runtut: ringkasan pesanan, pemilihan add-ons, data diri pemesan, metode pembayaran, hingga konfirmasi akhir dalam satu wizard bertahap.",
+        image: "./sinecamp-checkout.png"
+      },
+      {
+        title: "Galeri Momen",
+        description: "Galeri masonry berisi dokumentasi momen pengunjung sebagai social proof suasana kamp, dilengkapi tombol navigasi kembali.",
+        image: "./sinecamp-gallery.png"
+      },
+      {
+        title: "Peraturan & SOP",
+        description: "Halaman kebijakan resmi berisi standar operasional prosedur dan peringatan penting seputar sistem pemesanan non-refundable serta kebijakan reschedule maksimal H-3.",
+        image: "./sinecamp-sop.png"
+      }
+    ]
+  },
   sample_video_edit: {
     id: "sample_video_edit",
     type: "video",
