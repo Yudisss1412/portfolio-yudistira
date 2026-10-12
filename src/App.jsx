@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { Suspense, lazy, useState } from 'react';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import ProjectsPage from './components/ProjectsPage';
@@ -7,8 +7,11 @@ import ContactPage from './components/ContactPage';
 import Footer from './components/Footer';
 import DarkModeToggle from './components/DarkModeToggle';
 
+// Lazy-loaded: pulls in react-pdf only when the CV page is opened
+const CvPage = lazy(() => import('./components/CvPage'));
+
 function App() {
-  const [page, setPage] = useState('home'); // 'home', 'projects', 'case-study', 'contact'
+  const [page, setPage] = useState('home'); // 'home', 'projects', 'case-study', 'contact', 'cv'
   const [caseStudyId, setCaseStudyId] = useState('akrab');
   const [projectMode, setProjectMode] = useState('web'); // 'web' or 'video'
 
@@ -32,6 +35,18 @@ function App() {
 
         {page === 'contact' && (
           <ContactPage />
+        )}
+
+        {page === 'cv' && (
+          <Suspense
+            fallback={
+              <div className="pt-32 pb-16 text-center text-text-secondary text-sm">
+                Loading CV…
+              </div>
+            }
+          >
+            <CvPage setPage={setPage} />
+          </Suspense>
         )}
       </div>
       <Footer setPage={setPage} />

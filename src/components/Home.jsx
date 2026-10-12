@@ -28,12 +28,15 @@ export default function Home({ setPage, setProjectMode }) {
             A Web Developer based in Indonesia. Passionate about building high-quality, performant digital solutions with Laravel, PHP, and modern frontend frameworks.
           </p>
           <div className="flex flex-wrap gap-4 pt-4">
-            <a
-              href="./CV Yudistira Dwi Anggara.pdf" target="_blank" rel="noopener noreferrer"
-              className="bg-accent hover:bg-accent-dark text-white font-bold px-6 py-3.5 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 inline-block text-center text-sm sm:text-base"
+            <button
+              onClick={() => {
+                setPage('cv');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+              className="bg-accent hover:bg-accent-dark text-white font-bold px-6 py-3.5 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 text-sm sm:text-base cursor-pointer"
             >
               View CV
-            </a>
+            </button>
             <button
               onClick={handleSeeWork}
               className="bg-transparent hover:bg-bg-secondary text-accent font-bold px-6 py-3.5 rounded-xl border-2 border-accent hover:border-accent-dark transition-all transform hover:-translate-y-0.5 text-sm sm:text-base"
