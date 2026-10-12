@@ -23,7 +23,7 @@ function App() {
         )}
 
         {page === 'projects' && (
-          <ProjectsPage setPage={setPage} setCaseStudyId={setCaseStudyId} projectMode={projectMode} />
+          <ProjectsPage setPage={setPage} setCaseStudyId={setCaseStudyId} projectMode={projectMode} setProjectMode={setProjectMode} />
         )}
 
         {page === 'case-study' && (

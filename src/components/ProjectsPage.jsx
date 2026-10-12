@@ -1,14 +1,16 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { FaCode, FaFilm } from 'react-icons/fa';
 import { caseStudies } from '../data/caseStudiesData';
 
-export default function ProjectsPage({ setPage, setCaseStudyId, projectMode = 'web' }) {
+export default function ProjectsPage({ setPage, setCaseStudyId, projectMode = 'web', setProjectMode }) {
   const [activeFilter, setActiveFilter] = useState('All');
 
-  // Reset active filter to 'All' whenever mode changes
-  useEffect(() => {
+  const handleModeChange = (mode) => {
+    if (!setProjectMode) return;
+    setProjectMode(mode);
     setActiveFilter('All');
-  }, [projectMode]);
+  };
 
   // Define tabs based on the active mode
   const filters = projectMode === 'video' 
@@ -61,8 +63,48 @@ export default function ProjectsPage({ setPage, setCaseStudyId, projectMode = 'w
           Featured <span className="text-accent gradient-text">Projects</span>
         </h1>
         <p className="text-text-secondary text-sm sm:text-base md:text-lg leading-relaxed">
-          A selection of my recent works ranging from complex management dashboards to elegant e-commerce applications and interactive web solutions. Each project reflects my commitment to clean code, solid architectures, and user-centric designs.
+          {projectMode === 'video'
+            ? 'A collection of cinematic vlogs and commercial edits — exploring color grading, beat-matched transitions, and storytelling through handheld footage.'
+            : 'A selection of my recent works ranging from complex management dashboards to elegant e-commerce applications and interactive web solutions. Each project reflects my commitment to clean code, solid architectures, and user-centric designs.'}
         </p>
+      </div>
+
+      {/* Coding / Video Mode Toggle */}
+      <div className="inline-flex items-center self-start bg-bg-secondary border border-border rounded-full p-1 shadow-sm">
+        <button
+          onClick={() => handleModeChange('web')}
+          aria-pressed={projectMode === 'web'}
+          className={`relative flex items-center gap-2 px-5 sm:px-6 py-2.5 rounded-full font-bold text-xs sm:text-sm transition-colors ${
+            projectMode === 'web' ? 'text-white' : 'text-text-muted hover:text-accent'
+          }`}
+        >
+          {projectMode === 'web' && (
+            <motion.div
+              layoutId="mode-pill"
+              className="absolute inset-0 bg-accent rounded-full"
+              transition={{ type: 'spring', bounce: 0.25, duration: 0.5 }}
+            />
+          )}
+          <FaCode className="relative z-10 w-3.5 h-3.5" />
+          <span className="relative z-10">Coding</span>
+        </button>
+        <button
+          onClick={() => handleModeChange('video')}
+          aria-pressed={projectMode === 'video'}
+          className={`relative flex items-center gap-2 px-5 sm:px-6 py-2.5 rounded-full font-bold text-xs sm:text-sm transition-colors ${
+            projectMode === 'video' ? 'text-white' : 'text-text-muted hover:text-accent'
+          }`}
+        >
+          {projectMode === 'video' && (
+            <motion.div
+              layoutId="mode-pill"
+              className="absolute inset-0 bg-accent rounded-full"
+              transition={{ type: 'spring', bounce: 0.25, duration: 0.5 }}
+            />
+          )}
+          <FaFilm className="relative z-10 w-3.5 h-3.5" />
+          <span className="relative z-10">Video</span>
+        </button>
       </div>
 
       {/* Filter Tabs */}
