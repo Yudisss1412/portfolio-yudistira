@@ -1,8 +1,11 @@
 import { useState, useEffect } from 'react';
+import { motion, useScroll, useSpring } from 'framer-motion';
 
 export default function Navbar({ page, setPage }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+  const { scrollYProgress } = useScroll();
+  const progressScale = useSpring(scrollYProgress, { stiffness: 120, damping: 30, restDelta: 0.001 });
 
   useEffect(() => {
     if (page !== 'home') return;
@@ -54,6 +57,12 @@ export default function Navbar({ page, setPage }) {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-bg-secondary/85 backdrop-blur-md border-b border-border shadow-xs">
+      {/* Scroll progress bar */}
+      <motion.div
+        className="scroll-progress"
+        style={{ scaleX: progressScale }}
+        aria-hidden="true"
+      />
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Left: Logo */}
         <button 
@@ -68,45 +77,74 @@ export default function Navbar({ page, setPage }) {
           <button
             onClick={() => handleNav('home')}
             className={`hover:text-accent transition-colors relative py-1 ${
-              page === 'home' && (activeSection === 'home' || activeSection === '') ? 'text-accent border-b-2 border-accent' : ''
+              page === 'home' && (activeSection === 'home' || activeSection === '') ? 'text-accent' : ''
             }`}
           >
             Home
+            {page === 'home' && (activeSection === 'home' || activeSection === '') && (
+              <motion.span
+                layoutId="nav-underline"
+                className="absolute left-0 bottom-0 h-0.5 w-full bg-accent rounded-full"
+                transition={{ type: 'spring', stiffness: 350, damping: 30 }}
+              />
+            )}
           </button>
           <button
             onClick={() => handleNav('projects')}
             className={`hover:text-accent transition-colors relative py-1 ${
-              page === 'projects' || page === 'case-study' || (page === 'home' && activeSection === 'projects') ? 'text-accent border-b-2 border-accent' : ''
+              page === 'projects' || page === 'case-study' || (page === 'home' && activeSection === 'projects') ? 'text-accent' : ''
             }`}
           >
             Projects
+            {(page === 'projects' || page === 'case-study' || (page === 'home' && activeSection === 'projects')) && (
+              <motion.span
+                layoutId="nav-underline"
+                className="absolute left-0 bottom-0 h-0.5 w-full bg-accent rounded-full"
+                transition={{ type: 'spring', stiffness: 350, damping: 30 }}
+              />
+            )}
           </button>
           <button
             onClick={() => handleNav('home', 'skills')}
             className={`hover:text-accent transition-colors relative py-1 ${
-              page === 'home' && activeSection === 'skills' ? 'text-accent border-b-2 border-accent' : ''
+              page === 'home' && activeSection === 'skills' ? 'text-accent' : ''
             }`}
           >
             Skills
+            {page === 'home' && activeSection === 'skills' && (
+              <motion.span
+                layoutId="nav-underline"
+                className="absolute left-0 bottom-0 h-0.5 w-full bg-accent rounded-full"
+                transition={{ type: 'spring', stiffness: 350, damping: 30 }}
+              />
+            )}
           </button>
           <button
             onClick={() => handleNav('contact')}
             className={`hover:text-accent transition-colors relative py-1 ${
-              page === 'contact' || (page === 'home' && activeSection === 'contact') ? 'text-accent border-b-2 border-accent' : ''
+              page === 'contact' || (page === 'home' && activeSection === 'contact') ? 'text-accent' : ''
             }`}
           >
             Contact
+            {(page === 'contact' || (page === 'home' && activeSection === 'contact')) && (
+              <motion.span
+                layoutId="nav-underline"
+                className="absolute left-0 bottom-0 h-0.5 w-full bg-accent rounded-full"
+                transition={{ type: 'spring', stiffness: 350, damping: 30 }}
+              />
+            )}
           </button>
         </nav>
 
         {/* Right: Actions */}
         <div className="flex items-center gap-4">
-          <button
+          <motion.button
             onClick={() => handleNav('cv')}
+            whileTap={{ scale: 0.97 }}
             className="hidden sm:inline-block bg-accent hover:bg-accent-dark text-white font-bold px-5 py-2.5 rounded-full text-xs sm:text-sm shadow-xs hover:shadow-md transition-all text-center cursor-pointer"
           >
             View CV
-          </button>
+          </motion.button>
 
           {/* Burger Menu Button (Mobile) */}
           <button
@@ -149,12 +187,13 @@ export default function Navbar({ page, setPage }) {
             >
               Contact
             </button>
-            <button
+            <motion.button
               onClick={() => handleNav('cv')}
+              whileTap={{ scale: 0.97 }}
               className="mt-2 w-full bg-accent hover:bg-accent-dark text-white font-bold py-3 rounded-xl text-center text-sm shadow-sm cursor-pointer"
             >
               View CV
-            </button>
+            </motion.button>
           </nav>
         </div>
       )}

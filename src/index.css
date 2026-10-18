@@ -161,10 +161,11 @@ body {
   position: fixed;
   top: 0;
   left: 0;
+  width: 100%;
   height: 3px;
   background: linear-gradient(90deg, var(--color-gradient-start), var(--color-gradient-end));
   z-index: 9999;
-  transition: width 0.1s ease;
+  transform-origin: left;
 }
 
 /* Parallax container */

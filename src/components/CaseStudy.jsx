@@ -212,12 +212,25 @@ export default function CaseStudy({ caseStudyId, setPage }) {
 
       {/* 5. VISUAL EXPERIENCE GALLERY */}
       {currentStudy.mockups && currentStudy.mockups.length > 0 && (
-        <div className="space-y-6">
+        <motion.div
+          className="space-y-6"
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.15 }}
+          transition={{ duration: 0.5 }}
+        >
           <h2 className="text-xl sm:text-2xl font-black text-text-primary border-l-4 border-accent pl-3">Visual Experience</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {currentStudy.mockups.map((mockup, i) => (
-            <div key={i} className="bg-bg-secondary border border-border rounded-2xl overflow-hidden shadow-xs hover:shadow-md transition-shadow">
+            <motion.div
+              key={i}
+              className="bg-bg-secondary border border-border rounded-2xl overflow-hidden shadow-xs hover:shadow-md transition-shadow"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.45, delay: (i % 2) * 0.1 }}
+            >
               <div className="relative aspect-[16/10] bg-slate-50 border-b border-border">
                 <img 
                   src={mockup.image} 
@@ -238,33 +251,41 @@ export default function CaseStudy({ caseStudyId, setPage }) {
                 <h4 className="font-bold text-text-primary text-sm sm:text-base">{mockup.title}</h4>
                 <p className="text-text-muted text-xs leading-relaxed">{mockup.description}</p>
               </div>
-            </div>
+            </motion.div>
           ))}
           </div>
-        </div>
+        </motion.div>
       )}
 
       {/* 6. INTERESTED CTA & FOOTER SWITCH BUTTONS */}
-      <div className="bg-bg-secondary border border-border rounded-3xl p-8 md:p-12 text-center space-y-6 shadow-sm max-w-3xl mx-auto">
+      <motion.div
+        className="bg-bg-secondary border border-border rounded-3xl p-8 md:p-12 text-center space-y-6 shadow-sm max-w-3xl mx-auto"
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.5 }}
+      >
         <h3 className="text-xl sm:text-2xl font-black text-text-primary">Interested in the results?</h3>
         <p className="text-text-secondary text-xs sm:text-sm max-w-md mx-auto">
           Explore more of my digital solutions or head back to the landing page.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button 
+          <motion.button 
+            whileTap={{ scale: 0.97 }}
             onClick={handleBackToProjects}
             className="bg-accent hover:bg-accent-dark text-white font-bold px-6 py-3 rounded-xl shadow-md hover:shadow-lg transition-all text-xs sm:text-sm"
           >
             View More Projects
-          </button>
-          <button 
+          </motion.button>
+          <motion.button 
+            whileTap={{ scale: 0.97 }}
             onClick={handleBackToHome}
             className="bg-transparent hover:bg-bg-primary text-text-primary border-2 border-border hover:border-accent font-bold px-6 py-3 rounded-xl transition-all text-xs sm:text-sm"
           >
             Go to Homepage
-          </button>
+          </motion.button>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }

@@ -71,21 +71,23 @@ export default function CvPage({ setPage }) {
           </div>
 
           <div className="flex flex-wrap gap-3">
-            <a
+            <motion.a
               href={CV_FILE}
               download
+              whileTap={{ scale: 0.97 }}
               className="bg-accent hover:bg-accent-dark text-white font-bold px-5 py-3 rounded-xl shadow-md hover:shadow-lg transition-all inline-flex items-center gap-2 text-xs sm:text-sm cursor-pointer"
             >
               <FaDownload /> Download PDF
-            </a>
-            <a
+            </motion.a>
+            <motion.a
               href={CV_FILE}
               target="_blank"
               rel="noopener noreferrer"
+              whileTap={{ scale: 0.97 }}
               className="bg-transparent hover:bg-bg-secondary text-text-primary border-2 border-border hover:border-accent font-bold px-5 py-3 rounded-xl transition-all inline-flex items-center gap-2 text-xs sm:text-sm"
             >
               <FaExternalLinkAlt /> Open in New Tab
-            </a>
+            </motion.a>
           </div>
         </div>
       </div>

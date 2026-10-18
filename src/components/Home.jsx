@@ -28,7 +28,8 @@ export default function Home({ setPage, setProjectMode }) {
             A Web Developer based in Indonesia. Passionate about building high-quality, performant digital solutions with Laravel, PHP, and modern frontend frameworks.
           </p>
           <div className="flex flex-wrap gap-4 pt-4">
-            <button
+            <motion.button
+              whileTap={{ scale: 0.97 }}
               onClick={() => {
                 setPage('cv');
                 window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -36,13 +37,14 @@ export default function Home({ setPage, setProjectMode }) {
               className="bg-accent hover:bg-accent-dark text-white font-bold px-6 py-3.5 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 text-sm sm:text-base cursor-pointer"
             >
               View CV
-            </button>
-            <button
+            </motion.button>
+            <motion.button
+              whileTap={{ scale: 0.97 }}
               onClick={handleSeeWork}
               className="bg-transparent hover:bg-bg-secondary text-accent font-bold px-6 py-3.5 rounded-xl border-2 border-accent hover:border-accent-dark transition-all transform hover:-translate-y-0.5 text-sm sm:text-base"
             >
               See My Work →
-            </button>
+            </motion.button>
           </div>
         </motion.div>
 
@@ -71,14 +73,26 @@ export default function Home({ setPage, setProjectMode }) {
 
       {/* 2. CHOOSE YOUR JOURNEY SECTION */}
       <section id="projects-home" className="space-y-12">
-        <div className="text-center max-w-2xl mx-auto space-y-4">
+        <motion.div
+          className="text-center max-w-2xl mx-auto space-y-4"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.5 }}
+        >
           <h2 className="text-3xl sm:text-4xl font-black text-text-primary">Areas of Expertise</h2>
           <p className="text-text-secondary text-sm sm:text-base">
             Explore my portfolio based on the creative and technical solutions you are looking for.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto">
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto"
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={{ show: { transition: { staggerChildren: 0.12 } } }}
+        >
           {/* Web Development Card */}
           <motion.div
             onClick={() => {
@@ -86,6 +100,7 @@ export default function Home({ setPage, setProjectMode }) {
               handleSeeWork();
             }}
             className="relative group cursor-pointer rounded-[2rem] overflow-hidden bg-bg-secondary border border-border shadow-sm hover:shadow-2xl transition-all duration-500 aspect-[4/3] sm:aspect-square md:aspect-[4/3] flex flex-col items-center justify-center text-center p-8"
+            variants={{ hidden: { opacity: 0, y: 24 }, show: { opacity: 1, y: 0 } }}
             whileHover={{ y: -8, scale: 1.02 }}
           >
             {/* Background Glow */}
@@ -113,6 +128,7 @@ export default function Home({ setPage, setProjectMode }) {
               handleSeeWork();
             }}
             className="relative group cursor-pointer rounded-[2rem] overflow-hidden bg-bg-secondary border border-border shadow-sm hover:shadow-2xl transition-all duration-500 aspect-[4/3] sm:aspect-square md:aspect-[4/3] flex flex-col items-center justify-center text-center p-8"
+            variants={{ hidden: { opacity: 0, y: 24 }, show: { opacity: 1, y: 0 } }}
             whileHover={{ y: -8, scale: 1.02 }}
           >
             {/* Background Glow */}
@@ -132,13 +148,19 @@ export default function Home({ setPage, setProjectMode }) {
               Explore Video Projects <span>→</span>
             </div>
           </motion.div>
-        </div>
+        </motion.div>
       </section>
 
       {/* 3. TECHNICAL ARSENAL SECTION */}
       <section id="skills" className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16 items-start">
         {/* Left side info */}
-        <div className="space-y-8">
+        <motion.div
+          className="space-y-8"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.5 }}
+        >
           <div className="space-y-4">
             <h2 className="text-3xl sm:text-4xl font-black text-text-primary">Technical Arsenal</h2>
             <p className="text-text-secondary text-sm sm:text-base leading-relaxed">
@@ -171,10 +193,16 @@ export default function Home({ setPage, setProjectMode }) {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Right side skills cards grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+        <motion.div
+          className="grid grid-cols-2 sm:grid-cols-3 gap-4"
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={{ show: { transition: { staggerChildren: 0.07 } } }}
+        >
           {[
             { name: 'PHP', icon: <FaPhp className="text-3xl text-[#4f5b93]" /> },
             { name: 'Laravel', icon: <FaLaravel className="text-3xl text-[#ff2d20]" /> },
@@ -186,6 +214,7 @@ export default function Home({ setPage, setProjectMode }) {
             <motion.div
               key={index}
               className="bg-bg-secondary border border-border hover:border-accent hover:shadow-md rounded-2xl p-6 flex flex-col items-center justify-center gap-3 transition-all cursor-default"
+              variants={{ hidden: { opacity: 0, y: 16 }, show: { opacity: 1, y: 0 } }}
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
@@ -193,17 +222,25 @@ export default function Home({ setPage, setProjectMode }) {
               <span className="font-bold text-xs sm:text-sm text-text-primary">{skill.name}</span>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </section>
 
       {/* 4. CONTACT / LET'S TALK SECTION */}
-      <section id="contact" className="bg-bg-secondary border border-border rounded-3xl p-8 md:p-12 lg:p-16 text-center max-w-4xl mx-auto space-y-6 shadow-sm">
+      <motion.section
+        id="contact"
+        className="bg-bg-secondary border border-border rounded-3xl p-8 md:p-12 lg:p-16 text-center max-w-4xl mx-auto space-y-6 shadow-sm"
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.5 }}
+      >
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-text-primary">Let's build something together!</h2>
         <p className="text-text-secondary text-sm sm:text-base leading-relaxed max-w-xl mx-auto">
           I'm open to industrial partnerships, freelance opportunities, or full-time roles. If you have a project in mind or want to collaborate, feel free to reach out.
         </p>
         <div className="flex flex-wrap gap-4 justify-center pt-4">
-          <button
+          <motion.button
+            whileTap={{ scale: 0.97 }}
             onClick={() => {
               setPage('contact');
               window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -211,9 +248,9 @@ export default function Home({ setPage, setProjectMode }) {
             className="bg-accent hover:bg-accent-dark text-white font-bold px-6 py-3.5 rounded-xl shadow-md hover:shadow-lg transition-all inline-flex items-center gap-2 text-sm sm:text-base cursor-pointer"
           >
             <FaPaperPlane /> Get In Touch
-          </button>
+          </motion.button>
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 }

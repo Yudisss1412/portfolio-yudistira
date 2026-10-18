@@ -69,19 +69,31 @@ export default function ContactPage() {
   return (
     <div className="pt-24 pb-32 px-6 max-w-7xl mx-auto space-y-12">
       {/* Page Header */}
-      <div className="text-left space-y-4 max-w-3xl">
+      <motion.div
+        className="text-left space-y-4 max-w-3xl"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.4 }}
+        transition={{ duration: 0.5 }}
+      >
         <h1 className="text-4xl sm:text-5xl font-black text-text-primary leading-tight">
           Let's Build <span className="text-accent gradient-text">Something Great</span>
         </h1>
         <p className="text-text-secondary text-sm sm:text-base md:text-lg leading-relaxed">
           Have a project in mind or just want to say hi? I'm always open to discussing new opportunities, creative ideas, or partnerships.
         </p>
-      </div>
+      </motion.div>
 
       {/* Main Content Layout Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         {/* Left Column (Contact Information & Visual Card) */}
-        <div className="lg:col-span-5 space-y-6">
+        <motion.div
+          className="lg:col-span-5 space-y-6"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.5, delay: 0.05 }}
+        >
           {/* Card 1: Contact Information */}
           <div className="bg-bg-secondary border border-border rounded-3xl p-8 space-y-6 shadow-xs">
             <h2 className="text-xl sm:text-2xl font-black text-text-primary">Contact Information</h2>
@@ -161,7 +173,7 @@ export default function ContactPage() {
               </p>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Right Column (Send a Message Form Card) */}
         <div className="lg:col-span-7">
@@ -253,9 +265,10 @@ export default function ContactPage() {
 
               {/* Send Button */}
               <div className="pt-2">
-                <button
+                <motion.button
                   type="submit"
                   disabled={isSubmitting}
+                  whileTap={{ scale: 0.97 }}
                   className="w-full sm:w-auto bg-accent hover:bg-accent-dark text-white font-bold px-8 py-4 rounded-xl shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2.5 cursor-pointer text-sm sm:text-base disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:translate-y-0"
                 >
                   <span>{isSubmitting ? 'SENDING...' : 'SEND MESSAGE'}</span>
@@ -264,7 +277,7 @@ export default function ContactPage() {
                   ) : (
                     <FaPaperPlane className="text-xs sm:text-sm" />
                   )}
-                </button>
+                </motion.button>
               </div>
             </form>
           </div>

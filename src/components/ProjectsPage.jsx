@@ -61,7 +61,13 @@ export default function ProjectsPage({ setPage, setCaseStudyId, projectMode = 'w
   return (
     <div className="pt-24 pb-32 px-6 max-w-7xl mx-auto space-y-12">
       {/* Page Header */}
-      <div className="text-left space-y-4 max-w-3xl">
+      <motion.div
+        className="text-left space-y-4 max-w-3xl"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.4 }}
+        transition={{ duration: 0.5 }}
+      >
         <h1 className="text-4xl sm:text-5xl font-black text-text-primary leading-tight">
           Featured <span className="text-accent gradient-text">Projects</span>
         </h1>
@@ -70,7 +76,7 @@ export default function ProjectsPage({ setPage, setCaseStudyId, projectMode = 'w
             ? 'A collection of cinematic vlogs and commercial edits — exploring color grading, beat-matched transitions, and storytelling through handheld footage.'
             : 'A selection of my recent works ranging from complex management dashboards to elegant e-commerce applications and interactive web solutions. Each project reflects my commitment to clean code, solid architectures, and user-centric designs.'}
         </p>
-      </div>
+      </motion.div>
 
       {/* Coding / Video Mode Toggle */}
       <div className="inline-flex items-center self-start bg-bg-secondary border border-border rounded-full p-1 shadow-sm">
