@@ -22,7 +22,7 @@ function App() {
         <Navbar page={page} setPage={setPage} />
         
         {page === 'home' && (
-          <Home setPage={setPage} setCaseStudyId={setCaseStudyId} setProjectMode={setProjectMode} />
+          <Home setPage={setPage} setProjectMode={setProjectMode} />
         )}
 
         {page === 'projects' && (

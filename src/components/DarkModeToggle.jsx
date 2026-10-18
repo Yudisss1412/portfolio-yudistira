@@ -36,27 +36,30 @@ const DarkModeToggle = () => {
 
   return (
     <>
-      {/* Circular Reveal - Background Layer (behind content) */}
+      {/* Circular Reveal - only mounted during the toggle animation; a permanent
+          full-viewport layer here would cover static (z-index-less) elements like the footer */}
       <AnimatePresence>
-        <motion.div
-          key={isDark ? 'dark' : 'light'}
-          className="fixed inset-0 pointer-events-none z-0"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.3 }}
-        >
+        {isAnimating && (
           <motion.div
-            className={`w-full h-full ${isDark ? 'bg-[#0a0a0a]' : 'bg-[#f8f8f8]'}`}
-            initial={{
-              clipPath: `circle(0% at ${buttonPos.x}px ${buttonPos.y}px)`,
-            }}
-            animate={{
-              clipPath: `circle(150% at ${buttonPos.x}px ${buttonPos.y}px)`,
-            }}
-            transition={{ duration: 0.6, ease: 'easeInOut' }}
-          />
-        </motion.div>
+            key="theme-reveal"
+            className="fixed inset-0 pointer-events-none z-0"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            <motion.div
+              className={`w-full h-full ${isDark ? 'bg-[#0a0a0a]' : 'bg-[#f8f8f8]'}`}
+              initial={{
+                clipPath: `circle(0% at ${buttonPos.x}px ${buttonPos.y}px)`,
+              }}
+              animate={{
+                clipPath: `circle(150% at ${buttonPos.x}px ${buttonPos.y}px)`,
+              }}
+              transition={{ duration: 0.6, ease: 'easeInOut' }}
+            />
+          </motion.div>
+        )}
       </AnimatePresence>
 
       {/* Toggle Button */}
