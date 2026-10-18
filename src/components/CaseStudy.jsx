@@ -9,7 +9,7 @@ export default function CaseStudy({ caseStudyId, setPage }) {
 
   if (!currentStudy) {
     return (
-      <div className="pt-32 pb-16 px-6 text-center space-y-4">
+      <div className="pt-32 pb-32 px-6 text-center space-y-4">
         <h2 className="text-2xl font-bold text-text-primary">Studi kasus tidak ditemukan</h2>
         <button onClick={() => setPage('home')} className="text-accent font-bold hover:underline"> Kembali ke Beranda</button>
       </div>
@@ -27,7 +27,7 @@ export default function CaseStudy({ caseStudyId, setPage }) {
   };
 
   return (
-    <div className="pt-24 pb-16 px-6 max-w-5xl mx-auto space-y-16">
+    <div className="pt-24 pb-32 px-6 max-w-5xl mx-auto space-y-16">
       {/* 1. HEADER BREADCRUMB & TITLE */}
       <div className="space-y-4 text-left">
         <button 

@@ -8,7 +8,7 @@ export default function Home({ setPage, setProjectMode }) {
   };
 
   return (
-    <div className="pt-24 pb-16 px-6 max-w-7xl mx-auto space-y-24 sm:space-y-32">
+    <div className="pt-24 pb-32 px-6 max-w-7xl mx-auto space-y-24 sm:space-y-32">
       {/* 1. HERO SECTION */}
       <section className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[60vh]">
         {/* Left text */}

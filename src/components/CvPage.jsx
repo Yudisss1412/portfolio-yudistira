@@ -41,7 +41,7 @@ export default function CvPage({ setPage }) {
   }, []);
 
   return (
-    <div className="pt-24 pb-16 px-6 max-w-4xl mx-auto space-y-8">
+    <div className="pt-24 pb-32 px-6 max-w-4xl mx-auto space-y-8">
       {/* 1. HEADER: BACK BUTTON, TITLE & ACTIONS */}
       <div className="space-y-4 text-left">
         <button

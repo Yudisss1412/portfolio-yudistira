@@ -4,7 +4,6 @@ import Home from './components/Home';
 import ProjectsPage from './components/ProjectsPage';
 import CaseStudy from './components/CaseStudy';
 import ContactPage from './components/ContactPage';
-import Footer from './components/Footer';
 import DarkModeToggle from './components/DarkModeToggle';
 
 // Lazy-loaded: pulls in react-pdf only when the CV page is opened
@@ -40,7 +39,7 @@ function App() {
         {page === 'cv' && (
           <Suspense
             fallback={
-              <div className="pt-32 pb-16 text-center text-text-secondary text-sm">
+              <div className="pt-32 pb-32 text-center text-text-secondary text-sm">
                 Loading CV…
               </div>
             }
@@ -49,7 +48,6 @@ function App() {
           </Suspense>
         )}
       </div>
-      <Footer setPage={setPage} />
     </div>
   );
 }

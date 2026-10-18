@@ -67,7 +67,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="pt-24 pb-16 px-6 max-w-7xl mx-auto space-y-12">
+    <div className="pt-24 pb-32 px-6 max-w-7xl mx-auto space-y-12">
       {/* Page Header */}
       <div className="text-left space-y-4 max-w-3xl">
         <h1 className="text-4xl sm:text-5xl font-black text-text-primary leading-tight">
