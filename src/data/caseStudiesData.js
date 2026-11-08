@@ -626,5 +626,55 @@ export const caseStudies = {
       { name: "CapCut", desc: "Software utama untuk penyusunan timeline, beat-matching musik, dan rendering" }
     ],
     mockups: []
+  },
+  pmi: {
+    id: "pmi",
+    category: "Web App",
+    title: "Landing Page PMI Kabupaten Banyuwangi",
+    featuredImage: "./pmi-hero.jpg",
+    role: "Fullstack Developer",
+    industry: "Non-Profit / Humanitarian",
+    githubUrl: "#",
+    liveUrl: "#",
+    vision: "Landing page resmi Palang Merah Indonesia (PMI) Kabupaten Banyuwangi yang dirancang sebagai portal informasi dan sosialisasi kegiatan kemanusiaan. Platform ini menyediakan informasi mengenai stok darah, agenda donor, berita kegiatan, dampak program, testimoni, mitra, dan FAQ untuk masyarakat. Semua konten diambil dari konfigurasi terpusat (config/site.php) sehingga mudah dikelola oleh admin tanpa perlu mengubah kode template.",
+    problems: [
+      "Tidak ada platform digital terpusat untuk menyebarluaskan informasi kegiatan PMI Banyuwangi kepada masyarakat luas.",
+      "Data stok darah dan jadwal donor belum tersedia secara real-time dan mudah diakses publik.",
+      "Kurangnya media online untuk menampung testimoni, berita dampak, dan informasi mitra kemitraan."
+    ],
+    solutions: [
+      "Membangun landing page responsif dengan Laravel Blade dan Tailwind CSS yang menampilkan semua informasi penting PMI Banyuwangi.",
+      "Mengimplementasikan sistem konfigurasi konten terpusat melalui config/site.php agar admin dapat mengupdate isi halaman tanpa sentuh kode.",
+      "Menampilkan status stok darah (Tersedia, Menipis, Kritis), agenda donor, berita, dampak program, testimoni, mitra, dan FAQ dalam satu platform yang terintegrasi."
+    ],
+    technologies: [
+      { name: "Laravel", desc: "Core Backend & MVC Routing" },
+      { name: "PHP", desc: "Server-side logic & config-based content" },
+      { name: "Tailwind CSS", desc: "Modern & responsive UI design" },
+      { name: "MySQL", desc: "Database untuk pengelolaan data terkait" },
+      { name: "Blade", desc: "Template engine untuk rendering halaman dinamis" }
+    ],
+    mockups: [
+      {
+        title: "Hero Section",
+        description: "Tampilan awal landing page PMI Banyuwangi dengan call-to-action donor darah dan informasi kontak darurat.",
+        image: "./pmi-hero.jpg"
+      },
+      {
+        title: "Donor Section",
+        description: "Halaman informasi mengenai pendaftaran donor darah dan jadwal kegiatan donor darah rutin.",
+        image: "./pmi-donor.jpg"
+      },
+      {
+        title: "Preparation Section",
+        description: "Panduan persiapan sebelum donor darah untuk calon donor.",
+        image: "./pmi-prep.jpg"
+      },
+      {
+        title: "News Section",
+        description: "Halaman berita kegiatan PMI Banyuwangi dengan daftar artikel terbaru.",
+        image: "./pmi-news1.jpg"
+      }
+    ]
   }
 };
