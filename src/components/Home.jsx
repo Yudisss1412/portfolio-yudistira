@@ -60,7 +60,7 @@ export default function Home({ setPage, setProjectMode }) {
           {/* Main Photo Frame */}
           <div className="relative group overflow-hidden rounded-3xl border-4 border-white dark:border-bg-secondary shadow-2xl max-w-[320px] sm:max-w-[360px] aspect-square">
             <img
-              src="./Profile_foto.jpeg"
+              src="./profile-photo.jpeg"
               alt="Yudistira"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               onError={(e) => {
